@@ -56,4 +56,4 @@ ios/DerivedData/
 *.log
 .env
 .env.*
-appDescription.txt
+appDescriptions.txt
