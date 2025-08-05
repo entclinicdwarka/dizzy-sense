@@ -1,0 +1,157 @@
+✅ Short Description (max 80 characters)
+Find out why you're dizzy — ENT, neuro, heart, or general causes?
+
+✅ Long Description (max 4000 characters)
+🤔 Feeling dizzy, off-balance, or lightheaded?
+Use DizzySense to get quick, personalized guidance based on your symptoms.
+
+DizzySense is a self-assessment tool designed by a medical professional to help users understand possible causes of dizziness and guide them toward the appropriate type of doctor — whether ENT, neurologist, cardiologist, or general physician.
+
+🌀 What DizzySense Can Help With
+Vertigo or spinning sensations
+
+Light-headedness or fainting episodes
+
+Balance problems
+
+Vision-related dizziness
+
+Anxiety-related dizziness
+
+👨‍⚕️ Designed by a real ENT specialist
+Dr. Rahul Kapahi brings years of clinical experience in ENT and vestibular care into a simple tool that helps people figure out:
+
+What kind of dizziness they’re experiencing
+
+Whether it's urgent or not
+
+Which specialist to consult
+
+🧠 How It Works
+Answer a few symptom-based questions
+
+Get a summary of possible causes
+
+See the suggested type of doctor
+
+Optionally connect with the clinic
+
+🔒 Your Privacy Matters
+DizzySense does not collect personal data, track location, or require sign-up. It’s 100% offline, private, and focused on your awareness.
+
+🙅‍♂️ Important Disclaimer
+This app is not a diagnosis tool. It's intended for general awareness and is not a substitute for professional medical advice. Always consult a qualified doctor.
+
+📍 Useful For:
+Anyone with sudden or ongoing dizziness
+
+People trying to decide which specialist to visit
+
+Medical students or caregivers needing quick triage guidance
+
+Take control of your symptoms — use DizzySense today!
+
+HINDI Short
+ चक्कर का कारण जानें और सही विशेषज्ञ से सलाह लें
+
+HINDI Long
+
+✅ लॉन्ग डिस्क्रिप्शन (अधिकतम 4000 वर्ण)
+🤔 क्या आपको चक्कर आते हैं, असंतुलन महसूस होता है, या सिर हल्का लगता है?
+DizzySense का उपयोग करें और अपने लक्षणों के आधार पर त्वरित, व्यक्तिगत मार्गदर्शन प्राप्त करें।
+
+DizzySense एक स्वयं-मूल्यांकन उपकरण है जिसे एक अनुभवी चिकित्सा विशेषज्ञ ने डिज़ाइन किया है। इसका उद्देश्य चक्कर आने के संभावित कारणों को समझने में आपकी मदद करना और आपको सही विशेषज्ञ (ENT, न्यूरोलॉजिस्ट, कार्डियोलॉजिस्ट या सामान्य चिकित्सक) तक पहुंचाना है।
+
+🌀 DizzySense किन समस्याओं में सहायक हो सकता है:
+
+वर्टिगो या घूमने जैसा अनुभव
+
+सिर हल्का लगना या बेहोशी जैसा अनुभव
+
+संतुलन से जुड़ी समस्याएं
+
+दृष्टि संबंधित चक्कर
+
+चिंता (Anxiety) से संबंधित चक्कर
+
+👨‍⚕️ वास्तविक ENT विशेषज्ञ द्वारा डिज़ाइन किया गया
+डॉ. राहुल कपाही, एक अनुभवी ईएनटी और वेस्टीबुलर विशेषज्ञ हैं। उन्होंने इस सरल टूल को डिज़ाइन किया ताकि आप जान सकें:
+
+आपको किस प्रकार के चक्कर आ रहे हैं
+
+क्या स्थिति गंभीर है या नहीं
+
+किस विशेषज्ञ से परामर्श लेना चाहिए
+
+🧠 यह कैसे काम करता है:
+
+कुछ सरल लक्षण-आधारित प्रश्नों का उत्तर दें
+
+संभावित कारणों का सारांश प्राप्त करें
+
+उपयुक्त डॉक्टर की सलाह प्राप्त करें
+
+चाहें तो क्लिनिक से संपर्क करें
+
+🔒 आपकी गोपनीयता हमारे लिए महत्वपूर्ण है
+DizzySense कोई व्यक्तिगत डेटा एकत्र नहीं करता, न ही स्थान ट्रैक करता है, न ही साइन-अप की आवश्यकता है। यह 100% ऑफ़लाइन है और आपकी जागरूकता पर केंद्रित है।
+
+🙅‍♂️ महत्वपूर्ण अस्वीकरण
+यह ऐप निदान (Diagnosis) टूल नहीं है। यह केवल सामान्य जागरूकता के लिए है और किसी योग्य डॉक्टर की सलाह का विकल्प नहीं है। हमेशा एक योग्य चिकित्सक से परामर्श लें।
+
+📍 इनके लिए उपयोगी:
+
+अचानक या लंबे समय से चक्कर आने वाले लोग
+
+जो यह तय नहीं कर पा रहे कि किस डॉक्टर को दिखाएँ
+
+मेडिकल छात्र या देखभाल करने वाले जिन्हें त्वरित मार्गदर्शन चाहिए
+
+अपने लक्षणों पर नियंत्रण पाएं — आज ही DizzySense का उपयोग करें!
+
+What’s New (Release Notes)
+🌀 Welcome to DizzySense!
+
+• Take a quick symptom-based quiz
+• Understand possible causes of dizziness
+• Get suggestions on which doctor to consult (ENT, Neurologist, etc.)
+• Designed by a real ENT specialist
+• 100% offline – no sign-up, no data collection
+
+Start feeling more informed in just 2 minutes!
+
+SCREENSHOTS
+
+| Requirement             | Details                                                 |
+| ----------------------- | ------------------------------------------------------- |
+| **Minimum screenshots** | 2 per device type (phone, 7” & 10” tablets)             |
+| **Recommended size**    | 1080 × 1920 px (portrait) or 1920 × 1080 px (landscape) |
+| **Max number**          | Up to 8 per device type                                 |
+| **Format**              | JPEG or PNG                                             |
+| **File size**           | < 8 MB per image                                        |
+
+| Screenshot | Title (Overlay Text)         | Description                                |
+| ---------- | ---------------------------- | ------------------------------------------ |
+| 1          | 🌀 Understand Your Dizziness | Simple quiz to guide you based on symptoms |
+| 2          | ⏱️ Quick Self-Assessment     | Takes less than a minute                   |
+| 3          | 👨‍⚕️ Suggested Specialists  | Know whether to visit ENT, Neuro, or GP    |
+| 4          | 🔍 Red Flag Warnings         | Spot when to seek urgent help              |
+| 5          | 🔒 Fully Private & Offline   | No login, no data tracking                 |
+
+
+FEATURE GRAPHIC
+"./assets/images/FeatureGraphic"
+
+ create a new repository on the command line
+echo "# dizzy-sense" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/entclinicdwarka/dizzy-sense.git
+git push -u origin main
+
+push an existing repository from the command line
+git remote add origin https://github.com/entclinicdwarka/dizzy-sense.git
+git branch -M main
+git push -u origin main

@@ -1,50 +1,119 @@
-# Welcome to your Expo app 👋
+# 🌀 DizzySense
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+**DizzySense** is a mobile app that helps users understand the possible causes of dizziness and guides them toward the appropriate medical specialist—ENT, Neurologist, Cardiologist, or General Physician—based on their symptoms.
 
-## Get started
+Built using [React Native](https://reactnative.dev) and [Expo](https://expo.dev), DizzySense is fully offline and privacy-friendly.
 
-1. Install dependencies
+---
+
+## 📱 Features
+
+- Symptom-based interactive quiz
+- Summary of selected symptoms and red flags
+- Personalized specialist recommendation
+- No internet needed — everything runs locally
+- No data collection, ads, or tracking
+
+---
+
+## 🚀 Getting Started
+
+1. Install dependencies:
 
    ```bash
    npm install
    ```
 
-2. Start the app
+2. Start the development server:
 
    ```bash
    npx expo start
    ```
 
-In the output, you'll find options to open the app in a
+You can then test the app on:
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+- **Android Emulator**
+- **iOS Simulator**
+- **Expo Go** on your mobile device
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+---
 
-## Get a fresh project
+## 📂 Project Structure
 
-When you're ready, run:
+```
+app/
+├── components/
+│   ├── CustomHeader.tsx
+│   ├── FloatingWhatsAppButton.tsx
+│   └── QuestionEngine.tsx
+├── quiz/
+│   ├── data/
+│   ├── index.tsx
+│   └── result.tsx
+├── _layout.tsx
+├── about.tsx
+├── index.tsx
+├── privacy.tsx
+├── specialist.tsx
+└── terms.tsx
 
-```bash
-npm run reset-project
+assets/
+├── animations/
+│   └── dizzy.json
+├── fonts/
+│   └── SpaceMono-Regular.ttf
+└── images/
+    ├── DizzySense-689060fbb390e
+    ├── FeatureGraphic.png
+    ├── favicon.png
+    ├── icon.png
+    ├── logo-512px.png
+    ├── mypic.jpg
+    ├── playstore-icon.png
+    ├── splash.png
+    └── whatsapp.png
+
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+> Routing is handled using [`expo-router`](https://expo.github.io/router/docs/).
 
-## Learn more
+---
 
-To learn more about developing your project with Expo, look at the following resources:
+## 🔐 Privacy & Terms
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+- [Privacy Policy](/app/privacy.tsx)
+- [Terms & Conditions](/app/terms.tsx)
 
-## Join the community
+The app collects **no** personal data. All logic and quiz results are processed locally on your device.
 
-Join our community of developers creating universal apps.
+---
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## 🧪 Technologies Used
+
+- React Native with Expo
+- TypeScript
+- `expo-router` for file-based routing
+- Fully offline-first architecture
+- Minimalist and accessible UI
+
+---
+
+## 👨‍⚕️ Author
+
+**Dr. Rahul Kapahi**  
+ENT Consultant  
+📍 India  
+📧 entclinicdwarka@gmail.com
+
+---
+
+## 📦 Version
+
+**1.0** – August 2025
+
+---
+
+## 📝 License
+
+All rights reserved.  
+© 2025 Dr. Rahul Kapahi – DizzySense
