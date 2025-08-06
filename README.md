@@ -1,4 +1,9 @@
+![License: Proprietary](https://img.shields.io/badge/license-Proprietary-red)
+
 # 🌀 DizzySense
+
+> ⚠️ This project is licensed under a **proprietary license**.  
+> You may view the code, but **reproduction, modification, or commercial use is not allowed** without written permission from the author.
 
 **DizzySense** is a mobile app that helps users understand the possible causes of dizziness and guides them toward the appropriate medical specialist—ENT, Neurologist, Cardiologist, or General Physician—based on their symptoms.
 
@@ -115,5 +120,8 @@ ENT Consultant
 
 ## 📝 License
 
-All rights reserved.  
+**Proprietary – All rights reserved**  
 © 2025 Dr. Rahul Kapahi – DizzySense
+
+This codebase is the intellectual property of Dr. Rahul Kapahi.  
+You may not copy, modify, distribute, or use it for commercial purposes without written permission.
