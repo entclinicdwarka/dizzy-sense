@@ -1,5 +1,6 @@
 import { router, Stack } from "expo-router";
 import { ScrollView, Text, StyleSheet, TouchableOpacity } from "react-native";
+import { RFValue } from "react-native-responsive-fontsize";
 
 export default function TermsScreen() {
   return (
@@ -87,7 +88,7 @@ export default function TermsScreen() {
       <Text
         style={{
           textAlign: "center",
-          fontSize: 13,
+          fontSize: RFValue(13),
           color: "#888",
           marginTop: 30,
         }}
@@ -113,14 +114,14 @@ const styles = StyleSheet.create({
     backgroundColor: "#fdf2e9",
   },
   title: {
-    fontSize: 22,
+    fontSize: RFValue(22),
     fontWeight: "bold",
     marginBottom: 16,
     textAlign: "center",
     color: "#551802",
   },
   section: {
-    fontSize: 14,
+    fontSize: RFValue(14),
     marginBottom: 6,
     textAlign: "center",
     color: "#551802",
@@ -128,14 +129,14 @@ const styles = StyleSheet.create({
     borderBottomColor: "#551802",
   },
   heading: {
-    fontSize: 18,
+    fontSize: RFValue(18),
     fontWeight: "bold",
     marginTop: 20,
     marginBottom: 8,
     color: "#551802",
   },
   paragraph: {
-    fontSize: 15,
+    fontSize: RFValue(15),
     lineHeight: 24,
     color: "#551802",
   },
@@ -152,7 +153,7 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     color: "#fff",
-    fontSize: 16,
+    fontSize: RFValue(16),
     fontWeight: "600",
     textAlign: "center",
   },

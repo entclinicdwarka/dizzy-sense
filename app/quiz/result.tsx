@@ -9,6 +9,7 @@ import {
 } from "react-native";
 import { useLocalSearchParams, router, Stack } from "expo-router";
 import { getFinalResult } from "./data/questions";
+import { RFValue } from "react-native-responsive-fontsize";
 
 export default function ResultScreen() {
   const { result, summary } = useLocalSearchParams();
@@ -97,20 +98,20 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   title: {
-    fontSize: 28,
+    fontSize: RFValue(28),
     fontWeight: "bold",
     color: "#551802",
     textAlign: "center",
   },
   sectionLabel: {
-    fontSize: 18,
+    fontSize: RFValue(18),
     fontWeight: "600",
     marginTop: 16,
     marginBottom: 6,
     color: "#551802",
   },
   bodyText: {
-    fontSize: 16,
+    fontSize: RFValue(16),
     lineHeight: 22,
     color: "#551802",
   },
@@ -126,7 +127,7 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     color: "#fff",
-    fontSize: 16,
+    fontSize: RFValue(16),
     fontWeight: "600",
     textAlign: "center",
   },
@@ -157,13 +158,13 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 2 },
   },
   summaryQuestion: {
-    fontSize: 15,
+    fontSize: RFValue(15),
     fontWeight: "600",
     color: "#551802",
     marginBottom: 4,
   },
   summaryAnswer: {
-    fontSize: 15,
+    fontSize: RFValue(15),
     color: "#333",
     fontStyle: "italic",
     fontWeight: "600",

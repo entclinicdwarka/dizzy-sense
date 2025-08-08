@@ -1,4 +1,5 @@
 import { Image, Platform, StyleSheet, Text, View } from "react-native";
+import { RFValue } from "react-native-responsive-fontsize";
 
 export default function CustomHeader() {
   return (
@@ -48,7 +49,7 @@ const styles = StyleSheet.create({
     borderColor: "#ffffff",
   },
   title: {
-    fontSize: 24,
+    fontSize: RFValue(24),
     fontWeight: "bold",
     color: "#fff",
   },

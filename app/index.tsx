@@ -8,6 +8,7 @@ import {
 import { Link, Stack } from "expo-router";
 import CustomHeader from "./components/CustomHeader";
 import LottieView from "lottie-react-native";
+import { RFValue } from "react-native-responsive-fontsize";
 
 export default function HomeScreen() {
   return (
@@ -20,7 +21,7 @@ export default function HomeScreen() {
             headerTintColor: "#fff",
             headerTitleAlign: "left",
             headerBackVisible: false,
-            headerTitleStyle: { fontWeight: "bold", fontSize: 18 },
+            headerTitleStyle: { fontWeight: "bold", fontSize: RFValue(18) },
           }}
         />
 
@@ -57,7 +58,9 @@ export default function HomeScreen() {
           </Text>
 
           <Text style={styles.subtitle}>
-            <Text style={{ fontWeight: "bold", fontSize: 22 }}>DizzySense</Text>{" "}
+            <Text style={{ fontWeight: "bold", fontSize: RFValue(20) }}>
+              DizzySense
+            </Text>{" "}
             walks you through a short quiz to help you:
           </Text>
 
@@ -104,7 +107,7 @@ const styles = StyleSheet.create({
   },
 
   title: {
-    fontSize: 32,
+    fontSize: RFValue(28),
     fontWeight: "bold",
     color: "#fff",
     backgroundColor: "#551802",
@@ -120,7 +123,7 @@ const styles = StyleSheet.create({
     elevation: 20,
   },
   tagline: {
-    fontSize: 14,
+    fontSize: RFValue(14),
     color: "#6e2c00",
     marginBottom: 16,
     textAlign: "center",
@@ -141,7 +144,7 @@ const styles = StyleSheet.create({
   },
 
   subtitle: {
-    fontSize: 16,
+    fontSize: RFValue(16),
     textAlign: "center",
     color: "#551802",
     marginBottom: 12,
@@ -151,7 +154,7 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   bulletPoint: {
-    fontSize: 16,
+    fontSize: RFValue(14),
     color: "#551802",
     marginLeft: 10,
     marginBottom: 6,
@@ -166,7 +169,7 @@ const styles = StyleSheet.create({
   buttonText: {
     color: "#fff",
     textAlign: "center",
-    fontSize: 16,
+    fontSize: RFValue(16),
     fontWeight: "600",
   },
   headingRow: {
@@ -174,10 +177,10 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     marginBottom: 12,
-    flexWrap: "wrap", // just in case of small screen
+    flexWrap: "wrap",
   },
   headingText: {
-    fontSize: 22,
+    fontSize: RFValue(22),
     fontWeight: "bold",
     color: "#551802",
     textAlign: "center",

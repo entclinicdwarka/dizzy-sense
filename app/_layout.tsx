@@ -9,6 +9,7 @@ import {
 } from "react-native";
 import FloatingWhatsAppButton from "./components/FloatingWhatsAppButton";
 import { Ionicons } from "@expo/vector-icons";
+import { RFValue } from "react-native-responsive-fontsize";
 
 export default function RootLayout() {
   return (
@@ -78,7 +79,6 @@ export default function RootLayout() {
                 </TouchableOpacity>
               </View>
 
-              {/* Right Column with WhatsApp Button */}
               <View style={styles.whatsappColumn}>
                 <FloatingWhatsAppButton />
                 <Link href="/about" asChild>
@@ -116,6 +116,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: "space-between",
+    backgroundColor: "#fdf2e9",
   },
   content: {
     flex: 1,
@@ -123,18 +124,18 @@ const styles = StyleSheet.create({
   },
   footer: {
     backgroundColor: "#fae5d3",
-    paddingVertical: 4,
-    paddingHorizontal: 16,
+    paddingVertical: 6,
+    paddingHorizontal: 20,
     alignItems: "center",
   },
   footerText: {
-    fontSize: 15,
+    fontSize: RFValue(12),
     fontWeight: "900",
     color: "#551802",
     marginVertical: 6,
   },
   footerNote: {
-    fontSize: 12,
+    fontSize: RFValue(10),
     color: "#222222",
     marginTop: 2,
     textAlign: "center",
@@ -165,11 +166,11 @@ const styles = StyleSheet.create({
     backgroundColor: "#551802",
     paddingHorizontal: 8,
     paddingVertical: 4,
-    borderRadius: 50,
+    borderRadius: 9,
   },
   settingsText: {
     color: "#ffffff",
-    fontSize: 8,
+    fontSize: RFValue(6),
     fontWeight: "600",
     marginTop: 0,
     textAlign: "center",
@@ -185,10 +186,10 @@ const styles = StyleSheet.create({
   },
 
   disclaimerText: {
-    fontSize: 12,
+    fontSize: RFValue(12),
     textAlign: "center",
     color: "#856404",
-    fontWeight: "600",
+    fontWeight: "500",
     lineHeight: 18,
   },
 

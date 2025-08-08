@@ -9,6 +9,7 @@ import {
   View,
   Text,
 } from "react-native";
+import { RFValue } from "react-native-responsive-fontsize";
 
 const whatsappNumber = "+918800047117";
 
@@ -42,7 +43,6 @@ export default function FloatingWhatsAppButton() {
           style={styles.icon}
         />
       </TouchableOpacity>
-      <Text style={styles.caption}>WhatsApp</Text>
     </View>
   );
 }
@@ -70,12 +70,5 @@ const styles = StyleSheet.create({
     height: 24,
     resizeMode: "contain",
     justifyContent: "center",
-  },
-  caption: {
-    fontSize: 10,
-    color: "#551802",
-    fontWeight: "600",
-    textAlign: "center",
-    borderBottomWidth: 1,
   },
 });

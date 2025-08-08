@@ -8,6 +8,7 @@ import {
 } from "react-native";
 import { useRouter, Stack } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { RFValue } from "react-native-responsive-fontsize";
 
 export default function AboutScreen() {
   const router = useRouter();
@@ -71,6 +72,14 @@ export default function AboutScreen() {
           >
             <Text style={styles.linkButton}>📄 Terms & Conditions</Text>
           </TouchableOpacity>
+          <Text
+            style={[
+              styles.linkButton,
+              { fontStyle: "italic", fontSize: RFValue(10) },
+            ]}
+          >
+            (Click on the above links to read more)
+          </Text>
         </View>
 
         <Text style={styles.footer}>📱 Version 1.0 • August 2025</Text>
@@ -96,14 +105,14 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
   },
   title: {
-    fontSize: 22,
+    fontSize: RFValue(22),
     fontWeight: "bold",
     marginBottom: 16,
     textAlign: "center",
     color: "#551802",
   },
   paragraph: {
-    fontSize: 15,
+    fontSize: RFValue(15),
     lineHeight: 22,
     color: "#551802",
     marginBottom: 12,
@@ -112,17 +121,17 @@ const styles = StyleSheet.create({
     marginVertical: 16,
   },
   subheading: {
-    fontSize: 16,
+    fontSize: RFValue(16),
     fontWeight: "bold",
     marginBottom: 6,
     color: "#551802",
   },
   text: {
-    fontSize: 15,
+    fontSize: RFValue(15),
     color: "#551802",
   },
   linkText: {
-    fontSize: 15,
+    fontSize: RFValue(15),
     color: "#551802",
     marginTop: 4,
     textDecorationLine: "underline",
@@ -131,13 +140,13 @@ const styles = StyleSheet.create({
     marginTop: 24,
   },
   linkButton: {
-    fontSize: 16,
+    fontSize: RFValue(16),
     color: "#551802",
     paddingVertical: 10,
   },
   footer: {
     textAlign: "center",
-    fontSize: 13,
+    fontSize: RFValue(13),
     color: "#888",
     marginTop: 32,
     marginBottom: 10,
@@ -154,7 +163,7 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     color: "#fff",
-    fontSize: 16,
+    fontSize: RFValue(16),
     fontWeight: "600",
     textAlign: "center",
   },

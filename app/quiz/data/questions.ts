@@ -154,7 +154,7 @@ const questions: QuestionSet = {
 const getFinalResult = (id: string) => {
   const mapping = {
     ent: {
-      label: "ENT-related vertigo",
+      label: "ENT - related vertigo",
       doctor: "E.N.T. Specialist",
       description: "Your symptoms suggest an issue with the inner ear or balance system (vestibular apparatus), which commonly causes spinning sensations or positional dizziness.",
       redFlags: [
@@ -164,7 +164,7 @@ const getFinalResult = (id: string) => {
       ],
     },
     cardio: {
-      label: "CardioVascular-related dizziness",
+      label: "Cardio Vascular - related dizziness",
       doctor: "Cardiologist",
       description: "The pattern of your dizziness points toward a possible cardiovascular cause — such as changes in blood pressure, irregular heartbeat, or poor blood flow to the brain.",
       redFlags: [
@@ -174,7 +174,7 @@ const getFinalResult = (id: string) => {
       ],
     },
     neuro: {
-      label: "Neurological-related dizziness",
+      label: "Neurological - related dizziness",
       doctor: "Neurologist",
       description: "Your responses indicate that the dizziness may stem from the brain or nervous system — possibly linked to migraines, balance centers, or transient ischemic events.",
       redFlags: [

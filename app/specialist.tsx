@@ -8,6 +8,7 @@ import {
 import { useLocalSearchParams, Stack, router } from "expo-router";
 import { getFinalResult } from "@/app/quiz/data/questions";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { RFValue } from "react-native-responsive-fontsize";
 
 export default function SpecialistScreen() {
   const { result } = useLocalSearchParams();
@@ -100,7 +101,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#fdf2e9",
   },
   heading: {
-    fontSize: 22,
+    fontSize: RFValue(22),
     fontWeight: "bold",
     color: "#551802",
     marginBottom: 20,
@@ -118,7 +119,7 @@ const styles = StyleSheet.create({
     shadowRadius: 4,
   },
   title: {
-    fontSize: 22,
+    fontSize: RFValue(22),
     fontWeight: "bold",
     color: "#551802",
     marginBottom: 8,
@@ -126,7 +127,7 @@ const styles = StyleSheet.create({
     textDecorationLine: "underline",
   },
   doctor: {
-    fontSize: 24,
+    fontSize: RFValue(24),
     fontWeight: "bold",
     color: "#ffffff",
     marginBottom: 20,
@@ -135,17 +136,17 @@ const styles = StyleSheet.create({
     borderRadius: 11,
     paddingVertical: 4,
     paddingHorizontal: 10,
-    lineHeight: 24,
+    lineHeight: RFValue(32),
   },
   label: {
-    fontSize: 18,
+    fontSize: RFValue(18),
     fontWeight: "700",
     color: "#551802",
     marginTop: 10,
     lineHeight: 24,
   },
   point: {
-    fontSize: 16,
+    fontSize: RFValue(16),
     fontWeight: "400",
     color: "#551802",
     marginLeft: 8,
@@ -154,7 +155,7 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     color: "#551802",
-    fontSize: 16,
+    fontSize: RFValue(16),
     fontWeight: "600",
     textAlign: "center",
   },
