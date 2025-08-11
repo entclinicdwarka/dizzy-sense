@@ -35,7 +35,6 @@ export default function RootLayout() {
 
           <View style={styles.footer}>
             <View style={styles.footerRow}>
-              {/* Left Column with Links */}
               <View style={styles.footerLinks}>
                 <TouchableOpacity
                   accessible

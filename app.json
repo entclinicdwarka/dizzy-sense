@@ -1,28 +1,35 @@
 {
   "expo": {
-    "name": "dizzy-sense",
+    "name": "DizzySense",
     "slug": "dizzy-sense",
-    "version": "1.0.0",
+    "version": "1.0.0", // Human-readable app version
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
+    "icon": "./assets/images/icon.png", // 512×512 final Play Store icon
     "scheme": "dizzysense",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
+
     "ios": {
       "supportsTablet": true
     },
+
     "android": {
+      "package": "com.entclinicdwarka.dizzysense", // Unique permanent ID
+      "versionCode": 1, // Increment for each update
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/playstore-icon.png",
         "backgroundColor": "#551802"
       },
-      "edgeToEdgeEnabled": true
+      "edgeToEdgeEnabled": true,
+      "permissions": [] // Minimal permissions (empty = no extras)
     },
+
     "web": {
       "bundler": "metro",
       "output": "static",
       "favicon": "./assets/images/favicon.png"
     },
+
     "plugins": [
       "expo-router",
       [
@@ -35,6 +42,7 @@
         }
       ]
     ],
+
     "experiments": {
       "typedRoutes": true
     }
