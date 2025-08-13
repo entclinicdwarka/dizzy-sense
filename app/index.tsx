@@ -4,11 +4,17 @@ import {
   StyleSheet,
   TouchableOpacity,
   ScrollView,
+  Image,
 } from "react-native";
 import { Link, Stack } from "expo-router";
 import CustomHeader from "./components/CustomHeader";
-import LottieView from "lottie-react-native";
 import { RFValue } from "react-native-responsive-fontsize";
+import * as Animatable from "react-native-animatable";
+
+const spin: Animatable.CustomAnimation = {
+  from: { transform: [{ rotate: "0deg" }] },
+  to: { transform: [{ rotate: "360deg" }] },
+};
 
 export default function HomeScreen() {
   return (
@@ -38,11 +44,13 @@ export default function HomeScreen() {
 
         <View style={styles.card}>
           <View style={styles.headingRow}>
-            <LottieView
-              source={require("../assets/animations/dizzy.json")}
-              autoPlay
-              loop
-              style={{ width: 96, height: 96, marginRight: 8 }}
+            <Animatable.Image
+              animation={spin as any}
+              iterationCount="infinite"
+              duration={5000}
+              easing="linear"
+              source={require("../assets/images/dizzy_face.png")}
+              style={styles.image}
             />
             <Text
               accessibilityRole="header"
@@ -184,5 +192,10 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     color: "#551802",
     textAlign: "center",
+  },
+  image: {
+    width: 96,
+    height: 96,
+    marginRight: 8,
   },
 });
