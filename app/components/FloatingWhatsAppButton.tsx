@@ -4,28 +4,37 @@ import {
   TouchableOpacity,
   StyleSheet,
   Linking,
-  Platform,
   Image,
   View,
-  Text,
+  Alert,
 } from "react-native";
-import { RFValue } from "react-native-responsive-fontsize";
 
 const whatsappNumber = "+918800047117";
 
 export default function FloatingWhatsAppButton() {
   const openWhatsApp = async () => {
-    const url =
-      Platform.OS === "android"
-        ? `whatsapp://send?phone=${whatsappNumber}`
-        : `https://wa.me/${whatsappNumber}`;
+    const message = "Hello, I’d like to know more about DizzySense.";
+    const appUrl = `whatsapp://send?phone=${whatsappNumber}&text=${encodeURIComponent(
+      message
+    )}`;
+    const webUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
+      message
+    )}`;
 
-    const supported = await Linking.canOpenURL(url);
+    try {
+      const supported = await Linking.canOpenURL(appUrl);
 
-    if (supported) {
-      Linking.openURL(url);
-    } else {
-      alert("WhatsApp is not installed or the link cannot be opened.");
+      if (supported) {
+        await Linking.openURL(appUrl);
+      } else {
+        // fallback: open WhatsApp web or redirect to Play Store/App Store
+        await Linking.openURL(webUrl);
+      }
+    } catch (error) {
+      Alert.alert(
+        "Unable to open WhatsApp",
+        "It looks like WhatsApp is not installed or accessible on your device."
+      );
     }
   };
 
