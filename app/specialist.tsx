@@ -72,8 +72,8 @@ export default function SpecialistScreen() {
           <Text style={styles.label}>⚠️ Red flags to watch for:</Text>
           <View accessibilityRole="list">
             {info.redFlags.map((flag, idx) => (
-              <Text key={idx} style={styles.point}>
-                • {flag}
+              <Text key={idx} style={styles.flag}>
+                ❗ {flag}.
               </Text>
             ))}
           </View>
@@ -151,6 +151,14 @@ const styles = StyleSheet.create({
     color: "#551802",
     marginLeft: 8,
     marginVertical: 2,
+    lineHeight: 24,
+  },
+  flag: {
+    fontSize: RFValue(16),
+    fontWeight: "500",
+    color: "#551802",
+    marginLeft: 8,
+    marginVertical: 6,
     lineHeight: 22,
   },
   buttonText: {

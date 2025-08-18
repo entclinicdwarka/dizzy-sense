@@ -13,7 +13,8 @@ const whatsappNumber = "+918800047117";
 
 export default function FloatingWhatsAppButton() {
   const openWhatsApp = async () => {
-    const message = "Hello, I’d like to know more about DizzySense.";
+    const message =
+      "Hello, I want to book an appointment with Dr. Rahul Kapahi.";
     const appUrl = `whatsapp://send?phone=${whatsappNumber}&text=${encodeURIComponent(
       message
     )}`;

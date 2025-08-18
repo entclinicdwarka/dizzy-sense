@@ -13,7 +13,7 @@
     },
     "android": {
       "package": "com.entclinicdwarka.dizzysense",
-      "versionCode": 11,
+      "versionCode": 12,
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/playstore-icon.png",
         "backgroundColor": "#551802"

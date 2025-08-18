@@ -1,15 +1,15 @@
 // app/quiz/result.tsx
 
+import { router, Stack, useLocalSearchParams } from "expo-router";
 import {
-  View,
-  Text,
-  StyleSheet,
-  TouchableOpacity,
   ScrollView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
 } from "react-native";
-import { useLocalSearchParams, router, Stack } from "expo-router";
-import { getFinalResult } from "./data/questions";
 import { RFValue } from "react-native-responsive-fontsize";
+import { getFinalResult } from "./data/questions";
 
 export default function ResultScreen() {
   const { result, summary } = useLocalSearchParams();
@@ -59,11 +59,6 @@ export default function ResultScreen() {
 
         <Text style={styles.sectionLabel}>💬 What it might mean:</Text>
         <Text style={styles.bodyText}>{info.description}</Text>
-
-        <Text style={styles.sectionLabel}>⚠️ Red Flags:</Text>
-        <Text style={[styles.bodyText, styles.redFlags]}>
-          {info.redFlags.join(", ")}
-        </Text>
 
         <TouchableOpacity
           style={styles.button}
@@ -115,14 +110,10 @@ const styles = StyleSheet.create({
     lineHeight: 22,
     color: "#551802",
   },
-  redFlags: {
-    color: "#b91c1c",
-    fontWeight: "600",
-  },
   button: {
     marginTop: 30,
     backgroundColor: "#551802",
-    padding: 14,
+    paddingVertical: 12,
     borderRadius: 10,
   },
   buttonText: {
