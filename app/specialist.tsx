@@ -158,8 +158,9 @@ const styles = StyleSheet.create({
     fontWeight: "500",
     color: "#551802",
     marginLeft: 8,
-    marginVertical: 6,
-    lineHeight: 22,
+    marginVertical: 4,
+    lineHeight: 20,
+    fontStyle: "italic",
   },
   buttonText: {
     color: "#551802",

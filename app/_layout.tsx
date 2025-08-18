@@ -122,7 +122,7 @@ const styles = StyleSheet.create({
     position: "relative",
   },
   footer: {
-    backgroundColor: "#fae5d3",
+    backgroundColor: "#fdf2e9",
     paddingVertical: 6,
     paddingHorizontal: 20,
     alignItems: "center",
