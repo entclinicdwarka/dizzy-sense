@@ -47,7 +47,7 @@ export default function HomeScreen() {
             <Animatable.Image
               animation={spin as any}
               iterationCount="infinite"
-              duration={5000}
+              duration={6000}
               easing="linear"
               source={require("../assets/images/dizzy_face.png")}
               style={styles.image}
@@ -162,7 +162,7 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   bulletPoint: {
-    fontSize: RFValue(14),
+    fontSize: RFValue(15),
     color: "#551802",
     marginLeft: 10,
     marginBottom: 6,
