@@ -1,5 +1,3 @@
-// app/quiz/question.tsx
-
 import React, { useState } from "react";
 import {
   View,
@@ -11,19 +9,20 @@ import {
 import { router, Stack } from "expo-router";
 import QuestionEngine from "../components/QuestionEngine";
 import questions from "./data/questions";
-import { RFValue } from "react-native-responsive-fontsize";
+import { SafeAreaView } from "react-native-safe-area-context";
+import { moderateScale, verticalScale } from "react-native-size-matters";
 
 export default function QuizScreen() {
-  const [finalId, setFinalId] = useState<string | null>(null);
+  const [finalId] = useState<string | null>(null);
 
   return (
-    <View style={{ flex: 1, backgroundColor: "#fdf2e9" }}>
+    <SafeAreaView style={{ flex: 1, backgroundColor: "#eef5fc" }}>
       <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
         <Stack.Screen
           options={{
             title: finalId ? "Result" : "Questions",
-            headerStyle: { backgroundColor: "#551802" },
-            headerTintColor: "#fff",
+            headerStyle: { backgroundColor: "#2b4cca" },
+            headerTintColor: "#ffffff",
             headerBackVisible: true,
           }}
         />
@@ -32,7 +31,7 @@ export default function QuizScreen() {
           <View style={styles.container}>
             <Text style={styles.label}>Quiz Complete</Text>
             <Text style={styles.description}>
-              Based on your responses, we've identified a likely cause.
+              Based on your responses, we&apos;ve identified a likely cause.
             </Text>
             <Text style={styles.redFlags}>
               Tap below to see which doctor is most suitable.
@@ -62,45 +61,46 @@ export default function QuizScreen() {
           />
         )}
       </ScrollView>
-    </View>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    padding: 24,
+    padding: moderateScale(24),
     justifyContent: "center",
-    backgroundColor: "#fdf2e9",
+    backgroundColor: "#eef5fc",
   },
 
   label: {
-    fontSize: RFValue(28),
+    fontSize: moderateScale(28),
     fontWeight: "bold",
-    color: "#551802",
+    color: "#2b4cca",
     textAlign: "center",
-    marginBottom: 16,
+    marginBottom: verticalScale(16),
   },
   description: {
-    fontSize: RFValue(16),
+    fontSize: moderateScale(16),
     color: "#333",
     textAlign: "center",
-    marginBottom: 12,
+    marginBottom: verticalScale(12),
   },
   redFlags: {
-    fontSize: RFValue(14),
-    color: "#a30000",
+    fontSize: moderateScale(14),
+    color: "#d32f2f",
     fontStyle: "italic",
     textAlign: "center",
-    marginBottom: 24,
+    marginBottom: verticalScale(24),
   },
   button: {
-    backgroundColor: "#551802",
-    padding: 12,
-    borderRadius: 8,
+    backgroundColor: "#2b4cca",
+    paddingVertical: verticalScale(16),
+    paddingHorizontal: moderateScale(24),
+    borderRadius: moderateScale(8),
     alignSelf: "center",
   },
   buttonText: {
-    color: "#fff",
-    fontSize: RFValue(16),
+    color: "#ffffff",
+    fontSize: moderateScale(16),
   },
 });

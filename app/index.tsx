@@ -1,19 +1,22 @@
+// app/home.tsx
 import {
   View,
   Text,
   StyleSheet,
   TouchableOpacity,
   ScrollView,
-  Image,
 } from "react-native";
 import { Link, Stack } from "expo-router";
 import CustomHeader from "./components/CustomHeader";
-import { RFValue } from "react-native-responsive-fontsize";
 import * as Animatable from "react-native-animatable";
+import { moderateScale } from "react-native-size-matters";
 
 const spin: Animatable.CustomAnimation = {
-  from: { transform: [{ rotate: "0deg" }] },
-  to: { transform: [{ rotate: "360deg" }] },
+  0: { transform: [{ rotateY: "0deg" }, { translateX: 0 }] },
+  0.25: { transform: [{ rotateY: "90deg" }, { translateX: -10 }] },
+  0.5: { transform: [{ rotateY: "180deg" }, { translateX: 10 }] },
+  0.75: { transform: [{ rotateY: "270deg" }, { translateX: -10 }] },
+  1: { transform: [{ rotateY: "360deg" }, { translateX: 0 }] },
 };
 
 export default function HomeScreen() {
@@ -23,24 +26,12 @@ export default function HomeScreen() {
         <Stack.Screen
           options={{
             headerTitle: () => <CustomHeader />,
-            headerStyle: { backgroundColor: "#551802" },
-            headerTintColor: "#fff",
-            headerTitleAlign: "left",
+            headerStyle: {
+              backgroundColor: "#2b4cca",
+            },
             headerBackVisible: false,
-            headerTitleStyle: { fontWeight: "bold", fontSize: RFValue(18) },
           }}
         />
-
-        <Text
-          accessibilityRole="header"
-          accessibilityLabel="DizzySense App"
-          style={styles.title}
-        >
-          🌀 DizzySense
-        </Text>
-        <Text style={styles.tagline}>
-          Your guide to understanding unexplained dizziness.
-        </Text>
 
         <View style={styles.card}>
           <View style={styles.headingRow}>
@@ -49,8 +40,8 @@ export default function HomeScreen() {
               iterationCount="infinite"
               duration={6000}
               easing="linear"
-              source={require("../assets/images/dizzy_face.png")}
-              style={styles.image}
+              source={require("../assets/images/dizzy_face1.png")}
+              style={[styles.image, { perspective: 1000 } as any]}
             />
             <Text
               accessibilityRole="header"
@@ -62,11 +53,12 @@ export default function HomeScreen() {
           </View>
 
           <Text style={styles.subtitle}>
-            Unsure whether it's Vertigo, Dizziness, Giddiness, or a Blackout?
+            Unsure whether it&apos;s Vertigo, Dizziness, Giddiness, or a
+            Blackout?
           </Text>
 
           <Text style={styles.subtitle}>
-            <Text style={{ fontWeight: "bold", fontSize: RFValue(20) }}>
+            <Text style={{ fontWeight: "bold", fontSize: moderateScale(22) }}>
               DizzySense
             </Text>{" "}
             walks you through a short quiz to help you:
@@ -74,19 +66,19 @@ export default function HomeScreen() {
 
           <View style={styles.bulletWrapper}>
             <Text style={styles.bulletPoint}>
-              • Understand what you're experiencing
+              👉 Understand what you&apos;re experiencing.
             </Text>
             <Text style={styles.bulletPoint}>
-              • Learn common causes and warning signs
+              👉 Learn common causes and warning signs.
             </Text>
             <Text style={styles.bulletPoint}>
-              • Get clear guidance on which specialist to consult
+              👉 Get clear guidance on which specialist to consult.
             </Text>
           </View>
 
           <Link href="/quiz" asChild>
             <TouchableOpacity
-              accessible={true}
+              accessible
               accessibilityRole="button"
               accessibilityLabel="Start quiz to assess dizziness symptoms"
               style={styles.buttonPrimary}
@@ -103,99 +95,71 @@ export default function HomeScreen() {
 
 const styles = StyleSheet.create({
   scrollContent: {
-    paddingVertical: 40,
-    backgroundColor: "#fdf2e9",
+    paddingVertical: moderateScale(40),
+    backgroundColor: "#fff",
   },
   container: {
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-    paddingHorizontal: 20,
-    backgroundColor: "#fdf2e9",
-  },
-
-  title: {
-    fontSize: RFValue(28),
-    fontWeight: "bold",
-    color: "#fff",
-    backgroundColor: "#551802",
-    borderRadius: 9,
-    paddingHorizontal: 20,
-    paddingVertical: 8,
-    textAlign: "center",
-    marginBottom: 4,
-    shadowColor: "#ffd700",
-    shadowOffset: { width: 0, height: 0 },
-    shadowOpacity: 0.5,
-    shadowRadius: 10,
-    elevation: 20,
-  },
-  tagline: {
-    fontSize: RFValue(14),
-    color: "#6e2c00",
-    marginBottom: 16,
-    textAlign: "center",
-    fontStyle: "italic",
-    fontWeight: "500",
-  },
-
-  card: {
+    paddingHorizontal: moderateScale(24),
     backgroundColor: "#fff",
-    borderRadius: 12,
-    padding: 20,
-    width: "100%",
+  },
+  card: {
+    backgroundColor: "#eef5fc",
+    borderRadius: moderateScale(12),
+    padding: moderateScale(20),
+    width: "98%",
     shadowColor: "#000",
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.1,
-    shadowRadius: 6,
+    shadowRadius: moderateScale(6),
     elevation: 6,
   },
-
   subtitle: {
-    fontSize: RFValue(16),
+    fontSize: moderateScale(20),
     textAlign: "center",
-    color: "#551802",
-    marginBottom: 12,
-    lineHeight: 22,
+    color: "#2b4cca",
+    marginBottom: moderateScale(12),
+    lineHeight: moderateScale(22),
   },
   bulletWrapper: {
-    marginBottom: 20,
+    marginBottom: moderateScale(20),
   },
   bulletPoint: {
-    fontSize: RFValue(15),
-    color: "#551802",
-    marginLeft: 10,
-    marginBottom: 6,
+    fontSize: moderateScale(18),
+    color: "#2b4cca",
+    marginLeft: moderateScale(10),
+    marginBottom: moderateScale(6),
   },
   buttonPrimary: {
-    backgroundColor: "#551802",
-    padding: 15,
-    borderRadius: 10,
-    marginBottom: 10,
+    backgroundColor: "#2b4cca",
+    padding: moderateScale(15),
+    borderRadius: moderateScale(12),
+    marginBottom: moderateScale(10),
   },
-
   buttonText: {
     color: "#fff",
     textAlign: "center",
-    fontSize: RFValue(16),
+    fontSize: moderateScale(18),
     fontWeight: "600",
   },
   headingRow: {
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
-    marginBottom: 12,
+    marginBottom: moderateScale(12),
     flexWrap: "wrap",
   },
   headingText: {
-    fontSize: RFValue(22),
+    fontSize: moderateScale(26),
     fontWeight: "bold",
-    color: "#551802",
+    color: "#2b4cca",
     textAlign: "center",
   },
   image: {
-    width: 96,
-    height: 96,
-    marginRight: 8,
+    width: moderateScale(96),
+    height: moderateScale(96),
+    borderRadius: moderateScale(12),
   },
 });

@@ -1,4 +1,3 @@
-// components/FloatingWhatsAppButton.tsx
 import React from "react";
 import {
   TouchableOpacity,
@@ -8,10 +7,14 @@ import {
   View,
   Alert,
 } from "react-native";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
+import { moderateScale } from "react-native-size-matters";
 
 const whatsappNumber = "+918800047117";
 
 export default function FloatingWhatsAppButton() {
+  const insets = useSafeAreaInsets();
+
   const openWhatsApp = async () => {
     const message =
       "Hello, I want to book an appointment with Dr. Rahul Kapahi.";
@@ -28,10 +31,9 @@ export default function FloatingWhatsAppButton() {
       if (supported) {
         await Linking.openURL(appUrl);
       } else {
-        // fallback: open WhatsApp web or redirect to Play Store/App Store
         await Linking.openURL(webUrl);
       }
-    } catch (error) {
+    } catch {
       Alert.alert(
         "Unable to open WhatsApp",
         "It looks like WhatsApp is not installed or accessible on your device."
@@ -40,7 +42,14 @@ export default function FloatingWhatsAppButton() {
   };
 
   return (
-    <View>
+    <View
+      style={{
+        position: "absolute",
+        bottom: insets.bottom + moderateScale(20),
+        right: moderateScale(20),
+        zIndex: 10,
+      }}
+    >
       <TouchableOpacity
         accessibilityHint="Opens WhatsApp chat with Dr. Rahul Kapahi's clinic"
         accessibilityRole="button"
@@ -59,10 +68,10 @@ export default function FloatingWhatsAppButton() {
 
 const styles = StyleSheet.create({
   fab: {
-    backgroundColor: "#fdf2e9",
-    width: 42,
-    height: 42,
-    borderRadius: 21,
+    backgroundColor: "#eef5fc",
+    width: moderateScale(64),
+    height: moderateScale(64),
+    borderRadius: moderateScale(40),
     justifyContent: "center",
     alignItems: "center",
     alignSelf: "center",
@@ -73,11 +82,11 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.25,
     shadowRadius: 4,
     elevation: 8,
-    padding: 2,
+    padding: moderateScale(2),
   },
   icon: {
-    width: 24,
-    height: 24,
+    width: moderateScale(48),
+    height: moderateScale(48),
     resizeMode: "contain",
     justifyContent: "center",
   },

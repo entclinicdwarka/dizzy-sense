@@ -1,5 +1,3 @@
-// app/components/QuestionEngine.tsx
-
 import React, { useState } from "react";
 import {
   View,
@@ -9,7 +7,9 @@ import {
   ActivityIndicator,
   ScrollView,
 } from "react-native";
-import { RFValue } from "react-native-responsive-fontsize";
+import { SafeAreaView } from "react-native-safe-area-context";
+import { moderateScale } from "react-native-size-matters";
+import { Modal } from "react-native";
 
 export type QuestionOption = {
   label: string;
@@ -33,6 +33,34 @@ type Props = {
   ) => void;
 };
 
+const dizzinessInfo = [
+  {
+    icon: "🌀",
+    title: "Spinning",
+    desc: "A feeling that the room or you are moving or rotating.",
+  },
+  {
+    icon: "🌑",
+    title: "Blackout / Fainting",
+    desc: "A feeling of near-fainting or complete loss of consciousness.",
+  },
+  {
+    icon: "😵",
+    title: "Lightheaded",
+    desc: "A floating, woozy sensation — not quite spinning, but disorienting.",
+  },
+  {
+    icon: "🚶‍♂️",
+    title: "Unsteady",
+    desc: "A feeling of imbalance or swaying while walking or standing.",
+  },
+  {
+    icon: "💆",
+    title: "Neck / Posture related",
+    desc: "Feeling dizzy when moving or holding your neck in certain positions.",
+  },
+];
+
 export default function QuestionEngine({
   questions,
   startId = "start",
@@ -44,6 +72,7 @@ export default function QuestionEngine({
     { question: string; answer: string }[]
   >([]);
   const [showInfo, setShowInfo] = useState(false);
+  const step = answerSummary.length + 1;
 
   const current = questions[currentId];
 
@@ -73,174 +102,225 @@ export default function QuestionEngine({
   if (loading) {
     return (
       <View style={styles.spinnerContainer}>
-        <ActivityIndicator size="large" color="#551802" />
+        <ActivityIndicator size="large" color="#2b4cca" />
         <Text style={styles.spinnerText}>Preparing your result...</Text>
       </View>
     );
   }
 
   return (
-    <View style={styles.container}>
-      <View style={styles.questionRow}>
-        <Text style={styles.question}>
-          {current.text}{" "}
-          {current.id === "start" && (
-            <Text
-              onPress={() => setShowInfo(true)}
-              style={styles.infoIcon}
-              accessibilityLabel="Info about dizziness types"
-            >
-              ℹ️
-            </Text>
-          )}
-        </Text>
-      </View>
-
-      {current.options.map((opt) => (
-        <TouchableOpacity
-          key={opt.label}
-          style={styles.button}
-          onPress={() => handlePress(opt.next, opt.label)}
+    <SafeAreaView style={{ flex: 1, backgroundColor: "#eef5fc" }}>
+      <View style={styles.container}>
+        {/* Step Counter */}
+        <Text
+          style={{
+            textAlign: "center",
+            marginBottom: moderateScale(8),
+            color: "#2b4cca",
+            fontSize: moderateScale(16),
+          }}
         >
-          <Text style={styles.buttonText}>{opt.label}</Text>
-        </TouchableOpacity>
-      ))}
-
-      {showInfo && (
-        <View style={styles.modalOverlay}>
-          <View style={styles.modalCardContainer}>
-            <ScrollView contentContainerStyle={styles.modalCard}>
-              <Text style={styles.modalTitle}>Types of Dizziness</Text>
-
-              <Text style={styles.modalText}>
-                🌀 <Text style={styles.bold}>Spinning:</Text> A feeling that the
-                room or you are moving or rotating.
-              </Text>
-              <Text style={styles.modalText}>
-                🌑 <Text style={styles.bold}>Blackout / Fainting:</Text> A
-                feeling of near-fainting or complete loss of consciousness.
-              </Text>
-              <Text style={styles.modalText}>
-                😵 <Text style={styles.bold}>Lightheaded:</Text> A floating,
-                woozy sensation — not quite spinning, but disorienting.
-              </Text>
-              <Text style={styles.modalText}>
-                🚶‍♂️ <Text style={styles.bold}>Unsteady:</Text> A feeling of
-                imbalance or swaying while walking or standing. Trouble
-                maintaining balance or walking straight.
-              </Text>
-
-              <TouchableOpacity
-                accessibilityRole="button"
-                accessible={true}
-                accessibilityLabel="Close types of dizziness modal"
-                style={styles.closeButton}
-                onPress={() => setShowInfo(false)}
-              >
-                <Text style={styles.closeText}>Close</Text>
-              </TouchableOpacity>
-            </ScrollView>
-          </View>
+          Step {step}
+        </Text>
+        <View
+          style={{
+            flexDirection: "row",
+            justifyContent: "center",
+            marginBottom: moderateScale(16),
+          }}
+        >
+          {[...answerSummary, {}].map((_, index) => (
+            <View
+              key={index}
+              style={{
+                width: moderateScale(12),
+                height: moderateScale(12),
+                borderRadius: moderateScale(8),
+                backgroundColor:
+                  index < answerSummary.length ? "#2b4cca" : "transparent",
+                borderWidth: index < answerSummary.length ? 0 : 1,
+                borderColor: "#2b4cca",
+                marginHorizontal: moderateScale(4),
+              }}
+            />
+          ))}
         </View>
-      )}
-    </View>
+
+        {/* Question */}
+        <View style={styles.questionRow}>
+          <Text style={styles.question}>
+            {current.text}{" "}
+            {current.id === "start" && (
+              <Text
+                onPress={() => setShowInfo(true)}
+                style={styles.infoIcon}
+                accessibilityLabel="Info about dizziness types"
+              >
+                ℹ️
+              </Text>
+            )}
+          </Text>
+        </View>
+        {/* Options */}
+        {current.options.map((opt) => (
+          <TouchableOpacity
+            key={opt.label}
+            style={styles.button}
+            onPress={() => handlePress(opt.next, opt.label)}
+            accessibilityRole="button"
+            accessibilityLabel={`Select ${opt.label}`}
+          >
+            <Text style={[styles.buttonText, { flexShrink: 1 }]}>
+              {opt.label}
+            </Text>
+          </TouchableOpacity>
+        ))}
+        {/* Info Modal */}
+        {showInfo && (
+          <Modal
+            visible={showInfo}
+            animationType="slide"
+            transparent
+            onRequestClose={() => setShowInfo(false)}
+          >
+            <View style={styles.modalOverlay}>
+              <View style={styles.modalContainer}>
+                <ScrollView
+                  contentContainerStyle={styles.modalContent}
+                  showsVerticalScrollIndicator
+                  keyboardShouldPersistTaps="handled"
+                >
+                  <Text style={styles.modalTitle}>Types of Dizziness</Text>
+                  {dizzinessInfo.map((item) => (
+                    <Text key={item.title} style={styles.modalText}>
+                      {item.icon} <Text style={styles.bold}>{item.title}:</Text>{" "}
+                      {item.desc}
+                    </Text>
+                  ))}
+                </ScrollView>
+
+                {/* Close button outside ScrollView */}
+                <TouchableOpacity
+                  style={styles.floatingCloseButton}
+                  onPress={() => setShowInfo(false)}
+                >
+                  <Text style={styles.closeText}>Close</Text>
+                </TouchableOpacity>
+              </View>
+            </View>
+          </Modal>
+        )}
+      </View>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    padding: 20,
+    paddingHorizontal: moderateScale(20),
+    paddingBottom: moderateScale(20),
     justifyContent: "center",
     flex: 1,
-    backgroundColor: "#fdf2e9",
+    backgroundColor: "#eef5fc",
   },
   question: {
-    fontSize: RFValue(16),
-    marginBottom: 20,
+    fontSize: moderateScale(20),
+    marginBottom: moderateScale(2),
     textAlign: "center",
+    fontWeight: "bold",
+    color: "#2b4cca",
   },
   button: {
-    backgroundColor: "#551802",
-    padding: 12,
-    borderRadius: 10,
-    marginVertical: 8,
+    backgroundColor: "#2b4cca",
+    paddingVertical: moderateScale(16),
+    paddingHorizontal: moderateScale(12),
+    borderRadius: moderateScale(10),
+    marginBottom: moderateScale(16),
   },
   buttonText: {
-    color: "#fff",
+    color: "#ffffff",
     textAlign: "center",
-    fontSize: RFValue(14),
+    fontSize: moderateScale(18),
   },
   spinnerContainer: {
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#fdf2e9",
+    backgroundColor: "#eef5fc",
   },
   spinnerText: {
-    marginTop: 10,
-    fontSize: RFValue(16),
-    color: "#551802",
+    marginTop: moderateScale(10),
+    fontSize: moderateScale(16),
+    color: "#2b4cca",
   },
   questionRow: {
-    marginBottom: 20,
-    paddingHorizontal: 8,
+    marginBottom: moderateScale(20),
+    paddingHorizontal: moderateScale(8),
   },
   infoIcon: {
-    fontSize: RFValue(14),
-    marginLeft: 4,
+    fontSize: moderateScale(16),
+    marginLeft: moderateScale(4),
   },
   modalOverlay: {
-    position: "absolute",
-    top: 0,
-    bottom: 0,
-    left: 0,
-    right: 0,
-    backgroundColor: "#fdf2e9",
+    ...StyleSheet.absoluteFillObject,
+    backgroundColor: "rgba(238,245,252,0.95)",
     justifyContent: "center",
     alignItems: "center",
-    padding: 20,
+    padding: moderateScale(20),
   },
-  modalCardContainer: {
-    maxHeight: "100%",
+  modalContainer: {
     width: "100%",
-    maxWidth: 320,
-  },
-  modalCard: {
+    maxWidth: moderateScale(340),
+    maxHeight: "80%",
     backgroundColor: "#fff",
-    borderRadius: 12,
-    padding: 20,
+    borderRadius: moderateScale(15),
+    overflow: "hidden",
+    padding: moderateScale(10),
+    elevation: 5,
     shadowColor: "#000",
-    shadowOpacity: 0.2,
-    shadowRadius: 8,
-    elevation: 4,
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+  },
+  floatingCloseButton: {
+    alignSelf: "center",
+    backgroundColor: "#eef5fc",
+    paddingVertical: moderateScale(8),
+    paddingHorizontal: moderateScale(20),
+    borderRadius: moderateScale(10),
+    borderWidth: moderateScale(1),
+    borderColor: "#2b4cca",
+    marginVertical: moderateScale(12),
+  },
+  modalContent: {
+    paddingHorizontal: moderateScale(10),
+    paddingVertical: moderateScale(12),
   },
   modalTitle: {
-    fontSize: RFValue(24),
+    fontSize: moderateScale(24),
     fontWeight: "bold",
-    color: "#551802",
-    marginBottom: 10,
+    color: "#2b4cca",
+    marginBottom: moderateScale(12),
     textAlign: "center",
   },
   modalText: {
-    fontSize: RFValue(13),
-    color: "#551802",
-    marginBottom: 10,
+    fontSize: moderateScale(16),
+    color: "#2b4cca",
+    marginBottom: moderateScale(10),
   },
   bold: {
-    fontWeight: "900",
-  },
-  closeButton: {
-    marginTop: 16,
-    alignSelf: "center",
-    backgroundColor: "#fdf2e9",
-    paddingVertical: 8,
-    paddingHorizontal: 20,
-    borderRadius: 8,
-    borderWidth: 1,
-    borderColor: "#551802",
+    fontWeight: "bold",
   },
   closeText: {
-    color: "#551802",
-    fontWeight: "700",
+    color: "#2b4cca",
+    fontWeight: "bold",
+    fontSize: moderateScale(16),
+  },
+  gradient: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 12,
+    padding: 20,
   },
 });

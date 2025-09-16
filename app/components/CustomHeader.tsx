@@ -1,33 +1,19 @@
-import { Image, Platform, StyleSheet, Text, View } from "react-native";
-import { RFValue } from "react-native-responsive-fontsize";
+import { Platform, StyleSheet, Text } from "react-native";
+import { moderateScale } from "react-native-size-matters";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function CustomHeader() {
   return (
-    <View style={styles.headerContainer}>
-      <Image
-        source={require("../../assets/images/logo-512px.png")}
-        style={styles.logo}
-        resizeMode="contain"
-        accessible
-        accessibilityLabel="Clinic logo"
-      />
+    <SafeAreaView style={styles.headerContainer}>
       <Text
         style={styles.title}
         accessibilityRole="header"
         numberOfLines={1}
         adjustsFontSizeToFit
       >
-        Dr. Rahul Kapahi
+        🌀 DizzySense
       </Text>
-      <Image
-        source={require("../../assets/images/mypic.jpg")}
-        style={styles.profile}
-        resizeMode="cover"
-        accessible
-        accessibilityLabel="Doctor's profile photo"
-        accessibilityRole="image"
-      />
-    </View>
+    </SafeAreaView>
   );
 }
 
@@ -35,29 +21,15 @@ const styles = StyleSheet.create({
   headerContainer: {
     flexDirection: "row",
     alignItems: "center",
-    justifyContent: "space-between",
+    justifyContent: "center",
     paddingHorizontal: 4,
-    paddingTop: Platform.OS === "android" ? 20 : 40,
-    paddingBottom: 20,
+    paddingTop: Platform.OS === "android" ? 0 : 8,
     width: "100%",
-  },
-  logo: {
-    width: 36,
-    height: 36,
-    borderRadius: 18,
-    borderWidth: 2,
-    borderColor: "#ffffff",
+    backgroundColor: "#2b4cca",
   },
   title: {
-    fontSize: RFValue(24),
+    fontSize: moderateScale(32),
     fontWeight: "bold",
-    color: "#fff",
-  },
-  profile: {
-    width: 36,
-    height: 36,
-    borderRadius: 18,
-    borderWidth: 2,
-    borderColor: "#fff",
+    color: "#ffffff",
   },
 });

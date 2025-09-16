@@ -1,5 +1,4 @@
 // app/quiz/result.tsx
-
 import { router, Stack, useLocalSearchParams } from "expo-router";
 import {
   ScrollView,
@@ -8,8 +7,9 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
-import { RFValue } from "react-native-responsive-fontsize";
 import { getFinalResult } from "./data/questions";
+import { SafeAreaView } from "react-native-safe-area-context";
+import { moderateScale, verticalScale } from "react-native-size-matters";
 
 export default function ResultScreen() {
   const { result, summary } = useLocalSearchParams();
@@ -20,143 +20,169 @@ export default function ResultScreen() {
       typeof summary === "string"
         ? JSON.parse(decodeURIComponent(summary))
         : [];
-  } catch (e) {
+  } catch {
     parsedSummary = [];
   }
 
   const info = getFinalResult(normalized) ?? {
-    title: "Result Not Recognized",
+    label: "Result Not Recognized",
     description: "We couldn't determine a specific outcome. Please retry.",
     redFlags: [],
   };
 
   return (
-    <ScrollView>
-      <View style={styles.container}>
-        <Stack.Screen
-          options={{
-            title: "Your Result",
-            headerStyle: { backgroundColor: "#551802" },
-            headerTintColor: "#fff",
-          }}
-        />
+    <SafeAreaView style={{ flex: 1, backgroundColor: "#eef5fc" }}>
+      <ScrollView
+        contentContainerStyle={{ flexGrow: 1 }}
+        keyboardShouldPersistTaps="handled"
+      >
+        <View style={styles.container}>
+          <Stack.Screen
+            options={{
+              title: "Your Result",
+              headerStyle: { backgroundColor: "#2b4cca" },
+              headerTintColor: "#ffffff",
+            }}
+          />
 
-        <Text style={styles.title}>🩺 {info.label}</Text>
+          <Text style={styles.title}>🩺 {info.label}</Text>
 
-        {parsedSummary.length > 0 && (
-          <>
-            <Text style={styles.sectionLabel}>🧾 Your Answers:</Text>
-            {parsedSummary.map(
-              (item: { question: string; answer: string }, index: number) => (
-                <View key={index} style={styles.summaryItem}>
-                  <Text style={styles.summaryQuestion}>{item.question}</Text>
-                  <Text style={styles.summaryAnswer}>{item.answer}</Text>
-                </View>
-              )
-            )}
-          </>
-        )}
+          {parsedSummary.length > 0 && (
+            <>
+              <Text style={styles.sectionLabel}>🧾 Your Answers:</Text>
+              {parsedSummary.map(
+                (item: { question: string; answer: string }, index: number) => (
+                  <View key={index} style={styles.summaryItem}>
+                    <Text style={styles.summaryQuestion}>
+                      Q. {item.question}
+                    </Text>
+                    <Text style={styles.summaryAnswer}>A. {item.answer}</Text>
+                  </View>
+                )
+              )}
+            </>
+          )}
 
-        <Text style={styles.sectionLabel}>💬 What it might mean:</Text>
-        <Text style={styles.bodyText}>{info.description}</Text>
+          <View style={styles.card}>
+            <Text style={styles.sectionLabel}>💬 What it might mean:</Text>
+            <Text style={styles.bodyText}>{info.description}</Text>
 
-        <TouchableOpacity
-          style={styles.button}
-          accessibilityLabel="Tap to find the right doctor"
-          onPress={() => router.push(`/specialist?result=${normalized}`)}
-        >
-          <Text style={styles.buttonText}>
-            👉 Which doctor should I consult?
-          </Text>
-        </TouchableOpacity>
+            <TouchableOpacity
+              style={styles.button}
+              accessibilityLabel="Tap to find the right doctor"
+              onPress={() => router.push(`/specialist?result=${normalized}`)}
+            >
+              <Text style={styles.buttonText}>
+                👉 Which doctor should I consult?
+              </Text>
+            </TouchableOpacity>
+          </View>
 
-        <View style={styles.buttonGroup}>
-          <TouchableOpacity
-            style={styles.secondaryButton}
-            onPress={() => router.replace("/")}
-          >
-            <Text style={[styles.buttonText, { color: "#551802" }]}>
-              🏠 Home
-            </Text>
-          </TouchableOpacity>
+          <View style={styles.buttonGroup}>
+            <TouchableOpacity
+              style={styles.secondaryButton}
+              onPress={() => router.replace("/")}
+            >
+              <Text style={[styles.buttonText, { color: "#2b4cca" }]}>
+                🏠 Home
+              </Text>
+            </TouchableOpacity>
+          </View>
         </View>
-      </View>
-    </ScrollView>
+      </ScrollView>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#fdf2e9",
+    backgroundColor: "#eef5fc",
     flex: 1,
-    padding: 24,
+    padding: moderateScale(24),
     justifyContent: "center",
   },
   title: {
-    fontSize: RFValue(28),
+    fontSize: moderateScale(28),
     fontWeight: "bold",
-    color: "#551802",
+    color: "#2b4cca",
     textAlign: "center",
   },
+  card: {
+    backgroundColor: "white",
+    borderRadius: 12,
+    padding: 16,
+    marginVertical: 12,
+    shadowColor: "#000",
+    shadowOpacity: 0.1,
+    shadowOffset: { width: 0, height: 2 },
+    shadowRadius: 4,
+    elevation: 3,
+  },
   sectionLabel: {
-    fontSize: RFValue(18),
+    fontSize: moderateScale(24),
     fontWeight: "600",
-    marginTop: 16,
-    marginBottom: 6,
-    color: "#551802",
+    marginTop: verticalScale(16),
+    marginBottom: verticalScale(6),
+    color: "#2b4cca",
   },
   bodyText: {
-    fontSize: RFValue(16),
-    lineHeight: 22,
-    color: "#551802",
+    fontSize: moderateScale(18),
+    lineHeight: verticalScale(22),
+    color: "#2b4cca",
   },
   button: {
-    marginTop: 30,
-    backgroundColor: "#551802",
-    paddingVertical: 12,
-    borderRadius: 10,
+    marginTop: verticalScale(30),
+    backgroundColor: "#2b4cca",
+    paddingVertical: verticalScale(12),
+    paddingHorizontal: moderateScale(24),
+    borderRadius: moderateScale(12),
+    shadowColor: "#000",
+    shadowOpacity: 0.1,
+    shadowOffset: { width: 0, height: 2 },
+    shadowRadius: 4,
+    elevation: 5,
   },
   buttonText: {
-    color: "#fff",
-    fontSize: RFValue(16),
+    color: "#ffffff",
+    fontSize: moderateScale(20),
     fontWeight: "600",
     textAlign: "center",
   },
   buttonGroup: {
     flexDirection: "row",
     justifyContent: "space-around",
-    marginTop: 20,
+    marginTop: verticalScale(10),
   },
   secondaryButton: {
-    backgroundColor: "#fdf2e9",
-    padding: 12,
-    borderRadius: 10,
+    backgroundColor: "#eef5fc",
+    padding: verticalScale(12),
+    borderRadius: moderateScale(12),
     borderWidth: 2,
-    borderColor: "#551802",
-    marginHorizontal: 10,
-    minWidth: 130,
+    borderColor: "#2b4cca",
+    marginHorizontal: moderateScale(10),
+    minWidth: moderateScale(130),
   },
   summaryItem: {
-    backgroundColor: "#fff9f2",
-    padding: 12,
-    borderRadius: 8,
-    marginBottom: 10,
+    backgroundColor: "#cbe4fc",
+    padding: moderateScale(12),
+    borderRadius: moderateScale(8),
+    marginBottom: verticalScale(12),
     borderWidth: 1,
-    borderColor: "#e6d1bc",
+    borderColor: "#2b4cca",
     shadowColor: "#000",
     shadowOpacity: 0.1,
     shadowRadius: 4,
     shadowOffset: { width: 0, height: 2 },
   },
   summaryQuestion: {
-    fontSize: RFValue(15),
+    fontSize: moderateScale(14),
     fontWeight: "600",
-    color: "#551802",
-    marginBottom: 4,
+    color: "#2b4cca",
+    marginBottom: verticalScale(4),
   },
   summaryAnswer: {
-    fontSize: RFValue(15),
-    color: "#333",
+    fontSize: moderateScale(16),
+    color: "#2b4cca",
     fontStyle: "italic",
     fontWeight: "600",
   },

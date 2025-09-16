@@ -4,26 +4,27 @@ import {
   StyleSheet,
   ScrollView,
   TouchableOpacity,
+  Linking,
 } from "react-native";
 import { useLocalSearchParams, Stack, router } from "expo-router";
 import { getFinalResult } from "@/app/quiz/data/questions";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { RFValue } from "react-native-responsive-fontsize";
+import { moderateScale, verticalScale } from "react-native-size-matters";
+import { LinearGradient } from "expo-linear-gradient";
 
 export default function SpecialistScreen() {
   const { result } = useLocalSearchParams();
 
+  const handleHome = () => router.replace("/");
+
   if (!result || typeof result !== "string") {
     return (
-      <View style={[styles.container, { justifyContent: "center", flex: 1 }]}>
+      <SafeAreaView style={styles.centered}>
         <Text style={styles.heading}>Invalid result parameter.</Text>
-        <TouchableOpacity
-          style={styles.secondaryButton}
-          onPress={() => router.replace("/")}
-        >
+        <TouchableOpacity style={styles.secondaryButton} onPress={handleHome}>
           <Text style={styles.buttonText}>🏠 Home</Text>
         </TouchableOpacity>
-      </View>
+      </SafeAreaView>
     );
   }
 
@@ -31,61 +32,88 @@ export default function SpecialistScreen() {
 
   if (!info) {
     return (
-      <View style={[styles.container, { justifyContent: "center", flex: 1 }]}>
-        <Text accessibilityRole="header" style={styles.heading}>
-          No matching specialist found.
-        </Text>
-        <TouchableOpacity
-          style={styles.secondaryButton}
-          onPress={() => router.replace("/")}
-        >
+      <SafeAreaView style={styles.centered}>
+        <Text style={styles.heading}>No matching specialist found.</Text>
+        <TouchableOpacity style={styles.secondaryButton} onPress={handleHome}>
           <Text style={styles.buttonText}>🏠 Home</Text>
         </TouchableOpacity>
-      </View>
+      </SafeAreaView>
     );
   }
 
+  const handleSearch = async () => {
+    try {
+      const query = encodeURIComponent(`${info.doctor} near me`);
+      const url = `https://www.google.com/search?q=${query}`;
+      const supported = await Linking.canOpenURL(url);
+      if (supported) await Linking.openURL(url);
+      else alert("Cannot open search URL");
+    } catch (err) {
+      console.error(err);
+      alert("Something went wrong while opening the search.");
+    }
+  };
+
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: "#fdf2e9" }}>
-      <ScrollView contentContainerStyle={styles.container}>
+    <SafeAreaView style={styles.safeArea}>
+      <ScrollView
+        style={styles.scroll}
+        contentContainerStyle={styles.container}
+        showsVerticalScrollIndicator
+      >
         <Stack.Screen
           options={{
             title: "Specialist Guide",
-            headerStyle: { backgroundColor: "#551802" },
-            headerTintColor: "#fff",
+            headerStyle: { backgroundColor: "#2b4cca" },
+            headerTintColor: "#ffffff",
           }}
         />
-        <Text
-          accessibilityRole="header"
-          accessibilityLabel={`Specialist recommended: ${info.doctor}`}
-          style={styles.doctor}
+
+        {/* Doctor Card */}
+        <LinearGradient
+          colors={["#2b4cca", "#4abbdaff", "#00c6ff"]}
+          start={{ x: 0, y: 0 }}
+          end={{ x: 1, y: 1 }}
+          style={styles.doctorContainer}
         >
-          Consult {info.doctor}
-        </Text>
+          <Text
+            accessibilityRole="header"
+            accessibilityLabel={`Specialist recommended: ${info.doctor}`}
+            style={styles.doctor}
+          >
+            Consult {info.doctor}
+          </Text>
+        </LinearGradient>
 
+        {/* Red Flags Card */}
         <View style={styles.card}>
-          <Text style={styles.title}>{info.label}</Text>
-
-          <Text style={styles.label}>🩺 Description:</Text>
-          <Text style={styles.point}>{info.description}</Text>
-
-          <Text style={styles.label}>⚠️ Red flags to watch for:</Text>
+          <Text style={styles.label}>Red flags to watch for:</Text>
           <View accessibilityRole="list">
             {info.redFlags.map((flag, idx) => (
               <Text key={idx} style={styles.flag}>
-                ❗ {flag}.
+                🚩 {flag}
               </Text>
             ))}
           </View>
         </View>
-        <View style={styles.buttonGroup}>
-          <TouchableOpacity
-            accessibilityRole="button"
-            accessibilityLabel="Go to home screen"
-            accessibilityHint="Navigates back to the home screen"
-            style={styles.secondaryButton}
-            onPress={() => router.replace("/")}
+
+        {/* Search Nearby Button */}
+        <TouchableOpacity style={styles.fullWidthButton} onPress={handleSearch}>
+          <LinearGradient
+            colors={["#00c6ff", "#4abbdaff", "#2b4cca"]}
+            start={{ x: 0, y: 0 }}
+            end={{ x: 1, y: 1 }}
+            style={styles.searchButton}
           >
+            <Text style={styles.searchButtonText}>
+              🔎 Find {info.doctor}s nearby
+            </Text>
+          </LinearGradient>
+        </TouchableOpacity>
+
+        {/* Home Button */}
+        <View style={styles.buttonGroup}>
+          <TouchableOpacity style={styles.secondaryButton} onPress={handleHome}>
             <Text style={styles.buttonText}>🏠 Home</Text>
           </TouchableOpacity>
         </View>
@@ -95,91 +123,105 @@ export default function SpecialistScreen() {
 }
 
 const styles = StyleSheet.create({
+  safeArea: { flex: 1, backgroundColor: "#eef5fc" },
+  scroll: { flex: 1 },
   container: {
-    padding: 40,
-    paddingBottom: 60,
-    backgroundColor: "#fdf2e9",
+    padding: moderateScale(24),
+    paddingBottom: verticalScale(80),
+    backgroundColor: "#eef5fc",
+  },
+  centered: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    padding: moderateScale(24),
+    backgroundColor: "#eef5fc",
   },
   heading: {
-    fontSize: RFValue(22),
+    fontSize: moderateScale(24),
     fontWeight: "bold",
-    color: "#551802",
-    marginBottom: 20,
+    color: "#2b4cca",
+    marginBottom: verticalScale(20),
     textAlign: "center",
   },
   card: {
     backgroundColor: "#fff",
-    padding: 16,
-    borderRadius: 12,
-    marginBottom: 20,
+    padding: moderateScale(16),
+    borderRadius: moderateScale(12),
     elevation: 3,
     shadowColor: "#000",
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.1,
     shadowRadius: 4,
+    marginBottom: verticalScale(20),
   },
-  title: {
-    fontSize: RFValue(22),
-    fontWeight: "bold",
-    color: "#551802",
-    marginBottom: 8,
-    textTransform: "capitalize",
-    textDecorationLine: "underline",
+  doctorContainer: {
+    paddingVertical: verticalScale(12),
+    paddingHorizontal: moderateScale(16),
+    marginBottom: verticalScale(20),
+    alignItems: "center",
+    borderTopRightRadius: 8,
+    borderBottomLeftRadius: 8,
+    borderTopLeftRadius: moderateScale(40),
+    borderBottomRightRadius: moderateScale(40),
+    shadowColor: "#000",
+    shadowOpacity: 0.15,
+    shadowOffset: { width: 0, height: 2 },
+    shadowRadius: 4,
+    elevation: 8,
   },
   doctor: {
-    fontSize: RFValue(24),
+    fontSize: moderateScale(28),
     fontWeight: "bold",
-    color: "#ffffff",
-    marginBottom: 20,
+    color: "#fff",
     textAlign: "center",
-    backgroundColor: "#551802",
-    borderRadius: 11,
-    paddingVertical: 4,
-    paddingHorizontal: 10,
-    lineHeight: RFValue(32),
   },
   label: {
-    fontSize: RFValue(18),
+    fontSize: moderateScale(20),
     fontWeight: "700",
-    color: "#551802",
-    marginTop: 10,
-    lineHeight: 24,
-  },
-  point: {
-    fontSize: RFValue(16),
-    fontWeight: "400",
-    color: "#551802",
-    marginLeft: 8,
-    marginVertical: 2,
-    lineHeight: 24,
+    color: "#2b4cca",
+    marginBottom: verticalScale(10),
+    lineHeight: moderateScale(24),
   },
   flag: {
-    fontSize: RFValue(16),
+    fontSize: moderateScale(22),
     fontWeight: "500",
-    color: "#551802",
-    marginLeft: 8,
-    marginVertical: 4,
-    lineHeight: 20,
+    color: "#d32f2f",
+    marginLeft: moderateScale(8),
+    marginVertical: verticalScale(6),
+    lineHeight: moderateScale(26),
     fontStyle: "italic",
   },
-  buttonText: {
-    color: "#551802",
-    fontSize: RFValue(16),
-    fontWeight: "600",
+  fullWidthButton: { alignSelf: "stretch" },
+  searchButton: {
+    paddingVertical: verticalScale(20),
+    borderRadius: moderateScale(12),
+    marginBottom: verticalScale(20),
+  },
+  searchButtonText: {
+    color: "#fff",
+    fontSize: moderateScale(18),
+    fontWeight: "700",
     textAlign: "center",
   },
   buttonGroup: {
     flexDirection: "row",
     justifyContent: "center",
-    marginBottom: 20,
+    marginBottom: verticalScale(20),
   },
   secondaryButton: {
-    backgroundColor: "#fdf2e9",
-    padding: 12,
-    borderRadius: 10,
+    backgroundColor: "#eef5fc",
+    padding: moderateScale(12),
+    borderRadius: moderateScale(10),
     borderWidth: 2,
-    borderColor: "#551802",
-    marginHorizontal: 10,
-    minWidth: 130,
+    borderColor: "#2b4cca",
+    marginHorizontal: moderateScale(10),
+    minWidth: moderateScale(130),
+  },
+  buttonText: {
+    color: "#2b4cca",
+    fontSize: moderateScale(18),
+    fontWeight: "600",
+    textAlign: "center",
   },
 });

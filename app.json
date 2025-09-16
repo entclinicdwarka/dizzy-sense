@@ -2,7 +2,7 @@
   "expo": {
     "name": "DizzySense",
     "slug": "dizzy-sense",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "scheme": "dizzysense",
@@ -13,10 +13,10 @@
     },
     "android": {
       "package": "com.entclinicdwarka.dizzysense",
-      "versionCode": 12,
+      "versionCode": 13,
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/playstore-icon.png",
-        "backgroundColor": "#551802"
+        "backgroundColor": "#2b4cca"
       },
       "edgeToEdgeEnabled": true,
       "permissions": []
@@ -34,7 +34,7 @@
           "image": "./assets/images/splash.png",
           "imageWidth": 200,
           "resizeMode": "contain",
-          "backgroundColor": "#551802"
+          "backgroundColor": "#eef5fc"
         }
       ]
     ],

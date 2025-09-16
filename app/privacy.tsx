@@ -1,19 +1,21 @@
+// app/privacy.tsx
 import { router, Stack } from "expo-router";
 import { ScrollView, Text, StyleSheet, TouchableOpacity } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { RFValue } from "react-native-responsive-fontsize";
+import { moderateScale } from "react-native-size-matters";
 
 export default function PrivacyPolicyScreen() {
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: "#fdf2e9" }}>
-      <ScrollView style={styles.container}>
+    <SafeAreaView style={styles.safeArea}>
+      <ScrollView contentContainerStyle={styles.container}>
         <Stack.Screen
           options={{
             title: "Privacy Policy",
-            headerStyle: { backgroundColor: "#551802" },
+            headerStyle: { backgroundColor: "#2b4cca" },
             headerTintColor: "#fff",
           }}
         />
+
         <Text
           accessibilityRole="header"
           accessibilityLabel="Privacy Policy for DizzySense"
@@ -23,13 +25,14 @@ export default function PrivacyPolicyScreen() {
         </Text>
 
         <Text style={styles.section}>Effective Date: August 2, 2025</Text>
-        <Text style={styles.section}>Last Updated: August 2, 2025</Text>
+        <Text style={styles.section}>Last Updated: September 24, 2025</Text>
 
         <Text style={styles.paragraph}>
-          🌀 DizzySense ("the App", "we", "our") is a mobile application
-          designed to help users understand possible causes of dizziness and
-          guide them toward appropriate medical specialists. We value your
-          privacy and do not collect any personally identifiable information.
+          🌀 DizzySense (&quot;the App&quot;, &quot;we&quot;, &quot;our&quot;)
+          is a mobile application designed to help users understand possible
+          causes of dizziness and guide them toward appropriate medical
+          specialists. We value your privacy and do not collect any personally
+          identifiable information.
         </Text>
 
         <Text style={styles.heading}>🔍 Information We Collect</Text>
@@ -54,6 +57,11 @@ export default function PrivacyPolicyScreen() {
           We do not use any third-party analytics, advertising, or tracking
           tools (such as Google Analytics, Facebook SDK, etc.).
         </Text>
+        <Text style={styles.paragraph}>
+          The app may open external websites (e.g. Google Search) for
+          convenience. These are handled by your device&apos;s browser, and
+          DizzySense does not transmit any personal information.
+        </Text>
 
         <Text style={styles.heading}>⚠️ Medical Disclaimer</Text>
         <Text style={styles.paragraph}>
@@ -70,7 +78,7 @@ export default function PrivacyPolicyScreen() {
           entirely on your device.
         </Text>
 
-        <Text style={styles.heading}>👶 Children's Privacy</Text>
+        <Text style={styles.heading}>👶 Children&apos;s Privacy</Text>
         <Text style={styles.paragraph}>
           DizzySense is not directed at children under 13. We do not knowingly
           collect data from anyone, including minors.
@@ -80,12 +88,12 @@ export default function PrivacyPolicyScreen() {
         <Text style={styles.paragraph}>
           If you have any questions about this privacy policy or the app:
           {"\n"}
-          <Text style={styles.bold}>Email</Text>: entclinicdwarka@gmail.com
+          <Text style={styles.bold}>Email:</Text> entclinicdwarka@gmail.com
           {"\n"}
-          <Text style={styles.bold}>Developer</Text>: Dr. Rahul Kapahi, ENT
+          <Text style={styles.bold}>Developer:</Text> Dr. Rahul Kapahi, ENT
           Consultant
           {"\n"}
-          <Text style={styles.bold}>Location</Text>: India
+          <Text style={styles.bold}>Location:</Text> India
         </Text>
 
         <Text style={styles.heading}>✅ Summary</Text>
@@ -95,16 +103,7 @@ export default function PrivacyPolicyScreen() {
           advertising, or data collection.
         </Text>
 
-        <Text
-          style={{
-            textAlign: "center",
-            fontSize: RFValue(13),
-            color: "#888",
-            marginTop: 30,
-          }}
-        >
-          Version 1.0 • August 2025
-        </Text>
+        <Text style={styles.version}>Version 1.1 • September 2025</Text>
 
         <TouchableOpacity
           accessibilityRole="button"
@@ -112,7 +111,7 @@ export default function PrivacyPolicyScreen() {
           style={styles.secondaryButton}
           onPress={() => router.replace("/")}
         >
-          <Text style={[styles.buttonText, { color: "#551802" }]}>🏠 Home</Text>
+          <Text style={[styles.buttonText, { color: "#2b4cca" }]}>🏠 Home</Text>
         </TouchableOpacity>
       </ScrollView>
     </SafeAreaView>
@@ -120,56 +119,63 @@ export default function PrivacyPolicyScreen() {
 }
 
 const styles = StyleSheet.create({
+  safeArea: { flex: 1, backgroundColor: "#eef5fc" },
   container: {
-    flex: 1,
-    padding: 20,
-    backgroundColor: "#fdf2e9",
+    padding: moderateScale(20),
+    backgroundColor: "#eef5fc",
   },
   title: {
-    fontSize: RFValue(22),
+    fontSize: moderateScale(22),
     fontWeight: "bold",
-    marginBottom: 16,
+    marginBottom: moderateScale(16),
     textAlign: "center",
-    color: "#551802",
+    color: "#2b4cca",
   },
   section: {
-    fontSize: RFValue(14),
-    marginBottom: 6,
+    fontSize: moderateScale(14),
+    marginBottom: moderateScale(6),
     textAlign: "center",
-    color: "#551802",
+    color: "#2b4cca",
     borderBottomWidth: 1,
-    borderBottomColor: "#551802",
+    borderBottomColor: "#2b4cca",
+    paddingBottom: moderateScale(4),
   },
   heading: {
-    fontSize: RFValue(18),
+    fontSize: moderateScale(18),
     fontWeight: "bold",
-    marginTop: 20,
-    marginBottom: 8,
-    color: "#551802",
+    marginTop: moderateScale(20),
+    marginBottom: moderateScale(8),
+    color: "#2b4cca",
   },
   paragraph: {
-    fontSize: RFValue(15),
-    lineHeight: 24,
-    color: "#551802",
+    fontSize: moderateScale(15),
+    lineHeight: moderateScale(24),
+    color: "#2b4cca",
   },
   secondaryButton: {
-    backgroundColor: "#fdf2e9",
-    padding: 12,
-    borderRadius: 10,
+    backgroundColor: "#eef5fc",
+    padding: moderateScale(12),
+    borderRadius: moderateScale(10),
     borderWidth: 2,
-    borderColor: "#551802",
-    marginHorizontal: 10,
-    minWidth: 130,
-    marginTop: 20,
-    marginBottom: 60,
+    borderColor: "#2b4cca",
+    marginHorizontal: moderateScale(10),
+    minWidth: moderateScale(130),
+    marginTop: moderateScale(20),
+    marginBottom: moderateScale(60),
   },
   buttonText: {
     color: "#fff",
-    fontSize: RFValue(16),
+    fontSize: moderateScale(16),
     fontWeight: "600",
     textAlign: "center",
   },
   bold: {
     fontWeight: "700",
+  },
+  version: {
+    textAlign: "center",
+    fontSize: moderateScale(13),
+    color: "#333",
+    marginTop: moderateScale(30),
   },
 });
