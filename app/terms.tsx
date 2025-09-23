@@ -3,105 +3,95 @@ import { router, Stack } from "expo-router";
 import { ScrollView, Text, StyleSheet, TouchableOpacity } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { moderateScale } from "react-native-size-matters";
+import i18n from "@/i18n";
+import { useTranslation } from "@/hooks/useTranslation";
 
 export default function TermsScreen() {
+  const { t } = useTranslation();
   return (
     <SafeAreaView style={styles.safeArea}>
       <ScrollView contentContainerStyle={styles.container}>
         <Stack.Screen
           options={{
-            title: "Terms & Conditions",
-            headerStyle: { backgroundColor: "#2b4cca" },
+            title: t("terms.title"),
+            headerStyle: { backgroundColor: "#04d9ff" },
             headerTintColor: "#fff",
           }}
         />
 
         <Text
           accessibilityRole="header"
-          accessibilityLabel="Terms and Conditions for DizzySense"
+          accessibilityLabel={t("terms.headerAccessibility")}
           style={styles.title}
         >
-          📄 Terms & Conditions
+          {t("terms.title")}
         </Text>
 
-        <Text style={styles.section}>Effective Date: August 2, 2025</Text>
-        <Text style={styles.section}>Last Updated: September 24, 2025</Text>
+        <Text style={styles.section}>{t("terms.effectiveDate")}</Text>
+        <Text style={styles.section}>{t("terms.lastUpdated")}</Text>
 
-        <Text style={styles.paragraph}>
-          By using 🌀DizzySense (&quot;the App&quot;, &quot;we&quot;,
-          &quot;our&quot;), you agree to the following terms and conditions.
-          Please read them carefully before using the app.
-        </Text>
+        <Text style={styles.paragraph}>{t("terms.intro")}</Text>
 
-        <Text style={styles.heading}>1. Use of the App</Text>
-        <Text style={styles.paragraph}>
-          DizzySense is intended to provide general information and guidance
-          related to dizziness. It is not a substitute for professional medical
-          evaluation, diagnosis, or treatment.
-        </Text>
+        <Text style={styles.heading}>{t("terms.useOfApp.heading")}</Text>
+        <Text style={styles.paragraph}>{t("terms.useOfApp.paragraph")}</Text>
 
-        <Text style={styles.heading}>2. Medical Disclaimer</Text>
-        <Text style={styles.paragraph}>
-          This app does not provide medical advice. Always consult a qualified
-          healthcare provider if you experience symptoms or have health-related
-          questions. Do not delay seeking professional care based on information
-          from this app.
-        </Text>
-
-        <Text style={styles.heading}>3. No Data Collection</Text>
-        <Text style={styles.paragraph}>
-          The app does not collect or store any personal data. All symptom
-          inputs and interactions stay on your device. We do not track, store,
-          or share your data with anyone.
+        <Text style={styles.heading}>
+          {t("terms.medicalDisclaimer.heading")}
         </Text>
         <Text style={styles.paragraph}>
-          The app may open external websites (e.g. Google Search) for
-          convenience. These are handled by your device&apos;s browser, and
-          DizzySense does not transmit any personal information.
+          {t("terms.medicalDisclaimer.paragraph")}
         </Text>
 
-        <Text style={styles.heading}>4. Intellectual Property</Text>
+        <Text style={styles.heading}>
+          {t("terms.noDataCollection.heading")}
+        </Text>
         <Text style={styles.paragraph}>
-          All content within the app, including text, layout, and visuals, is
-          the intellectual property of Dr. Rahul Kapahi. You may not reproduce
-          or redistribute any part of this app without permission.
+          {t("terms.noDataCollection.paragraph1")}
+        </Text>
+        <Text style={styles.paragraph}>
+          {t("terms.noDataCollection.paragraph2")}
         </Text>
 
-        <Text style={styles.heading}>5. Limitation of Liability</Text>
+        <Text style={styles.heading}>
+          {t("terms.intellectualProperty.heading")}
+        </Text>
         <Text style={styles.paragraph}>
-          We are not liable for any harm or damage that may arise from the use
-          or misuse of the app, including reliance on the guidance provided. Use
-          of the app is at your own risk.
+          {t("terms.intellectualProperty.paragraph")}
         </Text>
 
-        <Text style={styles.heading}>6. Changes to Terms</Text>
-        <Text style={styles.paragraph}>
-          We may update these terms occasionally. The latest version will always
-          be available within the app. Continued use of the app implies your
-          acceptance of any changes.
-        </Text>
+        <Text style={styles.heading}>{t("terms.limitation.heading")}</Text>
+        <Text style={styles.paragraph}>{t("terms.limitation.paragraph")}</Text>
 
-        <Text style={styles.heading}>7. Contact</Text>
+        <Text style={styles.heading}>{t("terms.changes.heading")}</Text>
+        <Text style={styles.paragraph}>{t("terms.changes.paragraph")}</Text>
+
+        <Text style={styles.heading}>{t("terms.contact.heading")}</Text>
         <Text style={styles.paragraph}>
-          For questions or concerns about these terms:
+          {t("terms.contact.paragraph")}
           {"\n"}
-          <Text style={styles.bold}>Email:</Text> entclinicdwarka@gmail.com
+          <Text style={styles.bold}>{t("terms.contact.emailLabel")}</Text>{" "}
+          entclinicdwarka@gmail.com
           {"\n"}
-          <Text style={styles.bold}>Developer:</Text> Dr. Rahul Kapahi, ENT
-          Consultant
+          <Text style={styles.bold}>
+            {t("terms.contact.developerLabel")}
+          </Text>{" "}
+          Dr. Rahul Kapahi, ENT Consultant
           {"\n"}
-          <Text style={styles.bold}>Location:</Text> India
+          <Text style={styles.bold}>
+            {t("terms.contact.locationLabel")}
+          </Text>{" "}
+          India
         </Text>
 
-        <Text style={styles.version}>Version 1.1 • September 2025</Text>
+        <Text style={styles.version}>{t("terms.version")}</Text>
 
         <TouchableOpacity
           accessibilityRole="button"
-          accessibilityLabel="Go back to home screen"
+          accessibilityLabel={t("terms.homeButtonAccessibility")}
           style={styles.secondaryButton}
           onPress={() => router.replace("/")}
         >
-          <Text style={[styles.buttonText, { color: "#2b4cca" }]}>🏠 Home</Text>
+          <Text style={styles.buttonText}>{t("terms.homeButton")}</Text>
         </TouchableOpacity>
       </ScrollView>
     </SafeAreaView>
@@ -109,10 +99,10 @@ export default function TermsScreen() {
 }
 
 const styles = StyleSheet.create({
-  safeArea: { flex: 1, backgroundColor: "#eef5fc" },
+  safeArea: { flex: 1, backgroundColor: "#e3faff" },
   container: {
     padding: moderateScale(20),
-    backgroundColor: "#eef5fc",
+    backgroundColor: "#e3faff",
   },
   title: {
     fontSize: moderateScale(22),
@@ -143,7 +133,7 @@ const styles = StyleSheet.create({
     color: "#2b4cca",
   },
   secondaryButton: {
-    backgroundColor: "#eef5fc",
+    backgroundColor: "#e3faff",
     padding: moderateScale(12),
     borderRadius: moderateScale(10),
     borderWidth: 2,
@@ -154,7 +144,7 @@ const styles = StyleSheet.create({
     marginBottom: moderateScale(60),
   },
   buttonText: {
-    color: "#fff",
+    color: "#2b4cca",
     fontSize: moderateScale(16),
     fontWeight: "600",
     textAlign: "center",
@@ -164,7 +154,7 @@ const styles = StyleSheet.create({
   },
   version: {
     textAlign: "center",
-    fontSize: moderateScale(13),
+    fontSize: moderateScale(14),
     color: "#333",
     marginTop: moderateScale(30),
   },

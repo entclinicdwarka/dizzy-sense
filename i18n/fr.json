@@ -1,0 +1,419 @@
+{
+  "customHeader": {
+    "title": "🌀 DizzySense"
+  },
+  "whatsapp": {
+    "message": "Hello, I want to book an appointment with Dr. Rahul Kapahi.",
+    "alertTitle": "Impossible d'ouvrir WhatsApp",
+    "alertMessage": "Il semble que WhatsApp ne soit pas installé ou accessible sur votre appareil.",
+    "accessibilityHint": "Ouvre le chat WhatsApp avec la clinique du Dr Rahul Kapahi",
+    "accessibilityLabel": "Contactez-nous sur WhatsApp"
+  },
+  "questionEngine": {},
+  "common": {
+    "yes": "Oui",
+    "no": "Non"
+  },
+  "questions": {
+    "loading": "Préparation de votre résultat...",
+    "step": "Étape {{step}}",
+    "start": {
+      "text": "Quel type de vertige ressentez-vous ?",
+      "options": {
+        "spinning": "Rotation",
+        "blackout": "Évanouissement / Perte de conscience",
+        "lightheaded": "Étourdissement / Instabilité",
+        "vision": "Troubles visuels",
+        "neck": "Vertige lié au cou"
+      }
+    },
+    "spinning_duration": {
+      "text": "Combien de temps durent généralement vos épisodes de rotation ?",
+      "options": {
+        "seconds": "Secondes",
+        "minutes_hours": "Minutes à heures",
+        "hours_days": "Heures à jours"
+      }
+    },
+    "spinning_trigger": {
+      "text": "Sont-ils déclenchés par des changements de position (ex. : s'allonger, tourner) ?"
+    },
+    "hearing_issues": {
+      "text": "Ressentez-vous une sensation d'oreille pleine, des acouphènes ou une perte auditive ?"
+    },
+    "upper_respiratory": {
+      "text": "Avez-vous eu récemment un rhume, une sinusite ou une infection des voies respiratoires supérieures ?"
+    },
+    "head_trauma": {
+      "text": "Avez-vous subi récemment un traumatisme ou une blessure à la tête ?"
+    },
+    "nausea_vomiting": {
+      "text": "Ressentez-vous également des nausées ou des vomissements persistants ?"
+    },
+    "blackout_trigger": {
+      "text": "Quand surviennent généralement les évanouissements ?",
+      "options": {
+        "exertion": "Lors d'efforts physiques",
+        "standing": "En me levant rapidement",
+        "random": "Aléatoirement sans déclencheur clair"
+      }
+    },
+    "cardio_palpitations": {
+      "text": "Ressentez-vous une oppression thoracique, des palpitations ou un essoufflement pendant les évanouissements ?"
+    },
+    "neuro_syncopal": {
+      "text": "Avez-vous des troubles de la parole, de la confusion ou une faiblesse des membres pendant ces épisodes ?"
+    },
+    "lightheaded_trigger": {
+      "text": "Quand ressentez-vous des étourdissements ou de l'instabilité ?",
+      "options": {
+        "activity": "Pendant l'activité physique ou en me tenant debout",
+        "random": "Aléatoirement, même assis ou allongé",
+        "stress": "Dans des moments stressants ou anxieux",
+        "infection": "Avec fièvre, frissons ou infection récente",
+        "unexplained": "Avec des symptômes inexpliqués"
+      }
+    },
+    "endocrine_symptoms": {
+      "text": "Ressentez-vous une fatigue inexpliquée, une prise ou perte de poids, ou une transpiration excessive ?"
+    },
+    "psychiatric_stress": {
+      "text": "Vous sentez-vous détaché de la réalité (déréalisation) ?"
+    },
+    "psychiatric_anxiety": {
+      "text": "Ces symptômes coïncident-ils avec des crises de panique ou de l'anxiété ?"
+    },
+    "systemic_infection": {
+      "text": "Avez-vous récemment eu une infection virale, une fièvre inexpliquée ou une fatigue ?"
+    },
+    "vision_issues": {
+      "text": "Ressentez-vous une vision floue, une vision double, des difficultés à focaliser ou une fatigue oculaire ?"
+    },
+    "vision_additional": {
+      "text": "Ces symptômes sont-ils associés à des maux de tête, vertiges ou nausées ?"
+    },
+    "neuro_or_ophthalmology": {
+      "text": "Ces troubles visuels sont-ils associés à une faiblesse des membres ou à un trouble de la parole ?"
+    },
+    "neck_pain_relation": {
+      "text": "Votre vertige est-il lié à des douleurs cervicales ou une limitation de la mobilité du cou ?"
+    },
+    "neck_additional": {
+      "text": "Avez-vous des maux de tête, des picotements ou un engourdissement dans les bras ou les mains ?"
+    },
+    "ent": { "text": "Consultez un ORL." },
+    "cardio": { "text": "Consultez un cardiologue." },
+    "neuro": { "text": "Consultez un neurologue." },
+    "psychiatry": { "text": "Consultez un psychiatre." },
+    "orthopedics": { "text": "Consultez un orthopédiste." },
+    "endocrinology": { "text": "Consultez un endocrinologue." },
+    "ophthalmology": { "text": "Consultez un ophtalmologiste." },
+    "infectious": {
+      "text": "Consultez un spécialiste des maladies infectieuses."
+    },
+    "general": {
+      "text": "⚠️ Consultez un médecin de toute urgence en raison de symptômes d’alerte."
+    }
+  },
+  "options": {
+    "spinning": "Rotation",
+    "blackout": "Évanouissement / Perte de conscience",
+    "lightheaded": "Étourdissement / Instabilité",
+    "visual_disturbances": "Troubles visuels",
+    "neck_related": "Vertige lié au cou"
+  },
+  "dizziness": {
+    "spinning": {
+      "title": "Rotation",
+      "desc": "Sensation que la pièce ou vous-même êtes en mouvement ou en rotation."
+    },
+    "blackout": {
+      "title": "Évanouissement / Perte de conscience",
+      "desc": "Sensation de presque s'évanouir ou perte complète de conscience."
+    },
+    "lightheaded": {
+      "title": "Étourdissement",
+      "desc": "Sensation flottante ou étourdie — pas exactement une rotation, mais désorientante."
+    },
+    "unsteady": {
+      "title": "Instabilité",
+      "desc": "Sensation de déséquilibre ou de balancement en marchant ou en restant debout."
+    },
+    "neck": {
+      "title": "Cou / Posture",
+      "desc": "Sensation de vertige lors du mouvement ou maintien du cou dans certaines positions."
+    },
+    "modalTitle": "Types de vertiges",
+    "close": "Fermer"
+  },
+  "specialties": {
+    "ent": "Consultez un ORL.",
+    "cardio": "Consultez un cardiologue.",
+    "neuro": "Consultez un neurologue.",
+    "psychiatry": "Consultez un psychiatre.",
+    "orthopedics": "Consultez un orthopédiste.",
+    "endocrinology": "Consultez un endocrinologue.",
+    "ophthalmology": "Consultez un ophtalmologiste.",
+    "infectious": "Consultez un spécialiste des maladies infectieuses.",
+    "general": "⚠️ Consultez un médecin de toute urgence en raison de symptômes d’alerte."
+  },
+  "results": {
+    "ent": {
+      "label": "Vertige lié à l’oreille",
+      "doctor": "Spécialiste ORL",
+      "description": "Les symptômes suggèrent un problème de l’oreille interne ou du système d’équilibre, provoquant souvent un vertige positionnel.",
+      "redFlags": [
+        "Perte auditive soudaine ou progressive",
+        "Déséquilibre persistant lors des mouvements de tête",
+        "Nausées/vomissements lors du changement de position"
+      ],
+      "nextSteps": "Reposez-vous dans une pièce sombre et calme. Évitez les mouvements brusques.",
+      "contact": "Visitez une clinique ORL locale ou un hôpital."
+    },
+    "cardio": {
+      "label": "Vertige lié au cœur",
+      "doctor": "Cardiologue",
+      "description": "Le motif suggère une cause cardiovasculaire telle que des variations de tension ou une arythmie.",
+      "redFlags": [
+        "Oppression thoracique ou essoufflement",
+        "Évanouissement lors d’activité ou en se levant",
+        "Palpitations ou rythme cardiaque irrégulier"
+      ],
+      "nextSteps": "Restez hydraté et évitez les efforts jusqu’à la consultation médicale.",
+      "contact": "Rendez-vous au service de cardiologie de l’hôpital le plus proche."
+    },
+    "neuro": {
+      "label": "Vertige lié au système nerveux",
+      "doctor": "Neurologue",
+      "description": "Lien possible avec migraines, centres de l’équilibre ou événements ischémiques transitoires.",
+      "redFlags": [
+        "Troubles de la parole",
+        "Faiblesse ou engourdissement des membres",
+        "Vision floue ou double"
+      ],
+      "nextSteps": "Évitez le stress et notez vos symptômes pour la consultation médicale.",
+      "contact": "Consultez un neurologue pour évaluation du cerveau et du système nerveux."
+    },
+    "psychiatry": {
+      "label": "Vertige lié à la psychiatrie",
+      "doctor": "Psychiatre",
+      "description": "Les symptômes peuvent provenir de l’anxiété, du trouble panique ou de troubles somatoformes.",
+      "redFlags": [
+        "Inquiétude persistante",
+        "Dépersonnalisation ou déréalisation",
+        "Troubles du sommeil"
+      ],
+      "nextSteps": "Pratiquez des techniques de relaxation et consultez des professionnels de la santé mentale.",
+      "contact": "Visitez une clinique de santé mentale ou un psychiatre."
+    },
+    "orthopedics": {
+      "label": "Vertige lié à l’orthopédie",
+      "doctor": "Orthopédiste",
+      "description": "Symptômes liés à des douleurs cervicales ou des troubles de la colonne cervicale.",
+      "redFlags": [
+        "Raideur du cou",
+        "Douleur irradiant dans les bras",
+        "Mobilité réduite du cou"
+      ],
+      "nextSteps": "Évitez les tensions cervicales et consultez un orthopédiste.",
+      "contact": "Visitez une clinique orthopédique pour évaluation de la colonne."
+    },
+    "endocrinology": {
+      "label": "Vertige lié à l’endocrinologie",
+      "doctor": "Endocrinologue",
+      "description": "Peut être lié à des fluctuations de glycémie, dysfonction thyroïdienne ou déséquilibre hormonal.",
+      "redFlags": [
+        "Fatigue inexpliquée",
+        "Variation de poids",
+        "Transpiration excessive"
+      ],
+      "nextSteps": "Surveillez vos symptômes et consultez un endocrinologue pour tests.",
+      "contact": "Consultez un endocrinologue pour évaluation hormonale."
+    },
+    "ophthalmology": {
+      "label": "Vertige lié aux yeux",
+      "doctor": "Ophtalmologiste",
+      "description": "Troubles visuels provoquant des vertiges, dus à un dysfonctionnement des muscles oculaires ou du nerf optique.",
+      "redFlags": ["Vision floue", "Vision double", "Difficulté à focaliser"],
+      "nextSteps": "Évitez la fatigue visuelle et consultez un spécialiste des yeux.",
+      "contact": "Visitez une clinique d’ophtalmologie."
+    },
+    "infectious": {
+      "label": "Vertige lié aux infections",
+      "doctor": "Médecine interne",
+      "description": "Causes systémiques possibles comme infection, anémie ou déshydratation.",
+      "redFlags": ["Fièvre", "Fatigue", "Infection virale récente"],
+      "nextSteps": "Restez hydraté et consultez rapidement un médecin.",
+      "contact": "Rendez-vous à l’hôpital le plus proche pour un avis en médecine interne."
+    },
+    "general": {
+      "label": "Vertige non spécifié ou symptômes d’alerte",
+      "doctor": "Médecin généraliste",
+      "description": "Les symptômes d’alerte nécessitent une évaluation médicale urgente et complète.",
+      "redFlags": [
+        "Céphalée soudaine et intense",
+        "Perte de vision aiguë, floue ou double",
+        "Perte auditive soudaine",
+        "Faiblesse ou engourdissement des membres, affaissement facial",
+        "Troubles de la parole ou confusion",
+        "Perte de conscience ou évanouissement inexpliqué",
+        "Douleur thoracique intense, palpitations ou essoufflement",
+        "Fièvre inexpliquée, frissons ou signes d’infection",
+        "Vomissements persistants ou déshydratation",
+        "Marche instable, chutes ou incapacité à marcher en sécurité",
+        "Vertige sévère récent après traumatisme crânien",
+        "Symptômes qui s’aggravent rapidement",
+        "Fatigue intense ou perte de poids inexpliquée",
+        "Signes d’hypoglycémie (sueurs, tremblements, confusion)"
+      ],
+      "nextSteps": "Rendez-vous immédiatement à l’hôpital le plus proche.",
+      "contact": "Consultez un médecin généraliste pour un bilan complet."
+    }
+  },
+  "quiz/index": {
+    "index": {
+      "title": "Questions"
+    }
+  },
+  "quiz/result": {
+    "header": "Votre Résultat",
+    "unknown": {
+      "label": "Résultat non reconnu",
+      "description": "Nous n'avons pas pu déterminer un résultat spécifique. Veuillez réessayer."
+    },
+    "answersTitle": "🧾 Vos réponses :",
+    "qPrefix": "Q.",
+    "aPrefix": "R.",
+    "meaningTitle": "💬 Ce que cela pourrait signifier :",
+    "findDoctorButton": "👉 Quel médecin consulter ?",
+    "homeButton": "🏠 Accueil",
+    "accessibility": {
+      "findDoctor": "Appuyez pour trouver le bon médecin"
+    }
+  },
+  "layout": {
+    "disclaimer": {
+      "text1": "🛑🚫 Cette application fournit uniquement des informations générales et n’est",
+      "notSubstitute": "PAS UN SUBSTITUT",
+      "text2": "au conseil médical professionnel, au diagnostic ou au traitement. Consultez toujours un",
+      "provider": "professionnel de santé qualifié"
+    },
+    "footer": {
+      "aboutLink": "À propos / Conditions / Confidentialité",
+      "note": "Dr Rahul Kapahi · Pour sensibilisation, pas pour diagnostic",
+      "accessibility": "Ouvrir l’écran À propos avec Conditions et Politique de confidentialité"
+    }
+  },
+  "about": {
+    "screenTitle": "À propos de l'application",
+    "header": "🌀 À propos de DizzySense",
+    "paragraph1": "DizzySense est une application gratuite, hors-ligne, qui aide les utilisateurs à comprendre les causes possibles des vertiges et fournit des conseils sur le spécialiste médical à consulter.",
+    "paragraph2": "Aucune donnée personnelle n’est collectée. Tout est traité sur votre appareil.",
+    "paragraph3": "DizzySense fonctionne entièrement sans Internet !",
+    "developerInfo": "👨‍⚕️ Infos sur le développeur",
+    "developerName": "Dr Rahul Kapahi",
+    "developerRole": "Consultant ORL",
+    "developerCountry": "🇮🇳 Inde",
+    "emailLabel": "entclinicdwarka@gmail.com",
+    "websiteLabel": "Site de la clinique",
+    "directionsLabel": "Itinéraire",
+    "phoneLabel": "+91 88000 47117",
+    "privacyPolicy": "🛡️ Politique de confidentialité",
+    "terms": "📄 Conditions générales",
+    "clickHint": "(Cliquez sur les liens ci-dessus pour en savoir plus)",
+    "version": "📱 Version 1.1 • Septembre 2025",
+    "home": "🏠 Accueil"
+  },
+  "home": {
+    "feelingHeading": "Vous sentez-vous instable ou étourdi ?",
+    "subtitle1": "Vous ne savez pas si c’est un vertige, un étourdissement, des vertiges ou un évanouissement ?",
+    "subtitle2": "L’application vous guide à travers un court quiz pour :",
+    "bullet1": "👉 Comprendre ce que vous ressentez.",
+    "bullet2": "👉 Connaître les causes courantes et les signes d’alerte.",
+    "bullet3": "👉 Obtenir des conseils clairs sur le spécialiste à consulter.",
+    "startQuiz": "Commencer le quiz des symptômes"
+  },
+  "appName": "DizzySense",
+  "privacy": {
+    "title": "Politique de confidentialité",
+    "accessibilityTitle": "Politique de confidentialité pour DizzySense",
+    "header": "🛡️ Politique de confidentialité pour DizzySense",
+    "effectiveDate": "Date d'entrée en vigueur : 2 août 2025",
+    "lastUpdated": "Dernière mise à jour : 24 septembre 2025",
+    "intro": "🌀 DizzySense (\"l'application\", \"nous\", \"notre\") est une application mobile conçue pour aider les utilisateurs à comprendre les causes possibles des vertiges et les orienter vers le spécialiste médical approprié. Nous respectons votre vie privée et ne collectons aucune information personnelle identifiable.",
+    "infoCollectHeading": "🔍 Informations que nous collectons",
+    "infoCollectText": "Nous ne collectons, stockons ni ne transmettons aucune des informations suivantes :\n\n• Nom, adresse e-mail, numéro de téléphone ou identité personnelle\n• Localisation ou identifiants de l'appareil\n• Dossiers de santé ou antécédents médicaux\n\nL'application fonctionne entièrement sur votre appareil et ne transmet aucune réponse au quiz ou donnée à nos serveurs ou à des tiers.",
+    "permissionsHeading": "📱 Autorisations de l'appareil",
+    "permissionsText": "DizzySense ne demande pas l'accès à votre caméra, vos contacts, votre localisation ou votre microphone. Elle utilise uniquement les fonctions de base nécessaires au bon fonctionnement de l'application.",
+    "thirdPartyHeading": "💼 Services tiers",
+    "thirdPartyText1": "Nous n’utilisons aucun outil tiers d’analyse, publicité ou suivi (Google Analytics, Facebook SDK, etc.).",
+    "thirdPartyText2": "L’application peut ouvrir des sites Web externes (ex. : Google Search) pour plus de commodité. Cela se fait via le navigateur de votre appareil, et DizzySense ne transmet aucune information personnelle.",
+    "disclaimerHeading": "⚠️ Avertissement médical",
+    "disclaimerText": "DizzySense ne remplace pas les conseils ou diagnostics médicaux professionnels. Elle est destinée à des fins d'information uniquement. Consultez toujours un professionnel de santé qualifié pour tout symptôme ou problème de santé.",
+    "securityHeading": "🔐 Sécurité des données",
+    "securityText": "Comme l'application ne collecte pas de données, il n'y a aucune donnée personnelle à sécuriser ou à transmettre. Toutes les sélections de symptômes et la logique du quiz se déroulent entièrement sur votre appareil.",
+    "childrenHeading": "👶 Confidentialité des enfants",
+    "childrenText": "DizzySense ne s'adresse pas aux enfants de moins de 13 ans. Nous ne collectons aucune donnée, y compris auprès des mineurs.",
+    "contactHeading": "📬 Contactez-nous",
+    "contactText": "Pour toute question sur cette politique de confidentialité ou l'application :\nEmail : entclinicdwarka@gmail.com\nDéveloppeur : Dr Rahul Kapahi, Consultant ORL\nLieu : Inde",
+    "summaryHeading": "✅ Résumé",
+    "summaryText": "Votre vie privée est importante pour nous. DizzySense a été conçu pour fournir des conseils médicaux sûrs, hors-ligne, sans suivi, publicité ou collecte de données.",
+    "version": "Version 1.1 • Septembre 2025",
+    "homeButton": "🏠 Accueil",
+    "homeButtonLabel": "Retour à l'écran d'accueil"
+  },
+  "specialist": {
+    "title": "Guide des spécialistes",
+    "invalidResult": "Paramètre de résultat invalide.",
+    "noSpecialist": "Aucun spécialiste correspondant trouvé.",
+    "consultDoctor": "Consultez {{doctor}}",
+    "redFlags": "Signes d’alerte à surveiller :",
+    "findNearby": "🔎 Trouver des {{doctor}}s à proximité",
+    "home": "🏠 Accueil",
+    "errorSearch": "Une erreur est survenue lors de l’ouverture de la recherche.",
+    "cannotOpen": "Impossible d'ouvrir l’URL de recherche"
+  },
+  "terms": {
+    "title": "📄 Conditions générales",
+    "headerAccessibility": "Conditions générales pour DizzySense",
+    "effectiveDate": "Date d'entrée en vigueur : 2 août 2025",
+    "lastUpdated": "Dernière mise à jour : 24 septembre 2025",
+    "intro": "En utilisant 🌀DizzySense (\"l'application\", \"nous\", \"notre\"), vous acceptez les conditions suivantes. Veuillez les lire attentivement avant d’utiliser l’application.",
+    "useOfApp": {
+      "heading": "1. Utilisation de l'application",
+      "paragraph": "DizzySense est destiné à fournir des informations générales et des conseils liés aux vertiges. Il ne remplace pas une évaluation, un diagnostic ou un traitement médical professionnel."
+    },
+    "medicalDisclaimer": {
+      "heading": "2. Avertissement médical",
+      "paragraph": "Cette application ne fournit pas de conseils médicaux. Consultez toujours un professionnel de santé qualifié en cas de symptômes ou questions liées à la santé. Ne retardez pas la consultation professionnelle sur la base des informations de cette application."
+    },
+    "noDataCollection": {
+      "heading": "3. Pas de collecte de données",
+      "paragraph1": "L’application ne collecte ni ne stocke de données personnelles. Toutes les interactions et réponses restent sur votre appareil. Nous ne suivons, stockons ou partageons aucune donnée.",
+      "paragraph2": "L'application peut ouvrir des sites Web externes (ex. : Google Search) pour plus de commodité. Cela se fait via le navigateur de votre appareil, et DizzySense ne transmet aucune information personnelle."
+    },
+    "intellectualProperty": {
+      "heading": "4. Propriété intellectuelle",
+      "paragraph": "Tout le contenu de l’application, y compris le texte, la mise en page et les visuels, est la propriété intellectuelle du Dr Rahul Kapahi. Vous ne pouvez reproduire ou redistribuer aucune partie de cette application sans autorisation."
+    },
+    "limitation": {
+      "heading": "5. Limitation de responsabilité",
+      "paragraph": "Nous ne sommes pas responsables de tout dommage ou préjudice pouvant résulter de l’utilisation ou du mauvais usage de l’application, y compris la dépendance aux conseils fournis. L’utilisation de l’application se fait à vos propres risques."
+    },
+    "changes": {
+      "heading": "6. Modifications des conditions",
+      "paragraph": "Nous pouvons mettre à jour ces conditions de temps en temps. La dernière version sera toujours disponible dans l'application. L'utilisation continue de l'application implique votre acceptation des modifications."
+    },
+    "contact": {
+      "heading": "7. Contact",
+      "paragraph": "Pour toute question concernant ces conditions :",
+      "emailLabel": "Email :",
+      "developerLabel": "Développeur :",
+      "locationLabel": "Lieu :"
+    },
+    "version": "Version 1.1 • Septembre 2025",
+    "homeButton": "🏠 Accueil",
+    "homeButtonAccessibility": "Retour à l'écran d'accueil"
+  },
+  "language": "Changer la langue"
+}

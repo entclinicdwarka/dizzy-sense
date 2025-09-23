@@ -1,15 +1,16 @@
-import React, { useState } from "react";
+import { LinearGradient } from "expo-linear-gradient";
+import React, { useEffect, useRef, useState } from "react";
 import {
-  View,
+  ActivityIndicator,
+  Modal,
+  ScrollView,
+  StyleSheet,
   Text,
   TouchableOpacity,
-  StyleSheet,
-  ActivityIndicator,
-  ScrollView,
+  View,
 } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
 import { moderateScale } from "react-native-size-matters";
-import { Modal } from "react-native";
+import { useTranslation } from "@/hooks/useTranslation";
 
 export type QuestionOption = {
   label: string;
@@ -33,67 +34,71 @@ type Props = {
   ) => void;
 };
 
-const dizzinessInfo = [
-  {
-    icon: "🌀",
-    title: "Spinning",
-    desc: "A feeling that the room or you are moving or rotating.",
-  },
-  {
-    icon: "🌑",
-    title: "Blackout / Fainting",
-    desc: "A feeling of near-fainting or complete loss of consciousness.",
-  },
-  {
-    icon: "😵",
-    title: "Lightheaded",
-    desc: "A floating, woozy sensation — not quite spinning, but disorienting.",
-  },
-  {
-    icon: "🚶‍♂️",
-    title: "Unsteady",
-    desc: "A feeling of imbalance or swaying while walking or standing.",
-  },
-  {
-    icon: "💆",
-    title: "Neck / Posture related",
-    desc: "Feeling dizzy when moving or holding your neck in certain positions.",
-  },
-];
-
 export default function QuestionEngine({
   questions,
   startId = "start",
   onEnd,
 }: Props) {
+  const { t } = useTranslation();
+
+  const dizzinessInfo = [
+    {
+      icon: "🌀",
+      title: t("dizziness.spinning.title"),
+      desc: t("dizziness.spinning.desc"),
+    },
+    {
+      icon: "🌑",
+      title: t("dizziness.blackout.title"),
+      desc: t("dizziness.blackout.desc"),
+    },
+    {
+      icon: "😵",
+      title: t("dizziness.lightheaded.title"),
+      desc: t("dizziness.lightheaded.desc"),
+    },
+    {
+      icon: "🚶‍♂️",
+      title: t("dizziness.unsteady.title"),
+      desc: t("dizziness.unsteady.desc"),
+    },
+    {
+      icon: "💆",
+      title: t("dizziness.neck.title"),
+      desc: t("dizziness.neck.desc"),
+    },
+  ];
+
   const [currentId, setCurrentId] = useState(startId);
   const [loading, setLoading] = useState(false);
   const [answerSummary, setAnswerSummary] = useState<
     { question: string; answer: string }[]
   >([]);
   const [showInfo, setShowInfo] = useState(false);
+
+  const scrollRef = useRef<ScrollView>(null);
+
   const step = answerSummary.length + 1;
 
   const current = questions[currentId];
 
+  useEffect(() => {
+    scrollRef.current?.scrollTo({ y: 0, animated: false });
+  }, [currentId]);
+
   const handlePress = (nextId: string, selectedLabel: string) => {
     const current = questions[currentId];
-
-    setAnswerSummary((prev) => [
-      ...prev,
-      { question: current.text, answer: selectedLabel },
-    ]);
-
     const next = questions[nextId];
+
+    const updatedSummary = [
+      ...answerSummary,
+      { question: t(current.text), answer: t(selectedLabel) },
+    ];
+    setAnswerSummary(updatedSummary);
 
     if (next?.options.length === 0 && onEnd) {
       setLoading(true);
-      setTimeout(() => {
-        onEnd(nextId, [
-          ...answerSummary,
-          { question: current.text, answer: selectedLabel },
-        ]);
-      }, 800);
+      setTimeout(() => onEnd(nextId, updatedSummary), 800);
     } else {
       setCurrentId(nextId);
     }
@@ -102,33 +107,23 @@ export default function QuestionEngine({
   if (loading) {
     return (
       <View style={styles.spinnerContainer}>
-        <ActivityIndicator size="large" color="#2b4cca" />
-        <Text style={styles.spinnerText}>Preparing your result...</Text>
+        <ActivityIndicator size="large" color="#04d9ff" />
+        <Text style={styles.spinnerText}>{t("questions.loading")}</Text>
       </View>
     );
   }
 
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: "#eef5fc" }}>
+    <ScrollView
+      ref={scrollRef}
+      contentContainerStyle={styles.scrollContent}
+      showsVerticalScrollIndicator
+      keyboardShouldPersistTaps="handled"
+    >
       <View style={styles.container}>
         {/* Step Counter */}
-        <Text
-          style={{
-            textAlign: "center",
-            marginBottom: moderateScale(8),
-            color: "#2b4cca",
-            fontSize: moderateScale(16),
-          }}
-        >
-          Step {step}
-        </Text>
-        <View
-          style={{
-            flexDirection: "row",
-            justifyContent: "center",
-            marginBottom: moderateScale(16),
-          }}
-        >
+        <Text style={styles.stepCounter}>{t("questions.step", { step })}</Text>
+        <View style={styles.stepDotsContainer}>
           {[...answerSummary, {}].map((_, index) => (
             <View
               key={index}
@@ -149,32 +144,39 @@ export default function QuestionEngine({
         {/* Question */}
         <View style={styles.questionRow}>
           <Text style={styles.question}>
-            {current.text}{" "}
+            {t(current.text)}{" "}
             {current.id === "start" && (
               <Text
                 onPress={() => setShowInfo(true)}
                 style={styles.infoIcon}
-                accessibilityLabel="Info about dizziness types"
+                accessibilityLabel={t("questions.infoAccessibilityLabel")}
               >
                 ℹ️
               </Text>
             )}
           </Text>
         </View>
+
         {/* Options */}
         {current.options.map((opt) => (
           <TouchableOpacity
             key={opt.label}
-            style={styles.button}
             onPress={() => handlePress(opt.next, opt.label)}
             accessibilityRole="button"
-            accessibilityLabel={`Select ${opt.label}`}
+            accessibilityLabel={t("questions.selectOption", {
+              option: t(opt.label),
+            })}
+            style={styles.optionButtonWrapper}
           >
-            <Text style={[styles.buttonText, { flexShrink: 1 }]}>
-              {opt.label}
-            </Text>
+            <LinearGradient
+              colors={["#04d9ff", "#70a1ff"]}
+              style={styles.gradientButton}
+            >
+              <Text style={styles.buttonText}>{t(opt.label)}</Text>
+            </LinearGradient>
           </TouchableOpacity>
         ))}
+
         {/* Info Modal */}
         {showInfo && (
           <Modal
@@ -189,8 +191,11 @@ export default function QuestionEngine({
                   contentContainerStyle={styles.modalContent}
                   showsVerticalScrollIndicator
                   keyboardShouldPersistTaps="handled"
+                  bounces={false}
                 >
-                  <Text style={styles.modalTitle}>Types of Dizziness</Text>
+                  <Text style={styles.modalTitle}>
+                    {t("dizziness.modalTitle")}
+                  </Text>
                   {dizzinessInfo.map((item) => (
                     <Text key={item.title} style={styles.modalText}>
                       {item.icon} <Text style={styles.bold}>{item.title}:</Text>{" "}
@@ -199,42 +204,52 @@ export default function QuestionEngine({
                   ))}
                 </ScrollView>
 
-                {/* Close button outside ScrollView */}
+                {/* Close button */}
                 <TouchableOpacity
                   style={styles.floatingCloseButton}
                   onPress={() => setShowInfo(false)}
                 >
-                  <Text style={styles.closeText}>Close</Text>
+                  <Text style={styles.closeText}>{t("dizziness.close")}</Text>
                 </TouchableOpacity>
               </View>
             </View>
           </Modal>
         )}
       </View>
-    </SafeAreaView>
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
+  scrollContent: {
+    width: "80%",
+    justifyContent: "flex-start",
+    alignSelf: "center",
+    flexGrow: 1,
+  },
   container: {
-    paddingHorizontal: moderateScale(20),
-    paddingBottom: moderateScale(20),
-    justifyContent: "center",
+    paddingBottom: moderateScale(40),
+    backgroundColor: "#e3faff",
     flex: 1,
-    backgroundColor: "#eef5fc",
+  },
+  stepCounter: {
+    textAlign: "center",
+    marginBottom: moderateScale(8),
+    color: "#2b4cca",
+    fontSize: moderateScale(16),
+  },
+  stepDotsContainer: {
+    flexDirection: "row",
+    justifyContent: "center",
+    marginBottom: moderateScale(16),
   },
   question: {
-    fontSize: moderateScale(20),
-    marginBottom: moderateScale(2),
+    fontSize: moderateScale(24),
     textAlign: "center",
     fontWeight: "bold",
     color: "#2b4cca",
   },
-  button: {
-    backgroundColor: "#2b4cca",
-    paddingVertical: moderateScale(16),
-    paddingHorizontal: moderateScale(12),
-    borderRadius: moderateScale(10),
+  optionButtonWrapper: {
     marginBottom: moderateScale(16),
   },
   buttonText: {
@@ -246,7 +261,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#eef5fc",
+    backgroundColor: "#e3faff",
   },
   spinnerText: {
     marginTop: moderateScale(10),
@@ -254,7 +269,7 @@ const styles = StyleSheet.create({
     color: "#2b4cca",
   },
   questionRow: {
-    marginBottom: moderateScale(20),
+    marginBottom: moderateScale(40),
     paddingHorizontal: moderateScale(8),
   },
   infoIcon: {
@@ -263,7 +278,7 @@ const styles = StyleSheet.create({
   },
   modalOverlay: {
     ...StyleSheet.absoluteFillObject,
-    backgroundColor: "rgba(238,245,252,0.95)",
+    backgroundColor: "rgba(227, 239, 252, 0.95)",
     justifyContent: "center",
     alignItems: "center",
     padding: moderateScale(20),
@@ -271,11 +286,11 @@ const styles = StyleSheet.create({
   modalContainer: {
     width: "100%",
     maxWidth: moderateScale(340),
-    maxHeight: "80%",
+    maxHeight: "65%",
     backgroundColor: "#fff",
     borderRadius: moderateScale(15),
     overflow: "hidden",
-    padding: moderateScale(10),
+    padding: moderateScale(14),
     elevation: 5,
     shadowColor: "#000",
     shadowOffset: { width: 0, height: 2 },
@@ -284,7 +299,7 @@ const styles = StyleSheet.create({
   },
   floatingCloseButton: {
     alignSelf: "center",
-    backgroundColor: "#eef5fc",
+    backgroundColor: "#e3faff",
     paddingVertical: moderateScale(8),
     paddingHorizontal: moderateScale(20),
     borderRadius: moderateScale(10),
@@ -316,11 +331,11 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     fontSize: moderateScale(16),
   },
-  gradient: {
-    flex: 1,
+  gradientButton: {
+    paddingVertical: moderateScale(12),
+    paddingHorizontal: moderateScale(6),
+    borderRadius: moderateScale(12),
     justifyContent: "center",
     alignItems: "center",
-    borderRadius: 12,
-    padding: 20,
   },
 });

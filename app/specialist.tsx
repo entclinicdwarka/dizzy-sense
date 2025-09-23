@@ -1,3 +1,4 @@
+// app/quiz/specialist.tsx
 import {
   View,
   Text,
@@ -11,8 +12,10 @@ import { getFinalResult } from "@/app/quiz/data/questions";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { moderateScale, verticalScale } from "react-native-size-matters";
 import { LinearGradient } from "expo-linear-gradient";
+import { useTranslation } from "@/hooks/useTranslation";
 
 export default function SpecialistScreen() {
+  const { t } = useTranslation();
   const { result } = useLocalSearchParams();
 
   const handleHome = () => router.replace("/");
@@ -20,9 +23,9 @@ export default function SpecialistScreen() {
   if (!result || typeof result !== "string") {
     return (
       <SafeAreaView style={styles.centered}>
-        <Text style={styles.heading}>Invalid result parameter.</Text>
+        <Text style={styles.heading}>{t("specialist.invalidResult")}</Text>
         <TouchableOpacity style={styles.secondaryButton} onPress={handleHome}>
-          <Text style={styles.buttonText}>🏠 Home</Text>
+          <Text style={styles.buttonText}>{t("specialist.home")}</Text>
         </TouchableOpacity>
       </SafeAreaView>
     );
@@ -33,24 +36,30 @@ export default function SpecialistScreen() {
   if (!info) {
     return (
       <SafeAreaView style={styles.centered}>
-        <Text style={styles.heading}>No matching specialist found.</Text>
+        <Text style={styles.heading}>{t("specialist.noSpecialist")}</Text>
         <TouchableOpacity style={styles.secondaryButton} onPress={handleHome}>
-          <Text style={styles.buttonText}>🏠 Home</Text>
+          <Text style={styles.buttonText}>{t("specialist.home")}</Text>
         </TouchableOpacity>
       </SafeAreaView>
     );
   }
 
+  const doctorName = t(info.doctor);
+  const redFlags: string[] = (() => {
+    const rf = t(info.redFlags, { returnObjects: true });
+    return Array.isArray(rf) ? rf : [];
+  })();
+
   const handleSearch = async () => {
     try {
-      const query = encodeURIComponent(`${info.doctor} near me`);
+      const query = encodeURIComponent(`${doctorName} near me`);
       const url = `https://www.google.com/search?q=${query}`;
       const supported = await Linking.canOpenURL(url);
       if (supported) await Linking.openURL(url);
-      else alert("Cannot open search URL");
+      else alert(t("specialist.cannotOpen"));
     } catch (err) {
       console.error(err);
-      alert("Something went wrong while opening the search.");
+      alert(t("specialist.errorSearch"));
     }
   };
 
@@ -63,50 +72,55 @@ export default function SpecialistScreen() {
       >
         <Stack.Screen
           options={{
-            title: "Specialist Guide",
-            headerStyle: { backgroundColor: "#2b4cca" },
+            title: t("specialist.title"),
+            headerStyle: { backgroundColor: "#04d9ff" },
             headerTintColor: "#ffffff",
           }}
         />
 
         {/* Doctor Card */}
         <LinearGradient
-          colors={["#2b4cca", "#4abbdaff", "#00c6ff"]}
+          colors={["#2b4cca", "#04d9ff", "#00c6ff"]}
           start={{ x: 0, y: 0 }}
           end={{ x: 1, y: 1 }}
           style={styles.doctorContainer}
         >
           <Text
             accessibilityRole="header"
-            accessibilityLabel={`Specialist recommended: ${info.doctor}`}
+            accessibilityLabel={`Specialist recommended: ${doctorName}`}
             style={styles.doctor}
           >
-            Consult {info.doctor}
+            {t("specialist.consultDoctor", { doctor: doctorName })}
           </Text>
         </LinearGradient>
 
-        {/* Red Flags Card */}
-        <View style={styles.card}>
-          <Text style={styles.label}>Red flags to watch for:</Text>
-          <View accessibilityRole="list">
-            {info.redFlags.map((flag, idx) => (
-              <Text key={idx} style={styles.flag}>
-                🚩 {flag}
-              </Text>
-            ))}
+        {/* Red Flags */}
+        {redFlags.length > 0 && (
+          <View style={styles.card}>
+            <Text style={styles.label}>{t("specialist.redFlags")}</Text>
+            <View>
+              {redFlags.map((flag: string, idx: number) => (
+                <View key={idx} style={styles.flagRow}>
+                  <View style={styles.flagPill}>
+                    <Text style={styles.flagEmoji}>🚩</Text>
+                  </View>
+                  <Text style={styles.flagText}>{flag}</Text>
+                </View>
+              ))}
+            </View>
           </View>
-        </View>
+        )}
 
         {/* Search Nearby Button */}
         <TouchableOpacity style={styles.fullWidthButton} onPress={handleSearch}>
           <LinearGradient
-            colors={["#00c6ff", "#4abbdaff", "#2b4cca"]}
+            colors={["#00c6ff", "#04d9ff", "#2b4cca"]}
             start={{ x: 0, y: 0 }}
             end={{ x: 1, y: 1 }}
             style={styles.searchButton}
           >
             <Text style={styles.searchButtonText}>
-              🔎 Find {info.doctor}s nearby
+              {t("specialist.findNearby", { doctor: doctorName })}
             </Text>
           </LinearGradient>
         </TouchableOpacity>
@@ -114,7 +128,7 @@ export default function SpecialistScreen() {
         {/* Home Button */}
         <View style={styles.buttonGroup}>
           <TouchableOpacity style={styles.secondaryButton} onPress={handleHome}>
-            <Text style={styles.buttonText}>🏠 Home</Text>
+            <Text style={styles.buttonText}>{t("specialist.home")}</Text>
           </TouchableOpacity>
         </View>
       </ScrollView>
@@ -123,19 +137,19 @@ export default function SpecialistScreen() {
 }
 
 const styles = StyleSheet.create({
-  safeArea: { flex: 1, backgroundColor: "#eef5fc" },
+  safeArea: { flex: 1, backgroundColor: "#e3faff" },
   scroll: { flex: 1 },
   container: {
     padding: moderateScale(24),
     paddingBottom: verticalScale(80),
-    backgroundColor: "#eef5fc",
+    backgroundColor: "#e3faff",
   },
   centered: {
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
     padding: moderateScale(24),
-    backgroundColor: "#eef5fc",
+    backgroundColor: "#e3faff",
   },
   heading: {
     fontSize: moderateScale(24),
@@ -160,8 +174,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: moderateScale(16),
     marginBottom: verticalScale(20),
     alignItems: "center",
-    borderTopRightRadius: 8,
-    borderBottomLeftRadius: 8,
+    borderTopRightRadius: moderateScale(0),
+    borderBottomLeftRadius: moderateScale(0),
     borderTopLeftRadius: moderateScale(40),
     borderBottomRightRadius: moderateScale(40),
     shadowColor: "#000",
@@ -183,15 +197,6 @@ const styles = StyleSheet.create({
     marginBottom: verticalScale(10),
     lineHeight: moderateScale(24),
   },
-  flag: {
-    fontSize: moderateScale(22),
-    fontWeight: "500",
-    color: "#d32f2f",
-    marginLeft: moderateScale(8),
-    marginVertical: verticalScale(6),
-    lineHeight: moderateScale(26),
-    fontStyle: "italic",
-  },
   fullWidthButton: { alignSelf: "stretch" },
   searchButton: {
     paddingVertical: verticalScale(20),
@@ -210,7 +215,7 @@ const styles = StyleSheet.create({
     marginBottom: verticalScale(20),
   },
   secondaryButton: {
-    backgroundColor: "#eef5fc",
+    backgroundColor: "#e3faff",
     padding: moderateScale(12),
     borderRadius: moderateScale(10),
     borderWidth: 2,
@@ -223,5 +228,38 @@ const styles = StyleSheet.create({
     fontSize: moderateScale(18),
     fontWeight: "600",
     textAlign: "center",
+  },
+  flagRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    marginVertical: verticalScale(8),
+    flexWrap: "wrap",
+  },
+  flagPill: {
+    backgroundColor: "#e3faff",
+    borderRadius: moderateScale(24),
+    paddingVertical: verticalScale(3),
+    paddingHorizontal: moderateScale(4),
+    justifyContent: "center",
+    alignItems: "center",
+    borderWidth: 1,
+    borderColor: "#d32f2f",
+    shadowColor: "#d32f2f",
+    shadowOpacity: 0.2,
+    shadowOffset: { width: 0, height: 1 },
+    shadowRadius: 2,
+    elevation: 2,
+  },
+  flagEmoji: {
+    fontSize: moderateScale(22),
+  },
+  flagText: {
+    flex: 1,
+    marginLeft: moderateScale(8),
+    fontSize: moderateScale(22),
+    fontWeight: "500",
+    color: "#d32f2f",
+    lineHeight: moderateScale(30),
+    fontStyle: "italic",
   },
 });

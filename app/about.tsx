@@ -1,4 +1,3 @@
-// app/about.tsx
 import {
   View,
   Text,
@@ -12,50 +11,43 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { moderateScale } from "react-native-size-matters";
 import { Ionicons } from "@expo/vector-icons";
 import FloatingWhatsAppButton from "./components/FloatingWhatsAppButton";
+import i18n from "@/i18n";
+import { useTranslation } from "@/hooks/useTranslation";
 
 export default function AboutScreen() {
   const router = useRouter();
+  const { t } = useTranslation();
 
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: "#eef5fc" }}>
+    <SafeAreaView style={{ flex: 1, backgroundColor: "#e3faff" }}>
       <ScrollView contentContainerStyle={styles.container}>
         <Stack.Screen
           options={{
-            title: "About The App",
-            headerStyle: { backgroundColor: "#2b4cca" },
+            title: t("about.screenTitle"),
+            headerStyle: { backgroundColor: "#04d9ff" },
             headerTintColor: "#fff",
           }}
         />
 
         <Text
           accessibilityRole="header"
-          accessibilityLabel="About DizzySense"
+          accessibilityLabel={t("about.header")}
           style={styles.title}
         >
-          🌀 About DizzySense
+          {t("about.header")}
         </Text>
 
-        <Text style={styles.paragraph}>
-          DizzySense is a free offline-first app that helps users understand
-          possible causes of dizziness and provides guidance on which medical
-          specialist to consult.
-        </Text>
-
-        <Text style={styles.paragraph}>
-          No personal data is collected. All processing happens on your device.
-        </Text>
-
-        <Text style={styles.paragraph}>
-          DizzySense works fully without internet!
-        </Text>
+        <Text style={styles.paragraph}>{t("about.paragraph1")}</Text>
+        <Text style={styles.paragraph}>{t("about.paragraph2")}</Text>
+        <Text style={styles.paragraph}>{t("about.paragraph3")}</Text>
 
         <View style={styles.section}>
-          <Text style={styles.subheading}>👨‍⚕️ Developer Info</Text>
+          <Text style={styles.subheading}>{t("about.developerInfo")}</Text>
 
           <View style={styles.infoCard}>
-            <Text style={styles.infoTitle}>Dr. Rahul Kapahi</Text>
-            <Text style={styles.infoSubtitle}>ENT Consultant</Text>
-            <Text style={styles.infoText}>🇮🇳 India</Text>
+            <Text style={styles.infoTitle}>{t("about.developerName")}</Text>
+            <Text style={styles.infoSubtitle}>{t("about.developerRole")}</Text>
+            <Text style={styles.infoText}>{t("about.developerCountry")}</Text>
 
             <TouchableOpacity
               style={styles.infoButton}
@@ -69,11 +61,9 @@ export default function AboutScreen() {
               <Ionicons
                 name="mail-outline"
                 size={moderateScale(20)}
-                color="#2b4cca"
+                color="#04d9ff"
               />
-              <Text style={styles.infoButtonText}>
-                entclinicdwarka@gmail.com
-              </Text>
+              <Text style={styles.infoButtonText}>{t("about.emailLabel")}</Text>
             </TouchableOpacity>
 
             <TouchableOpacity
@@ -88,9 +78,11 @@ export default function AboutScreen() {
               <Ionicons
                 name="globe-outline"
                 size={moderateScale(20)}
-                color="#2b4cca"
+                color="#04d9ff"
               />
-              <Text style={styles.infoButtonText}>Clinic Website</Text>
+              <Text style={styles.infoButtonText}>
+                {t("about.websiteLabel")}
+              </Text>
             </TouchableOpacity>
 
             <TouchableOpacity
@@ -107,9 +99,11 @@ export default function AboutScreen() {
               <Ionicons
                 name="location-outline"
                 size={moderateScale(20)}
-                color="#2b4cca"
+                color="#04d9ff"
               />
-              <Text style={styles.infoButtonText}>Directions</Text>
+              <Text style={styles.infoButtonText}>
+                {t("about.directionsLabel")}
+              </Text>
             </TouchableOpacity>
 
             <TouchableOpacity
@@ -122,9 +116,9 @@ export default function AboutScreen() {
               <Ionicons
                 name="call-outline"
                 size={moderateScale(20)}
-                color="#2b4cca"
+                color="#04d9ff"
               />
-              <Text style={styles.infoButtonText}>+91 88000 47117</Text>
+              <Text style={styles.infoButtonText}>{t("about.phoneLabel")}</Text>
             </TouchableOpacity>
 
             <View>
@@ -139,7 +133,7 @@ export default function AboutScreen() {
             accessibilityLabel="Go to privacy policy"
             onPress={() => router.push("/privacy")}
           >
-            <Text style={styles.linkButton}>🛡️ Privacy Policy</Text>
+            <Text style={styles.linkButton}>{t("about.privacyPolicy")}</Text>
           </TouchableOpacity>
 
           <TouchableOpacity
@@ -147,7 +141,7 @@ export default function AboutScreen() {
             accessibilityLabel="Go to terms and conditions of use"
             onPress={() => router.push("/terms")}
           >
-            <Text style={styles.linkButton}>📄 Terms & Conditions</Text>
+            <Text style={styles.linkButton}>{t("about.terms")}</Text>
           </TouchableOpacity>
 
           <Text
@@ -160,13 +154,11 @@ export default function AboutScreen() {
               },
             ]}
           >
-            (Click on the above links to read more)
+            {t("about.clickHint")}
           </Text>
         </View>
 
-        <Text style={styles.footerVersion}>
-          📱 Version 1.1 • September 2025
-        </Text>
+        <Text style={styles.footerVersion}>{t("about.version")}</Text>
 
         <TouchableOpacity
           accessibilityRole="button"
@@ -174,7 +166,7 @@ export default function AboutScreen() {
           style={styles.secondaryButton}
           onPress={() => router.replace("/")}
         >
-          <Text style={styles.buttonText}>🏠 Home</Text>
+          <Text style={styles.buttonText}>{t("about.home")}</Text>
         </TouchableOpacity>
       </ScrollView>
     </SafeAreaView>
@@ -184,7 +176,7 @@ export default function AboutScreen() {
 const styles = StyleSheet.create({
   container: {
     padding: moderateScale(24),
-    backgroundColor: "#eef5fc",
+    backgroundColor: "#e3faff",
     flexGrow: 1,
   },
   title: {
@@ -225,7 +217,7 @@ const styles = StyleSheet.create({
     marginBottom: moderateScale(10),
   },
   secondaryButton: {
-    backgroundColor: "#eef5fc",
+    backgroundColor: "#e3faff",
     padding: moderateScale(12),
     borderRadius: moderateScale(12),
     borderWidth: 2,
@@ -273,7 +265,7 @@ const styles = StyleSheet.create({
     paddingVertical: moderateScale(12),
     paddingHorizontal: moderateScale(16),
     borderTopWidth: 1,
-    borderTopColor: "#eef5fc",
+    borderTopColor: "#e3faff",
   },
   infoButtonText: {
     fontSize: moderateScale(14),

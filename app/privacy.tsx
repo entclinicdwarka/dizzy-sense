@@ -1,117 +1,70 @@
-// app/privacy.tsx
 import { router, Stack } from "expo-router";
 import { ScrollView, Text, StyleSheet, TouchableOpacity } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { moderateScale } from "react-native-size-matters";
+import i18n from "@/i18n";
+import { useTranslation } from "@/hooks/useTranslation";
 
 export default function PrivacyPolicyScreen() {
+  const { t } = useTranslation();
   return (
     <SafeAreaView style={styles.safeArea}>
       <ScrollView contentContainerStyle={styles.container}>
         <Stack.Screen
           options={{
-            title: "Privacy Policy",
-            headerStyle: { backgroundColor: "#2b4cca" },
+            title: t("privacy.title"),
+            headerStyle: { backgroundColor: "#04d9ff" },
             headerTintColor: "#fff",
           }}
         />
 
         <Text
           accessibilityRole="header"
-          accessibilityLabel="Privacy Policy for DizzySense"
+          accessibilityLabel={t("privacy.accessibilityTitle")}
           style={styles.title}
         >
-          🛡️ Privacy Policy for DizzySense
+          {t("privacy.header")}
         </Text>
 
-        <Text style={styles.section}>Effective Date: August 2, 2025</Text>
-        <Text style={styles.section}>Last Updated: September 24, 2025</Text>
+        <Text style={styles.section}>{t("privacy.effectiveDate")}</Text>
+        <Text style={styles.section}>{t("privacy.lastUpdated")}</Text>
 
-        <Text style={styles.paragraph}>
-          🌀 DizzySense (&quot;the App&quot;, &quot;we&quot;, &quot;our&quot;)
-          is a mobile application designed to help users understand possible
-          causes of dizziness and guide them toward appropriate medical
-          specialists. We value your privacy and do not collect any personally
-          identifiable information.
-        </Text>
+        <Text style={styles.paragraph}>{t("privacy.intro")}</Text>
 
-        <Text style={styles.heading}>🔍 Information We Collect</Text>
-        <Text style={styles.paragraph}>
-          We do not collect, store, or transmit any of the following:
-          {"\n\n"}• Your name, email address, phone number, or personal identity
-          {"\n"}• Location or device identifiers
-          {"\n"}• Health records or medical history
-          {"\n\n"}The app runs entirely on your device and does not transmit any
-          quiz responses or data to our servers or any third parties.
-        </Text>
+        <Text style={styles.heading}>{t("privacy.infoCollectHeading")}</Text>
+        <Text style={styles.paragraph}>{t("privacy.infoCollectText")}</Text>
 
-        <Text style={styles.heading}>📱 Device Permissions</Text>
-        <Text style={styles.paragraph}>
-          DizzySense does not request access to your camera, contacts, location,
-          or microphone. It only uses basic device functions necessary to run
-          the app smoothly.
-        </Text>
+        <Text style={styles.heading}>{t("privacy.permissionsHeading")}</Text>
+        <Text style={styles.paragraph}>{t("privacy.permissionsText")}</Text>
 
-        <Text style={styles.heading}>💼 Third-Party Services</Text>
-        <Text style={styles.paragraph}>
-          We do not use any third-party analytics, advertising, or tracking
-          tools (such as Google Analytics, Facebook SDK, etc.).
-        </Text>
-        <Text style={styles.paragraph}>
-          The app may open external websites (e.g. Google Search) for
-          convenience. These are handled by your device&apos;s browser, and
-          DizzySense does not transmit any personal information.
-        </Text>
+        <Text style={styles.heading}>{t("privacy.thirdPartyHeading")}</Text>
+        <Text style={styles.paragraph}>{t("privacy.thirdPartyText1")}</Text>
+        <Text style={styles.paragraph}>{t("privacy.thirdPartyText2")}</Text>
 
-        <Text style={styles.heading}>⚠️ Medical Disclaimer</Text>
-        <Text style={styles.paragraph}>
-          DizzySense is not a substitute for professional medical advice or
-          diagnosis. It is intended for informational purposes only. Always
-          consult a qualified healthcare provider regarding any symptoms or
-          health concerns.
-        </Text>
+        <Text style={styles.heading}>{t("privacy.disclaimerHeading")}</Text>
+        <Text style={styles.paragraph}>{t("privacy.disclaimerText")}</Text>
 
-        <Text style={styles.heading}>🔐 Data Security</Text>
-        <Text style={styles.paragraph}>
-          Since the app does not collect data, there is no personal data to
-          secure or transmit. All symptom selections and quiz logic occur
-          entirely on your device.
-        </Text>
+        <Text style={styles.heading}>{t("privacy.securityHeading")}</Text>
+        <Text style={styles.paragraph}>{t("privacy.securityText")}</Text>
 
-        <Text style={styles.heading}>👶 Children&apos;s Privacy</Text>
-        <Text style={styles.paragraph}>
-          DizzySense is not directed at children under 13. We do not knowingly
-          collect data from anyone, including minors.
-        </Text>
+        <Text style={styles.heading}>{t("privacy.childrenHeading")}</Text>
+        <Text style={styles.paragraph}>{t("privacy.childrenText")}</Text>
 
-        <Text style={styles.heading}>📬 Contact Us</Text>
-        <Text style={styles.paragraph}>
-          If you have any questions about this privacy policy or the app:
-          {"\n"}
-          <Text style={styles.bold}>Email:</Text> entclinicdwarka@gmail.com
-          {"\n"}
-          <Text style={styles.bold}>Developer:</Text> Dr. Rahul Kapahi, ENT
-          Consultant
-          {"\n"}
-          <Text style={styles.bold}>Location:</Text> India
-        </Text>
+        <Text style={styles.heading}>{t("privacy.contactHeading")}</Text>
+        <Text style={styles.paragraph}>{t("privacy.contactText")}</Text>
 
-        <Text style={styles.heading}>✅ Summary</Text>
-        <Text style={styles.paragraph}>
-          Your privacy is important to us. DizzySense was built with the goal of
-          providing safe, offline-first medical guidance without any tracking,
-          advertising, or data collection.
-        </Text>
+        <Text style={styles.heading}>{t("privacy.summaryHeading")}</Text>
+        <Text style={styles.paragraph}>{t("privacy.summaryText")}</Text>
 
-        <Text style={styles.version}>Version 1.1 • September 2025</Text>
+        <Text style={styles.version}>{t("privacy.version")}</Text>
 
         <TouchableOpacity
           accessibilityRole="button"
-          accessibilityLabel="Go back to the home screen"
+          accessibilityLabel={t("privacy.homeButtonLabel")}
           style={styles.secondaryButton}
           onPress={() => router.replace("/")}
         >
-          <Text style={[styles.buttonText, { color: "#2b4cca" }]}>🏠 Home</Text>
+          <Text style={styles.buttonText}>{t("privacy.homeButton")}</Text>
         </TouchableOpacity>
       </ScrollView>
     </SafeAreaView>
@@ -119,10 +72,10 @@ export default function PrivacyPolicyScreen() {
 }
 
 const styles = StyleSheet.create({
-  safeArea: { flex: 1, backgroundColor: "#eef5fc" },
+  safeArea: { flex: 1, backgroundColor: "#e3faff" },
   container: {
     padding: moderateScale(20),
-    backgroundColor: "#eef5fc",
+    backgroundColor: "#e3faff",
   },
   title: {
     fontSize: moderateScale(22),
@@ -153,7 +106,7 @@ const styles = StyleSheet.create({
     color: "#2b4cca",
   },
   secondaryButton: {
-    backgroundColor: "#eef5fc",
+    backgroundColor: "#e3faff",
     padding: moderateScale(12),
     borderRadius: moderateScale(10),
     borderWidth: 2,
@@ -164,7 +117,7 @@ const styles = StyleSheet.create({
     marginBottom: moderateScale(60),
   },
   buttonText: {
-    color: "#fff",
+    color: "#2b4cca",
     fontSize: moderateScale(16),
     fontWeight: "600",
     textAlign: "center",

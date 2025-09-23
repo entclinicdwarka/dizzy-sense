@@ -1,0 +1,416 @@
+{
+  "customHeader": {
+    "title": "🌀 DizzySense"
+  },
+  "whatsapp": {
+    "message": "Hello, I want to book an appointment with Dr. Rahul Kapahi.",
+    "alertTitle": "无法打开 WhatsApp",
+    "alertMessage": "您的设备上似乎未安装或无法访问 WhatsApp。",
+    "accessibilityHint": "打开与 Rahul Kapahi 医生诊所的 WhatsApp 聊天",
+    "accessibilityLabel": "通过 WhatsApp 联系我们"
+  },
+  "questionEngine": {},
+  "common": {
+    "yes": "是",
+    "no": "否"
+  },
+  "questions": {
+    "loading": "正在准备您的结果...",
+    "step": "步骤 {{step}}",
+    "start": {
+      "text": "您感觉到哪种类型的眩晕？",
+      "options": {
+        "spinning": "旋转感",
+        "blackout": "晕厥 / 失去意识",
+        "lightheaded": "头晕 / 站立不稳",
+        "vision": "视觉障碍",
+        "neck": "颈部相关眩晕"
+      }
+    },
+    "spinning_duration": {
+      "text": "旋转眩晕通常持续多久？",
+      "options": {
+        "seconds": "几秒钟",
+        "minutes_hours": "几分钟到几小时",
+        "hours_days": "几小时到几天"
+      }
+    },
+    "spinning_trigger": {
+      "text": "这些眩晕是否由体位变化触发？（如躺下、转头）"
+    },
+    "hearing_issues": {
+      "text": "您是否有耳闷、耳鸣或听力下降？"
+    },
+    "upper_respiratory": {
+      "text": "您最近是否有感冒、鼻窦感染或上呼吸道感染？"
+    },
+    "head_trauma": {
+      "text": "您最近是否有头部外伤或受伤？"
+    },
+    "nausea_vomiting": {
+      "text": "您是否有持续的恶心或呕吐？"
+    },
+    "blackout_trigger": {
+      "text": "晕厥通常在什么时候发生？",
+      "options": {
+        "exertion": "运动时",
+        "standing": "快速起身时",
+        "random": "随机发生，无明确诱因"
+      }
+    },
+    "cardio_palpitations": {
+      "text": "晕厥时，您是否感到胸闷、心悸或呼吸急促？"
+    },
+    "neuro_syncopal": {
+      "text": "晕厥期间是否出现语言不清、意识混乱或肢体无力？"
+    },
+    "lightheaded_trigger": {
+      "text": "您在什么时候感到头晕或不稳？",
+      "options": {
+        "activity": "运动或站立时",
+        "random": "随机，包括坐着或躺着时",
+        "stress": "紧张或焦虑时",
+        "infection": "发热、寒战或近期感染时",
+        "unexplained": "伴随不明原因症状时"
+      }
+    },
+    "endocrine_symptoms": {
+      "text": "您是否有不明原因的疲劳、体重变化或出汗过多？"
+    },
+    "psychiatric_stress": {
+      "text": "您是否感到与现实脱节（现实感消失）？"
+    },
+    "psychiatric_anxiety": {
+      "text": "这些症状是否伴随恐慌发作或焦虑？"
+    },
+    "systemic_infection": {
+      "text": "您最近是否有病毒感染、不明原因的发热或疲劳？"
+    },
+    "vision_issues": {
+      "text": "您是否有视力模糊、复视、聚焦困难或眼疲劳？"
+    },
+    "vision_additional": {
+      "text": "这些症状是否伴随头痛、眩晕或恶心？"
+    },
+    "neuro_or_ophthalmology": {
+      "text": "这些视觉症状是否伴随肢体无力或语言不清？"
+    },
+    "neck_pain_relation": {
+      "text": "您的眩晕是否与颈部疼痛或活动受限有关？"
+    },
+    "neck_additional": {
+      "text": "您是否有头痛、手臂或手部麻木/刺痛？"
+    },
+    "ent": { "text": "请咨询耳鼻喉科医生。" },
+    "cardio": { "text": "请咨询心脏科医生。" },
+    "neuro": { "text": "请咨询神经科医生。" },
+    "psychiatry": { "text": "请咨询精神科医生。" },
+    "orthopedics": { "text": "请咨询骨科医生。" },
+    "endocrinology": { "text": "请咨询内分泌科医生。" },
+    "ophthalmology": { "text": "请咨询眼科医生。" },
+    "infectious": { "text": "请咨询感染科医生。" },
+    "general": { "text": "⚠️ 有红旗症状，请立即就医。" }
+  },
+  "options": {
+    "spinning": "旋转感",
+    "blackout": "晕厥 / 失去意识",
+    "lightheaded": "头晕 / 站立不稳",
+    "visual_disturbances": "视觉障碍",
+    "neck_related": "颈部相关眩晕"
+  },
+  "dizziness": {
+    "spinning": {
+      "title": "旋转感",
+      "desc": "感觉房间或自己在移动或旋转。"
+    },
+    "blackout": {
+      "title": "晕厥 / 失去意识",
+      "desc": "感觉快要昏倒或完全失去意识。"
+    },
+    "lightheaded": {
+      "title": "头晕",
+      "desc": "一种漂浮、头昏眼花的感觉——不像旋转，但令人迷惑。"
+    },
+    "unsteady": {
+      "title": "站立不稳",
+      "desc": "走路或站立时感到失衡或摇晃。"
+    },
+    "neck": {
+      "title": "颈部 / 姿势相关",
+      "desc": "在移动或保持颈部某些姿势时感到头晕。"
+    },
+    "modalTitle": "眩晕类型",
+    "close": "关闭"
+  },
+  "specialties": {
+    "ent": "请咨询耳鼻喉科医生。",
+    "cardio": "请咨询心脏科医生。",
+    "neuro": "请咨询神经科医生。",
+    "psychiatry": "请咨询精神科医生。",
+    "orthopedics": "请咨询骨科医生。",
+    "endocrinology": "请咨询内分泌科医生。",
+    "ophthalmology": "请咨询眼科医生。",
+    "infectious": "请咨询感染科医生。",
+    "general": "⚠️ 出现红旗症状，请立即就医。"
+  },
+  "results": {
+    "ent": {
+      "label": "耳部相关眩晕",
+      "doctor": "耳鼻喉科医生",
+      "description": "症状提示可能为内耳或平衡系统问题，常引起体位性眩晕。",
+      "redFlags": [
+        "听力突然下降或逐渐下降",
+        "头部运动时持续失衡",
+        "体位变化时伴恶心/呕吐"
+      ],
+      "nextSteps": "在黑暗安静的房间休息。避免突然动作。",
+      "contact": "前往当地耳鼻喉科诊所或医院就诊。"
+    },
+    "cardio": {
+      "label": "心脏相关眩晕",
+      "doctor": "心脏科医生",
+      "description": "模式提示可能为心血管原因，如血压变化或心律失常。",
+      "redFlags": [
+        "胸部紧迫感或呼吸急促",
+        "活动或站立时晕厥",
+        "心悸或心律不齐"
+      ],
+      "nextSteps": "保持水分，避免过度活动，尽快就医。",
+      "contact": "前往最近医院的心脏科就诊。"
+    },
+    "neuro": {
+      "label": "神经系统相关眩晕",
+      "doctor": "神经科医生",
+      "description": "可能与偏头痛、平衡中枢或短暂性脑缺血事件相关。",
+      "redFlags": ["言语含糊", "四肢无力或麻木", "视力模糊或复视"],
+      "nextSteps": "避免压力，并记录症状以便就医咨询。",
+      "contact": "就诊神经科医生，进行脑和神经系统评估。"
+    },
+    "psychiatry": {
+      "label": "精神科相关眩晕",
+      "doctor": "精神科医生",
+      "description": "症状可能源自焦虑、惊恐障碍或躯体化障碍。",
+      "redFlags": ["持续焦虑", "人格解体或现实感消失", "睡眠障碍"],
+      "nextSteps": "练习放松技巧，并咨询心理健康专业人士。",
+      "contact": "前往心理健康诊所或精神科医生就诊。"
+    },
+    "orthopedics": {
+      "label": "骨科相关眩晕",
+      "doctor": "骨科医生",
+      "description": "症状与颈部疼痛或颈椎疾病相关。",
+      "redFlags": ["颈部僵硬", "疼痛放射至手臂", "颈部活动受限"],
+      "nextSteps": "避免颈部劳损，并进行骨科评估。",
+      "contact": "前往骨科诊所进行脊柱检查。"
+    },
+    "endocrinology": {
+      "label": "内分泌相关眩晕",
+      "doctor": "内分泌科医生",
+      "description": "可能与血糖波动、甲状腺功能异常或激素失衡有关。",
+      "redFlags": ["无明显原因的疲劳", "体重变化", "出汗过多"],
+      "nextSteps": "监测症状，并咨询内分泌科医生进行检测。",
+      "contact": "前往内分泌科医生处进行激素评估。"
+    },
+    "ophthalmology": {
+      "label": "眼科相关眩晕",
+      "doctor": "眼科医生",
+      "description": "视觉障碍引起眩晕，可能由眼肌或视神经功能异常导致。",
+      "redFlags": ["视力模糊", "复视", "聚焦困难"],
+      "nextSteps": "避免视觉疲劳，并咨询眼科专家。",
+      "contact": "前往眼科诊所就诊。"
+    },
+    "infectious": {
+      "label": "感染相关眩晕",
+      "doctor": "内科医生",
+      "description": "可能由系统性疾病引起，如感染、贫血或脱水。",
+      "redFlags": ["发热", "疲劳", "近期病毒感染"],
+      "nextSteps": "保持水分，尽快就医。",
+      "contact": "前往最近医院的内科就诊。"
+    },
+    "general": {
+      "label": "不明原因或红旗症状眩晕",
+      "doctor": "全科医生",
+      "description": "红旗症状需要紧急、全面的医疗评估。",
+      "redFlags": [
+        "突发严重头痛（人生最严重的头痛）",
+        "急性视力丧失、视力模糊或复视",
+        "突然听力下降",
+        "四肢无力、麻木或面部下垂",
+        "说话困难、言语含糊或意识混乱",
+        "失去意识或不明原因晕厥",
+        "严重胸痛、心悸或呼吸急促",
+        "无明显原因的发热、寒战或感染迹象",
+        "持续呕吐或脱水",
+        "行走不稳、跌倒或无法安全行走",
+        "头部外伤后出现新发严重眩晕",
+        "症状快速恶化或进展",
+        "严重疲劳或不明原因体重下降",
+        "低血糖迹象（出汗、颤抖、意识混乱）"
+      ],
+      "nextSteps": "立即前往最近医院就诊。",
+      "contact": "请就诊全科医生进行全面检查。"
+    }
+  },
+  "quiz/index": {
+    "index": {
+      "title": "问题"
+    }
+  },
+  "quiz/result": {
+    "header": "您的结果",
+    "unknown": {
+      "label": "结果未识别",
+      "description": "无法确定具体结果，请重试。"
+    },
+    "answersTitle": "🧾 您的答案：",
+    "qPrefix": "问.",
+    "aPrefix": "答.",
+    "meaningTitle": "💬 可能的含义：",
+    "findDoctorButton": "👉 我应该咨询哪位医生？",
+    "homeButton": "🏠 首页",
+    "accessibility": {
+      "findDoctor": "点击查找合适的医生"
+    }
+  },
+  "layout": {
+    "disclaimer": {
+      "text1": "🛑🚫 本应用仅提供一般信息，",
+      "notSubstitute": "不能替代",
+      "text2": "专业医疗建议、诊断或治疗。请始终咨询",
+      "provider": "合格的医疗专业人员"
+    },
+    "footer": {
+      "aboutLink": "关于 / 条款 / 隐私",
+      "note": "Dr. Rahul Kapahi · 用于健康科普，不用于诊断",
+      "accessibility": "打开关于页面及条款与隐私政策"
+    }
+  },
+  "about": {
+    "screenTitle": "关于应用",
+    "header": "🌀 关于 DizzySense",
+    "paragraph1": "DizzySense 是一款免费、离线优先的应用，帮助用户了解眩晕的可能原因，并提供应咨询哪类专业医生的指导。",
+    "paragraph2": "不收集任何个人数据。所有处理均在您的设备上完成。",
+    "paragraph3": "DizzySense 可完全离线使用！",
+    "developerInfo": "👨‍⚕️ 开发者信息",
+    "developerName": "Dr. Rahul Kapahi",
+    "developerRole": "耳鼻喉科医生",
+    "developerCountry": "🇮🇳 印度",
+    "emailLabel": "entclinicdwarka@gmail.com",
+    "websiteLabel": "诊所网站",
+    "directionsLabel": "路线",
+    "phoneLabel": "+91 88000 47117",
+    "privacyPolicy": "🛡️ 隐私政策",
+    "terms": "📄 条款与条件",
+    "clickHint": "（点击以上链接查看更多）",
+    "version": "📱 版本 1.1 • 2025年9月",
+    "home": "🏠 首页"
+  },
+  "home": {
+    "feelingHeading": "感觉不稳或头晕？",
+    "subtitle1": "不确定是眩晕、头晕、眼花还是昏厥？",
+    "subtitle2": "通过简短问卷帮助您：",
+    "bullet1": "👉 了解您正在经历的症状。",
+    "bullet2": "👉 了解常见原因及警示信号。",
+    "bullet3": "👉 获取清晰的就诊指导，选择合适的专家。",
+    "startQuiz": "开始症状问卷"
+  },
+  "appName": "DizzySense",
+  "privacy": {
+    "title": "隐私政策",
+    "accessibilityTitle": "DizzySense 隐私政策",
+    "header": "🛡️ DizzySense 隐私政策",
+    "effectiveDate": "生效日期：2025年8月2日",
+    "lastUpdated": "最后更新：2025年9月24日",
+    "intro": "🌀 DizzySense（“本应用”，“我们”）是一款移动应用，旨在帮助用户了解眩晕的可能原因，并指导用户就诊适当的专业医生。我们重视您的隐私，不收集任何个人身份信息。",
+
+    "infoCollectHeading": "🔍 我们收集的信息",
+    "infoCollectText": "我们不收集、存储或传输以下任何信息：\n\n• 您的姓名、电子邮件、电话号码或个人身份信息\n• 位置信息或设备标识符\n• 健康记录或病史\n\n应用完全在您的设备上运行，不会将问卷回答或数据传输到我们的服务器或任何第三方。",
+
+    "permissionsHeading": "📱 设备权限",
+    "permissionsText": "DizzySense 不会请求访问您的相机、联系人、位置或麦克风。应用仅使用运行所需的基本设备功能。",
+
+    "thirdPartyHeading": "💼 第三方服务",
+    "thirdPartyText1": "我们不使用任何第三方分析、广告或跟踪工具（如 Google Analytics、Facebook SDK 等）。",
+    "thirdPartyText2": "应用可能会为方便打开外部网站（例如 Google 搜索）。这些操作由设备浏览器处理，DizzySense 不会传输任何个人信息。",
+
+    "disclaimerHeading": "⚠️ 医疗免责声明",
+    "disclaimerText": "DizzySense 不能替代专业医疗建议或诊断，仅用于提供信息。遇到任何症状或健康问题，请始终咨询合格的医疗专业人员。",
+
+    "securityHeading": "🔐 数据安全",
+    "securityText": "由于应用不收集数据，因此无需保护或传输个人数据。所有症状选择和问卷逻辑完全在您的设备上进行。",
+
+    "childrenHeading": "👶 儿童隐私",
+    "childrenText": "DizzySense 不针对13岁以下儿童。我们不会有意收集任何人的数据，包括未成年人。",
+
+    "contactHeading": "📬 联系我们",
+    "contactText": "如对本隐私政策或应用有任何疑问：\n邮箱：entclinicdwarka@gmail.com\n开发者：Dr. Rahul Kapahi，耳鼻喉科医生\n地点：印度",
+
+    "summaryHeading": "✅ 总结",
+    "summaryText": "您的隐私对我们很重要。DizzySense 的目标是提供安全、离线优先的医疗指导，不含任何跟踪、广告或数据收集。",
+
+    "version": "版本 1.1 • 2025年9月",
+    "homeButton": "🏠 首页",
+    "homeButtonLabel": "返回首页"
+  },
+  "specialist": {
+    "title": "专家指南",
+    "invalidResult": "结果参数无效。",
+    "noSpecialist": "未找到匹配的专家。",
+    "consultDoctor": "咨询 {{doctor}}",
+    "redFlags": "需注意的红旗症状：",
+    "findNearby": "🔎 查找附近的 {{doctor}}",
+    "home": "🏠 首页",
+    "errorSearch": "打开搜索时出错。",
+    "cannotOpen": "无法打开搜索链接"
+  },
+  "terms": {
+    "title": "📄 条款与条件",
+    "headerAccessibility": "DizzySense 条款与条件",
+    "effectiveDate": "生效日期：2025年8月2日",
+    "lastUpdated": "最后更新：2025年9月24日",
+    "intro": "使用 🌀DizzySense（“本应用”，“我们”）即表示您同意以下条款和条件。请在使用应用前仔细阅读。",
+
+    "useOfApp": {
+      "heading": "1. 应用使用",
+      "paragraph": "DizzySense 旨在提供与眩晕相关的一般信息和指导。它不能替代专业医疗评估、诊断或治疗。"
+    },
+
+    "medicalDisclaimer": {
+      "heading": "2. 医疗免责声明",
+      "paragraph": "本应用不提供医疗建议。如出现症状或有健康相关问题，请始终咨询合格的医疗专业人员。不要因应用信息而延误专业治疗。"
+    },
+
+    "noDataCollection": {
+      "heading": "3. 不收集数据",
+      "paragraph1": "应用不收集或存储任何个人数据。所有症状输入和交互均保留在您的设备上。我们不会跟踪、存储或分享您的数据。",
+      "paragraph2": "应用可能会为方便打开外部网站（如 Google 搜索）。这些操作由您的设备浏览器处理，DizzySense 不会传输任何个人信息。"
+    },
+
+    "intellectualProperty": {
+      "heading": "4. 知识产权",
+      "paragraph": "应用内的所有内容，包括文字、布局和视觉素材，均为 Dr. Rahul Kapahi 的知识产权。未经许可，您不得复制或重新分发应用的任何部分。"
+    },
+
+    "limitation": {
+      "heading": "5. 责任限制",
+      "paragraph": "我们不对因使用或误用本应用而产生的任何损害或伤害负责，包括依赖应用提供的指导。使用本应用风险自担。"
+    },
+
+    "changes": {
+      "heading": "6. 条款变更",
+      "paragraph": "我们可能会不时更新这些条款。应用内始终提供最新版本。继续使用应用即表示您接受任何更改。"
+    },
+
+    "contact": {
+      "heading": "7. 联系方式",
+      "paragraph": "如对这些条款有任何疑问或关注：",
+      "emailLabel": "邮箱：",
+      "developerLabel": "开发者：",
+      "locationLabel": "地点："
+    },
+
+    "version": "版本 1.1 • 2025年9月",
+    "homeButton": "🏠 首页",
+    "homeButtonAccessibility": "返回首页"
+  },
+  "language": "更改语言"
+}

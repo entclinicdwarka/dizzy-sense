@@ -9,15 +9,17 @@ import {
 } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { moderateScale } from "react-native-size-matters";
+import i18n from "@/i18n";
+import { useTranslation } from "@/hooks/useTranslation";
 
 const whatsappNumber = "+918800047117";
 
 export default function FloatingWhatsAppButton() {
   const insets = useSafeAreaInsets();
+  const { t } = useTranslation();
 
   const openWhatsApp = async () => {
-    const message =
-      "Hello, I want to book an appointment with Dr. Rahul Kapahi.";
+    const message = t("whatsapp.message");
     const appUrl = `whatsapp://send?phone=${whatsappNumber}&text=${encodeURIComponent(
       message
     )}`;
@@ -34,10 +36,7 @@ export default function FloatingWhatsAppButton() {
         await Linking.openURL(webUrl);
       }
     } catch {
-      Alert.alert(
-        "Unable to open WhatsApp",
-        "It looks like WhatsApp is not installed or accessible on your device."
-      );
+      Alert.alert(t("whatsapp.alertTitle"), t("whatsapp.alertMessage"));
     }
   };
 
@@ -51,9 +50,9 @@ export default function FloatingWhatsAppButton() {
       }}
     >
       <TouchableOpacity
-        accessibilityHint="Opens WhatsApp chat with Dr. Rahul Kapahi's clinic"
+        accessibilityHint={t("whatsapp.accessibilityHint")}
         accessibilityRole="button"
-        accessibilityLabel="Contact us on WhatsApp"
+        accessibilityLabel={t("whatsapp.accessibilityLabel")}
         style={styles.fab}
         onPress={openWhatsApp}
       >
@@ -68,7 +67,7 @@ export default function FloatingWhatsAppButton() {
 
 const styles = StyleSheet.create({
   fab: {
-    backgroundColor: "#eef5fc",
+    backgroundColor: "#e3faff",
     width: moderateScale(64),
     height: moderateScale(64),
     borderRadius: moderateScale(40),

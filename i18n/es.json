@@ -1,0 +1,419 @@
+{
+  "customHeader": {
+    "title": "🌀 DizzySense"
+  },
+  "whatsapp": {
+    "message": "Hello, I want to book an appointment with Dr. Rahul Kapahi.",
+    "alertTitle": "No se puede abrir WhatsApp",
+    "alertMessage": "Parece que WhatsApp no está instalado o accesible en tu dispositivo.",
+    "accessibilityHint": "Abre el chat de WhatsApp con la clínica del Dr. Rahul Kapahi",
+    "accessibilityLabel": "Contáctanos por WhatsApp"
+  },
+  "questionEngine": {},
+  "common": {
+    "yes": "Sí",
+    "no": "No"
+  },
+  "questions": {
+    "loading": "Preparando tu resultado...",
+    "step": "Paso {{step}}",
+    "start": {
+      "text": "¿Qué tipo de mareo estás sintiendo?",
+      "options": {
+        "spinning": "Vértigo/Giro",
+        "blackout": "Desmayo / Pérdida de conciencia",
+        "lightheaded": "Aturdimiento / Inestabilidad",
+        "vision": "Alteraciones visuales",
+        "neck": "Mareo relacionado con el cuello"
+      }
+    },
+    "spinning_duration": {
+      "text": "¿Cuánto suelen durar tus episodios de giro?",
+      "options": {
+        "seconds": "Segundos",
+        "minutes_hours": "Minutos a horas",
+        "hours_days": "Horas a días"
+      }
+    },
+    "spinning_trigger": {
+      "text": "¿Se desencadenan por cambios de posición (por ejemplo, al acostarse o girar)?"
+    },
+    "hearing_issues": {
+      "text": "¿Sientes plenitud en los oídos, zumbido (tinnitus) o pérdida de audición?"
+    },
+    "upper_respiratory": {
+      "text": "¿Has tenido algún resfriado reciente, infección sinusal o infección respiratoria superior?"
+    },
+    "head_trauma": {
+      "text": "¿Algún antecedente reciente de traumatismo o lesión en la cabeza?"
+    },
+    "nausea_vomiting": {
+      "text": "¿También experimentas náuseas o vómitos persistentes?"
+    },
+    "blackout_trigger": {
+      "text": "¿Cuándo suelen ocurrir los desmayos?",
+      "options": {
+        "exertion": "Durante el esfuerzo",
+        "standing": "Al ponerse de pie rápidamente",
+        "random": "Aleatoriamente sin un desencadenante claro"
+      }
+    },
+    "cardio_palpitations": {
+      "text": "¿Sientes opresión en el pecho, palpitaciones o falta de aire durante los desmayos?"
+    },
+    "neuro_syncopal": {
+      "text": "¿Alguna vez tienes habla arrastrada, confusión o debilidad en las extremidades durante estos episodios?"
+    },
+    "lightheaded_trigger": {
+      "text": "¿Cuándo te sientes aturdido o inestable?",
+      "options": {
+        "activity": "Durante actividad física o al estar de pie",
+        "random": "Aleatoriamente, incluso al sentarse o recostarse",
+        "stress": "En momentos de estrés o ansiedad",
+        "infection": "Con fiebre, escalofríos o infección reciente",
+        "unexplained": "Con síntomas inexplicables"
+      }
+    },
+    "endocrine_symptoms": {
+      "text": "¿Experimentas fatiga inexplicada, aumento/pérdida de peso o sudoración excesiva?"
+    },
+    "psychiatric_stress": {
+      "text": "¿Te sientes desconectado de la realidad (desrealización)?"
+    },
+    "psychiatric_anxiety": {
+      "text": "¿Estos síntomas coinciden con ataques de pánico o ansiedad?"
+    },
+    "systemic_infection": {
+      "text": "¿Has tenido infecciones virales recientes, fiebre inexplicada o fatiga?"
+    },
+    "vision_issues": {
+      "text": "¿Experimentas visión borrosa, visión doble, dificultad para enfocar o fatiga ocular?"
+    },
+    "vision_additional": {
+      "text": "¿Estos síntomas se asocian con dolor de cabeza, mareo o náuseas?"
+    },
+    "neuro_or_ophthalmology": {
+      "text": "¿Estos síntomas visuales se acompañan de debilidad en las extremidades o habla arrastrada?"
+    },
+    "neck_pain_relation": {
+      "text": "¿Tu mareo está relacionado con dolor de cuello o rango de movimiento limitado?"
+    },
+    "neck_additional": {
+      "text": "¿Tienes dolor de cabeza, hormigueo o entumecimiento en brazos o manos?"
+    },
+    "ent": { "text": "Consulta a un especialista en ORL." },
+    "cardio": { "text": "Consulta a un cardiólogo." },
+    "neuro": { "text": "Consulta a un neurólogo." },
+    "psychiatry": { "text": "Consulta a un psiquiatra." },
+    "orthopedics": { "text": "Consulta a un ortopedista." },
+    "endocrinology": { "text": "Consulta a un endocrinólogo." },
+    "ophthalmology": { "text": "Consulta a un oftalmólogo." },
+    "infectious": {
+      "text": "Consulta a un especialista en enfermedades infecciosas."
+    },
+    "general": {
+      "text": "⚠️ Consulta a un médico urgentemente debido a síntomas de alerta."
+    }
+  },
+  "options": {
+    "spinning": "Vértigo/Giro",
+    "blackout": "Desmayo / Pérdida de conciencia",
+    "lightheaded": "Aturdimiento / Inestabilidad",
+    "visual_disturbances": "Alteraciones visuales",
+    "neck_related": "Mareo relacionado con el cuello"
+  },
+  "dizziness": {
+    "spinning": {
+      "title": "Vértigo/Giro",
+      "desc": "Sensación de que la habitación o tú te estás moviendo o rotando."
+    },
+    "blackout": {
+      "title": "Desmayo / Pérdida de conciencia",
+      "desc": "Sensación de casi desmayo o pérdida completa de conciencia."
+    },
+    "lightheaded": {
+      "title": "Aturdimiento",
+      "desc": "Sensación flotante, mareada, no exactamente giratoria, pero desorientadora."
+    },
+    "unsteady": {
+      "title": "Inestabilidad",
+      "desc": "Sensación de desequilibrio o bamboleo al caminar o estar de pie."
+    },
+    "neck": {
+      "title": "Cuello / Relacionado con la postura",
+      "desc": "Sentir mareo al mover o mantener el cuello en ciertas posiciones."
+    },
+    "modalTitle": "Tipos de Mareo",
+    "close": "Cerrar"
+  },
+  "specialties": {
+    "ent": "Consulta a un especialista en ORL.",
+    "cardio": "Consulta a un cardiólogo.",
+    "neuro": "Consulta a un neurólogo.",
+    "psychiatry": "Consulta a un psiquiatra.",
+    "orthopedics": "Consulta a un ortopedista.",
+    "endocrinology": "Consulta a un endocrinólogo.",
+    "ophthalmology": "Consulta a un oftalmólogo.",
+    "infectious": "Consulta a un especialista en enfermedades infecciosas.",
+    "general": "⚠️ Consulta a un médico urgentemente debido a síntomas de alerta."
+  },
+  "results": {
+    "ent": {
+      "label": "Vértigo relacionado con oído",
+      "doctor": "Especialista ORL",
+      "description": "Los síntomas sugieren un problema en el oído interno o el sistema de equilibrio, causando vértigo posicional comúnmente.",
+      "redFlags": [
+        "Pérdida de audición súbita o progresiva",
+        "Desequilibrio persistente con movimiento de cabeza",
+        "Náuseas/vómitos al cambiar de posición"
+      ],
+      "nextSteps": "Descansa en una habitación oscura y tranquila. Evita movimientos bruscos.",
+      "contact": "Visita una clínica o hospital ORL local."
+    },
+    "cardio": {
+      "label": "Mareo relacionado con el corazón",
+      "doctor": "Cardiólogo",
+      "description": "El patrón sugiere una causa cardiovascular como cambios de presión arterial o arritmia.",
+      "redFlags": [
+        "Opresión en el pecho o falta de aire",
+        "Desmayo durante actividad o al ponerse de pie",
+        "Palpitaciones o ritmo cardíaco irregular"
+      ],
+      "nextSteps": "Mantente hidratado y evita esfuerzos hasta ser evaluado por un médico.",
+      "contact": "Visita el departamento de cardiología en el hospital más cercano."
+    },
+    "neuro": {
+      "label": "Mareo de origen neurológico",
+      "doctor": "Neurólogo",
+      "description": "Posible vínculo con migrañas, centros de equilibrio o eventos isquémicos transitorios.",
+      "redFlags": [
+        "Habla arrastrada",
+        "Debilidad o entumecimiento en extremidades",
+        "Visión borrosa o doble"
+      ],
+      "nextSteps": "Evita el estrés y toma nota de los síntomas para la consulta médica.",
+      "contact": "Consulta a un neurólogo para evaluación del cerebro y sistema nervioso."
+    },
+    "psychiatry": {
+      "label": "Mareo de origen psiquiátrico",
+      "doctor": "Psiquiatra",
+      "description": "Los síntomas pueden derivar de ansiedad, trastorno de pánico o trastornos somatoformes.",
+      "redFlags": [
+        "Preocupación persistente",
+        "Despersonalización o desrealización",
+        "Alteraciones del sueño"
+      ],
+      "nextSteps": "Practica técnicas de relajación y consulta a profesionales de salud mental.",
+      "contact": "Visita una clínica de salud mental o psiquiatra."
+    },
+    "orthopedics": {
+      "label": "Mareo de origen ortopédico",
+      "doctor": "Ortopedista",
+      "description": "Síntomas relacionados con dolor de cuello o trastornos de la columna cervical.",
+      "redFlags": [
+        "Rigidez en el cuello",
+        "Dolor irradiado a brazos",
+        "Movimiento limitado del cuello"
+      ],
+      "nextSteps": "Evita tensiones en el cuello y busca evaluación ortopédica.",
+      "contact": "Visita una clínica ortopédica para evaluación de la columna."
+    },
+    "endocrinology": {
+      "label": "Mareo de origen endocrino",
+      "doctor": "Endocrinólogo",
+      "description": "Podría estar relacionado con fluctuaciones de azúcar, disfunción tiroidea o desequilibrio hormonal.",
+      "redFlags": [
+        "Fatiga inexplicada",
+        "Cambios de peso",
+        "Sudoración excesiva"
+      ],
+      "nextSteps": "Monitorea los síntomas y consulta a un endocrinólogo para pruebas.",
+      "contact": "Consulta a un endocrinólogo para evaluación hormonal."
+    },
+    "ophthalmology": {
+      "label": "Mareo de origen ocular",
+      "doctor": "Oftalmólogo",
+      "description": "Alteraciones visuales que causan mareo, por disfunción de músculos o nervio óptico.",
+      "redFlags": ["Visión borrosa", "Visión doble", "Dificultad para enfocar"],
+      "nextSteps": "Evita esfuerzo visual y consulta a un especialista ocular.",
+      "contact": "Visita una clínica de oftalmología."
+    },
+    "infectious": {
+      "label": "Mareo relacionado con infecciones",
+      "doctor": "Medicina Interna",
+      "description": "Posibles causas sistémicas como infección, anemia o deshidratación.",
+      "redFlags": ["Fiebre", "Fatiga", "Infección viral reciente"],
+      "nextSteps": "Mantente hidratado y consulta al médico urgentemente.",
+      "contact": "Visita el hospital más cercano para consulta de medicina interna."
+    },
+    "general": {
+      "label": "Mareo no especificado o con señales de alerta",
+      "doctor": "Médico general",
+      "description": "Los síntomas de alerta requieren evaluación médica urgente y completa.",
+      "redFlags": [
+        "Dolor de cabeza súbito y severo",
+        "Pérdida aguda de visión, visión borrosa o doble",
+        "Pérdida repentina de audición",
+        "Debilidad en extremidades, entumecimiento o caída facial",
+        "Dificultad para hablar, habla arrastrada o confusión",
+        "Pérdida de conciencia o desmayo inexplicable",
+        "Dolor torácico severo, palpitaciones o falta de aire",
+        "Fiebre inexplicada, escalofríos o signos de infección",
+        "Vómitos persistentes o deshidratación",
+        "Inestabilidad al caminar, caídas o incapacidad de moverse con seguridad",
+        "Mareo súbito tras trauma craneal",
+        "Síntomas que empeoran rápidamente",
+        "Fatiga severa o pérdida de peso inexplicada",
+        "Signos de hipoglucemia (sudor, temblores, confusión)"
+      ],
+      "nextSteps": "Visita el hospital más cercano inmediatamente.",
+      "contact": "Consulta a un médico general para evaluación completa."
+    }
+  },
+  "quiz/index": {
+    "index": {
+      "title": "Preguntas"
+    }
+  },
+  "quiz/result": {
+    "header": "Tu Resultado",
+    "unknown": {
+      "label": "Resultado No Reconocido",
+      "description": "No pudimos determinar un resultado específico. Por favor, inténtalo de nuevo."
+    },
+    "answersTitle": "🧾 Tus Respuestas:",
+    "qPrefix": "P.",
+    "aPrefix": "R.",
+    "meaningTitle": "💬 Qué podría significar:",
+    "findDoctorButton": "👉 ¿Qué especialista debo consultar?",
+    "homeButton": "🏠 Inicio",
+    "accessibility": {
+      "findDoctor": "Toca para encontrar el especialista adecuado"
+    }
+  },
+  "layout": {
+    "disclaimer": {
+      "text1": "🛑🚫 Esta aplicación proporciona solo información general y",
+      "notSubstitute": "NO ES UN SUSTITUTO",
+      "text2": "del consejo médico profesional, diagnóstico o tratamiento. Siempre consulta a un",
+      "provider": "Profesional de Salud Calificado"
+    },
+    "footer": {
+      "aboutLink": "Acerca / Términos / Privacidad",
+      "note": "Dr. Rahul Kapahi · Para Conciencia, No Diagnóstico",
+      "accessibility": "Abre la pantalla de Acerca con Términos y Privacidad"
+    }
+  },
+  "about": {
+    "screenTitle": "Acerca de la App",
+    "header": "🌀 Acerca de DizzySense",
+    "paragraph1": "DizzySense es una aplicación gratuita y offline que ayuda a los usuarios a comprender las posibles causas del mareo y orienta sobre qué especialista consultar.",
+    "paragraph2": "No se recopilan datos personales. Todo el procesamiento ocurre en tu dispositivo.",
+    "paragraph3": "¡DizzySense funciona completamente sin internet!",
+    "developerInfo": "👨‍⚕️ Información del Desarrollador",
+    "developerName": "Dr. Rahul Kapahi",
+    "developerRole": "Consultor ORL",
+    "developerCountry": "🇮🇳 India",
+    "emailLabel": "entclinicdwarka@gmail.com",
+    "websiteLabel": "Sitio web de la clínica",
+    "directionsLabel": "Direcciones",
+    "phoneLabel": "+91 88000 47117",
+    "privacyPolicy": "🛡️ Política de Privacidad",
+    "terms": "📄 Términos y Condiciones",
+    "clickHint": "(Haz clic en los enlaces anteriores para más información)",
+    "version": "📱 Versión 1.1 • Septiembre 2025",
+    "home": "🏠 Inicio"
+  },
+  "home": {
+    "feelingHeading": "¿Te sientes inestable o aturdido?",
+    "subtitle1": "¿No estás seguro si es Vértigo, Mareo, Inestabilidad o un Desmayo?",
+    "subtitle2": "te guía a través de un breve cuestionario para ayudarte a:",
+    "bullet1": "👉 Entender lo que estás experimentando.",
+    "bullet2": "👉 Conocer causas comunes y señales de alerta.",
+    "bullet3": "👉 Obtener orientación clara sobre qué especialista consultar.",
+    "startQuiz": "Comenzar Cuestionario de Síntomas"
+  },
+  "appName": "DizzySense",
+  "privacy": {
+    "title": "Política de Privacidad",
+    "accessibilityTitle": "Política de Privacidad de DizzySense",
+    "header": "🛡️ Política de Privacidad de DizzySense",
+    "effectiveDate": "Fecha de Vigencia: 2 de agosto de 2025",
+    "lastUpdated": "Última actualización: 24 de septiembre de 2025",
+    "intro": "🌀 DizzySense (\"la App\", \"nosotros\") es una aplicación móvil diseñada para ayudar a los usuarios a comprender posibles causas del mareo y guiar hacia especialistas médicos adecuados. Valoramos tu privacidad y no recopilamos información personal identificable.",
+    "infoCollectHeading": "🔍 Información que Recopilamos",
+    "infoCollectText": "No recopilamos, almacenamos ni transmitimos ninguno de los siguientes datos:\n\n• Tu nombre, correo electrónico, teléfono o identidad personal\n• Ubicación o identificadores del dispositivo\n• Historial médico o registros de salud\n\nLa aplicación funciona completamente en tu dispositivo y no envía ninguna respuesta o dato a servidores o terceros.",
+    "permissionsHeading": "📱 Permisos del Dispositivo",
+    "permissionsText": "DizzySense no solicita acceso a cámara, contactos, ubicación o micrófono. Solo utiliza funciones básicas necesarias para su funcionamiento.",
+    "thirdPartyHeading": "💼 Servicios de Terceros",
+    "thirdPartyText1": "No usamos herramientas de análisis, publicidad o seguimiento de terceros (como Google Analytics, Facebook SDK, etc.).",
+    "thirdPartyText2": "La app puede abrir sitios web externos (p. ej., Búsqueda de Google) para conveniencia. Son manejados por el navegador del dispositivo y DizzySense no transmite información personal.",
+    "disclaimerHeading": "⚠️ Descargo Médico",
+    "disclaimerText": "DizzySense no sustituye el consejo médico profesional ni diagnóstico. Está destinado solo a fines informativos. Siempre consulta a un profesional de la salud.",
+    "securityHeading": "🔐 Seguridad de Datos",
+    "securityText": "Dado que la app no recopila datos, no hay información personal que asegurar o transmitir. Todas las selecciones de síntomas y la lógica del cuestionario ocurren en tu dispositivo.",
+    "childrenHeading": "👶 Privacidad Infantil",
+    "childrenText": "DizzySense no está dirigida a menores de 13 años. No recopilamos datos de menores.",
+    "contactHeading": "📬 Contáctanos",
+    "contactText": "Si tienes preguntas sobre esta política o la app:\nCorreo: entclinicdwarka@gmail.com\nDesarrollador: Dr. Rahul Kapahi, Consultor ORL\nUbicación: India",
+    "summaryHeading": "✅ Resumen",
+    "summaryText": "Tu privacidad es importante. DizzySense fue creada para ofrecer orientación médica segura, offline y sin rastreo, publicidad o recopilación de datos.",
+    "version": "Versión 1.1 • Septiembre 2025",
+    "homeButton": "🏠 Inicio",
+    "homeButtonLabel": "Volver a la pantalla de inicio"
+  },
+  "specialist": {
+    "title": "Guía de Especialistas",
+    "invalidResult": "Parámetro de resultado inválido.",
+    "noSpecialist": "No se encontró un especialista coincidente.",
+    "consultDoctor": "Consulta a {{doctor}}",
+    "redFlags": "Señales de alerta a vigilar:",
+    "findNearby": "🔎 Buscar {{doctor}}s cercanos",
+    "home": "🏠 Inicio",
+    "errorSearch": "Ocurrió un error al abrir la búsqueda.",
+    "cannotOpen": "No se puede abrir la URL de búsqueda"
+  },
+  "terms": {
+    "title": "📄 Términos y Condiciones",
+    "headerAccessibility": "Términos y Condiciones de DizzySense",
+    "effectiveDate": "Fecha de Vigencia: 2 de agosto de 2025",
+    "lastUpdated": "Última actualización: 24 de septiembre de 2025",
+    "intro": "Al usar 🌀DizzySense (\"la App\", \"nosotros\"), aceptas los siguientes términos y condiciones. Léelos cuidadosamente antes de usar la app.",
+    "useOfApp": {
+      "heading": "1. Uso de la App",
+      "paragraph": "DizzySense proporciona información general y orientación relacionada con mareos. No sustituye la evaluación médica profesional, diagnóstico o tratamiento."
+    },
+    "medicalDisclaimer": {
+      "heading": "2. Descargo Médico",
+      "paragraph": "Esta app no proporciona consejo médico. Siempre consulta a un profesional de salud si presentas síntomas o dudas médicas. No retrases la atención profesional basándote en la información de esta app."
+    },
+    "noDataCollection": {
+      "heading": "3. No Recopilación de Datos",
+      "paragraph1": "La app no recopila ni almacena datos personales. Todas las interacciones permanecen en tu dispositivo. No rastreamos, almacenamos ni compartimos tus datos.",
+      "paragraph2": "La app puede abrir sitios web externos (p. ej., Búsqueda de Google) para conveniencia. Son manejados por el navegador del dispositivo y DizzySense no transmite información personal."
+    },
+    "intellectualProperty": {
+      "heading": "4. Propiedad Intelectual",
+      "paragraph": "Todo el contenido de la app, incluyendo texto, diseño y visuales, es propiedad intelectual del Dr. Rahul Kapahi. No se puede reproducir ni redistribuir sin permiso."
+    },
+    "limitation": {
+      "heading": "5. Limitación de Responsabilidad",
+      "paragraph": "No somos responsables por daños o perjuicios derivados del uso o mal uso de la app, incluyendo confiar en la orientación proporcionada. El uso es bajo tu propio riesgo."
+    },
+    "changes": {
+      "heading": "6. Cambios en los Términos",
+      "paragraph": "Podemos actualizar estos términos ocasionalmente. La última versión estará siempre disponible en la app. El uso continuo implica aceptación de cambios."
+    },
+    "contact": {
+      "heading": "7. Contacto",
+      "paragraph": "Para preguntas sobre estos términos:",
+      "emailLabel": "Correo:",
+      "developerLabel": "Desarrollador:",
+      "locationLabel": "Ubicación:"
+    },
+    "version": "Versión 1.1 • Septiembre 2025",
+    "homeButton": "🏠 Inicio",
+    "homeButtonAccessibility": "Volver a la pantalla de inicio"
+  },
+  "language": "Cambiar idioma"
+}

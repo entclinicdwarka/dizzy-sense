@@ -1,0 +1,426 @@
+{
+  "customHeader": {
+    "title": "🌀 DizzySense"
+  },
+  "whatsapp": {
+    "message": "Hello, I want to book an appointment with Dr. Rahul Kapahi.",
+    "alertTitle": "WhatsAppを開けません",
+    "alertMessage": "お使いのデバイスにWhatsAppがインストールされていないか、利用できないようです。",
+    "accessibilityHint": "ラフル・カパヒ医師のクリニックのWhatsAppチャットを開きます",
+    "accessibilityLabel": "WhatsAppでお問い合わせ"
+  },
+  "questionEngine": {},
+  "common": {
+    "yes": "はい",
+    "no": "いいえ"
+  },
+  "questions": {
+    "loading": "結果を準備しています...",
+    "step": "ステップ {{step}}",
+    "start": {
+      "text": "どのようなめまいを感じていますか？",
+      "options": {
+        "spinning": "回転性めまい",
+        "blackout": "失神 / 気絶",
+        "lightheaded": "ふらつき / 不安定",
+        "vision": "視覚の異常",
+        "neck": "首に関連しためまい"
+      }
+    },
+    "spinning_duration": {
+      "text": "回転性の発作は通常どれくらい続きますか？",
+      "options": {
+        "seconds": "数秒",
+        "minutes_hours": "数分～数時間",
+        "hours_days": "数時間～数日"
+      }
+    },
+    "spinning_trigger": {
+      "text": "体位の変化（例：横になる、体を回す）で誘発されますか？"
+    },
+    "hearing_issues": {
+      "text": "耳の詰まり感、耳鳴り（ tinnitus ）や聴力低下はありますか？"
+    },
+    "upper_respiratory": {
+      "text": "最近、風邪、副鼻腔炎、上気道感染症にかかりましたか？"
+    },
+    "head_trauma": {
+      "text": "最近、頭部外傷やけがの経験はありますか？"
+    },
+    "nausea_vomiting": {
+      "text": "持続的な吐き気や嘔吐もありますか？"
+    },
+    "blackout_trigger": {
+      "text": "失神は通常いつ起こりますか？",
+      "options": {
+        "exertion": "運動中",
+        "standing": "立ち上がる時",
+        "random": "明確なきっかけなしに突然"
+      }
+    },
+    "cardio_palpitations": {
+      "text": "失神時に胸の圧迫感、動悸、息切れを感じますか？"
+    },
+    "neuro_syncopal": {
+      "text": "これらの発作中に言語障害、混乱、手足の脱力がありますか？"
+    },
+    "lightheaded_trigger": {
+      "text": "ふらつきや不安定感はいつ起こりますか？",
+      "options": {
+        "activity": "運動中や立っている時",
+        "random": "座っている時や横になっている時も含め突然",
+        "stress": "ストレスや不安の時",
+        "infection": "発熱、寒気、最近の感染症と共に",
+        "unexplained": "原因不明の症状と共に"
+      }
+    },
+    "endocrine_symptoms": {
+      "text": "原因不明の疲労、体重増減、または多汗がありますか？"
+    },
+    "psychiatric_stress": {
+      "text": "現実から離れた感覚（非現実感、derealization）を感じますか？"
+    },
+    "psychiatric_anxiety": {
+      "text": "これらの症状はパニック発作や不安と関連していますか？"
+    },
+    "systemic_infection": {
+      "text": "最近のウイルス感染、原因不明の発熱、疲労がありますか？"
+    },
+    "vision_issues": {
+      "text": "視力のぼやけ、複視、焦点合わせの困難、目の疲れはありますか？"
+    },
+    "vision_additional": {
+      "text": "これらの症状は頭痛、めまい、吐き気と関連していますか？"
+    },
+    "neuro_or_ophthalmology": {
+      "text": "これらの視覚症状は手足の脱力や言語障害と関連していますか？"
+    },
+    "neck_pain_relation": {
+      "text": "めまいは首の痛みや可動域制限と関連していますか？"
+    },
+    "neck_additional": {
+      "text": "頭痛、しびれ、腕や手の麻痺はありますか？"
+    },
+    "ent": { "text": "耳鼻科の専門医に相談してください。" },
+    "cardio": { "text": "心臓専門医に相談してください。" },
+    "neuro": { "text": "神経科専門医に相談してください。" },
+    "psychiatry": { "text": "精神科専門医に相談してください。" },
+    "orthopedics": { "text": "整形外科専門医に相談してください。" },
+    "endocrinology": { "text": "内分泌科専門医に相談してください。" },
+    "ophthalmology": { "text": "眼科専門医に相談してください。" },
+    "infectious": { "text": "感染症専門医に相談してください。" },
+    "general": {
+      "text": "⚠️ 赤旗症状がある場合は直ちに医師に相談してください。"
+    }
+  },
+  "options": {
+    "spinning": "回転性めまい",
+    "blackout": "失神 / 気絶",
+    "lightheaded": "ふらつき / 不安定",
+    "visual_disturbances": "視覚の異常",
+    "neck_related": "首に関連しためまい"
+  },
+  "dizziness": {
+    "spinning": {
+      "title": "回転性めまい",
+      "desc": "部屋や自分自身が回っているように感じる感覚。"
+    },
+    "blackout": {
+      "title": "失神 / 気絶",
+      "desc": "失神寸前、または意識の完全喪失を感じる感覚。"
+    },
+    "lightheaded": {
+      "title": "ふらつき",
+      "desc": "軽く浮遊しているような、少しめまいを伴う不安定な感覚。"
+    },
+    "unsteady": {
+      "title": "不安定",
+      "desc": "歩行中や立っているときのバランスが崩れる感覚。"
+    },
+    "neck": {
+      "title": "首 / 姿勢に関連",
+      "desc": "首を動かしたり、特定の姿勢で保持するとめまいを感じる。"
+    },
+    "modalTitle": "めまいの種類",
+    "close": "閉じる"
+  },
+  "specialties": {
+    "ent": "耳鼻科の専門医に相談してください。",
+    "cardio": "心臓専門医に相談してください。",
+    "neuro": "神経科専門医に相談してください。",
+    "psychiatry": "精神科専門医に相談してください。",
+    "orthopedics": "整形外科専門医に相談してください。",
+    "endocrinology": "内分泌科専門医に相談してください。",
+    "ophthalmology": "眼科専門医に相談してください。",
+    "infectious": "感染症専門医に相談してください。",
+    "general": "⚠️ 赤旗症状がある場合は直ちに医師に相談してください。"
+  },
+  "results": {
+    "ent": {
+      "label": "耳に関連しためまい",
+      "doctor": "耳鼻咽喉科専門医",
+      "description": "症状は内耳や平衡機能の問題を示唆しており、姿勢性めまいを引き起こすことがあります。",
+      "redFlags": [
+        "突然のまたは進行性の難聴",
+        "頭の動きで持続するバランスの崩れ",
+        "姿勢変化による吐き気や嘔吐"
+      ],
+      "nextSteps": "暗く静かな部屋で休息してください。急な動きを避けましょう。",
+      "contact": "近くの耳鼻科クリニックや病院を受診してください。"
+    },
+    "cardio": {
+      "label": "心臓に関連しためまい",
+      "doctor": "循環器専門医",
+      "description": "血圧変動や不整脈など心血管系の原因が考えられます。",
+      "redFlags": [
+        "胸の圧迫感や息切れ",
+        "運動中や立ち上がった際の失神",
+        "動悸や不整脈"
+      ],
+      "nextSteps": "水分補給をし、医師に診てもらうまで無理な運動を避けてください。",
+      "contact": "最寄りの病院の循環器科を受診してください。"
+    },
+    "neuro": {
+      "label": "神経系に関連しためまい",
+      "doctor": "神経科専門医",
+      "description": "片頭痛や平衡中枢、または一過性脳虚血発作との関連が考えられます。",
+      "redFlags": [
+        "ろれつが回らない",
+        "手足の脱力やしびれ",
+        "視界のかすみや複視"
+      ],
+      "nextSteps": "ストレスを避け、症状を記録して医療相談してください。",
+      "contact": "脳と神経系の評価のため神経科専門医を受診してください。"
+    },
+    "psychiatry": {
+      "label": "精神科に関連しためまい",
+      "doctor": "精神科専門医",
+      "description": "症状は不安、パニック障害、身体表現性障害などが原因の可能性があります。",
+      "redFlags": [
+        "持続的な不安",
+        "現実感喪失や非現実感（非現実化）",
+        "睡眠障害"
+      ],
+      "nextSteps": "リラクゼーション技術を実践し、精神科専門医に相談してください。",
+      "contact": "精神科クリニックまたは精神科専門医を受診してください。"
+    },
+    "orthopedics": {
+      "label": "整形外科に関連しためまい",
+      "doctor": "整形外科専門医",
+      "description": "首の痛みや頸椎の問題に関連する症状です。",
+      "redFlags": ["首のこわばり", "腕への痛みの放散", "首の可動域の制限"],
+      "nextSteps": "首の負担を避け、整形外科で評価を受けてください。",
+      "contact": "整形外科クリニックで脊椎評価を受けてください。"
+    },
+    "endocrinology": {
+      "label": "内分泌系に関連しためまい",
+      "doctor": "内分泌科専門医",
+      "description": "血糖変動、甲状腺機能異常、ホルモン不均衡などが関連する可能性があります。",
+      "redFlags": ["原因不明の疲労", "体重変化", "多汗"],
+      "nextSteps": "症状を観察し、検査のため内分泌科を受診してください。",
+      "contact": "ホルモン評価のため内分泌科専門医を受診してください。"
+    },
+    "ophthalmology": {
+      "label": "眼に関連しためまい",
+      "doctor": "眼科専門医",
+      "description": "眼筋や視神経の機能障害による視覚異常が原因でめまいを感じます。",
+      "redFlags": ["視界がぼやける", "複視", "焦点を合わせにくい"],
+      "nextSteps": "視覚の負担を避け、眼科専門医に相談してください。",
+      "contact": "眼科クリニックを受診してください。"
+    },
+    "infectious": {
+      "label": "感染症に関連しためまい",
+      "doctor": "内科専門医",
+      "description": "感染症、貧血、脱水などの全身的な原因の可能性があります。",
+      "redFlags": ["発熱", "疲労感", "最近のウイルス感染"],
+      "nextSteps": "水分補給を行い、早急に医師に相談してください。",
+      "contact": "最寄りの病院の内科を受診してください。"
+    },
+    "general": {
+      "label": "原因不明または赤旗症状のめまい",
+      "doctor": "総合診療医",
+      "description": "赤旗症状は緊急の包括的医療評価が必要です。",
+      "redFlags": [
+        "突然の激しい頭痛（人生最悪の頭痛）",
+        "急な視力低下、視界のかすみや複視",
+        "突然の難聴",
+        "手足の脱力、しびれ、顔の垂れ",
+        "ろれつが回らない、言語障害、混乱",
+        "意識消失や原因不明の失神",
+        "激しい胸痛、動悸、息切れ",
+        "原因不明の発熱、悪寒、感染の兆候",
+        "持続的な嘔吐や脱水",
+        "ふらつき歩行、転倒、安全に歩行できない",
+        "頭部外傷後の新たな激しいめまい",
+        "症状の急速な悪化や進行",
+        "原因不明の激しい疲労や体重減少",
+        "低血糖の兆候（発汗、震え、混乱）"
+      ],
+      "nextSteps": "最寄りの病院を直ちに受診してください。",
+      "contact": "総合診療医に相談し、全身評価を受けてください。"
+    }
+  },
+  "quiz/index": {
+    "index": {
+      "title": "質問"
+    }
+  },
+  "quiz/result": {
+    "header": "あなたの結果",
+    "unknown": {
+      "label": "結果が認識できません",
+      "description": "特定の結果を判定できませんでした。もう一度お試しください。"
+    },
+    "answersTitle": "🧾 あなたの回答：",
+    "qPrefix": "Q.",
+    "aPrefix": "A.",
+    "meaningTitle": "💬 これが意味すること：",
+    "findDoctorButton": "👉 どの医師に相談すべきか？",
+    "homeButton": "🏠 ホーム",
+    "accessibility": {
+      "findDoctor": "適切な医師を見つけるにはタップしてください"
+    }
+  },
+  "layout": {
+    "disclaimer": {
+      "text1": "🛑🚫 このアプリは一般的な情報のみを提供し、",
+      "notSubstitute": "代替ではありません",
+      "text2": "専門的な医療アドバイス、診断、治療のためには必ず",
+      "provider": "資格のある医療提供者に相談してください"
+    },
+    "footer": {
+      "aboutLink": "アプリについて / 利用規約 / プライバシー",
+      "note": "Dr. Rahul Kapahi · 情報提供目的であり診断用ではありません",
+      "accessibility": "利用規約とプライバシーポリシーの画面を開く"
+    }
+  },
+  "about": {
+    "screenTitle": "アプリについて",
+    "header": "🌀 DizzySenseについて",
+    "paragraph1": "DizzySenseは、めまいの可能性のある原因を理解し、どの専門医に相談すべきかを案内する無料のオフライン優先アプリです。",
+    "paragraph2": "個人データは収集されません。すべての処理はお使いの端末で行われます。",
+    "paragraph3": "DizzySenseはインターネットなしで完全に動作します！",
+    "developerInfo": "👨‍⚕️ 開発者情報",
+    "developerName": "Dr. Rahul Kapahi",
+    "developerRole": "耳鼻咽喉科医",
+    "developerCountry": "🇮🇳 インド",
+    "emailLabel": "entclinicdwarka@gmail.com",
+    "websiteLabel": "クリニックのウェブサイト",
+    "directionsLabel": "アクセス",
+    "phoneLabel": "+91 88000 47117",
+    "privacyPolicy": "🛡️ プライバシーポリシー",
+    "terms": "📄 利用規約",
+    "clickHint": "（上のリンクをクリックして詳細を確認）",
+    "version": "📱 バージョン 1.1 • 2025年9月",
+    "home": "🏠 ホーム"
+  },
+  "home": {
+    "feelingHeading": "ふらつきやめまいを感じますか？",
+    "subtitle1": "それがめまい、立ちくらみ、ふらつき、失神のどれか分からない場合、",
+    "subtitle2": "短いクイズで次のことをサポートします：",
+    "bullet1": "👉 現在の症状を理解する。",
+    "bullet2": "👉 よくある原因や注意すべき症状を学ぶ。",
+    "bullet3": "👉 どの専門医に相談すべきか明確な案内を得る。",
+    "startQuiz": "症状クイズを始める"
+  },
+  "appName": "DizzySense",
+  "privacy": {
+    "title": "プライバシーポリシー",
+    "accessibilityTitle": "DizzySenseのプライバシーポリシー",
+    "header": "🛡️ DizzySenseのプライバシーポリシー",
+    "effectiveDate": "施行日：2025年8月2日",
+    "lastUpdated": "最終更新日：2025年9月24日",
+    "intro": "🌀 DizzySense（「アプリ」「当社」「私たち」）は、めまいの可能性のある原因を理解し、適切な医療専門家に案内するためのモバイルアプリです。プライバシーを重視しており、個人を特定できる情報は一切収集しません。",
+
+    "infoCollectHeading": "🔍 収集する情報",
+    "infoCollectText": "以下の情報は収集、保存、送信しません：\n\n• 名前、メールアドレス、電話番号、個人識別情報\n• 位置情報や端末識別子\n• 健康記録や医療履歴\n\nアプリは完全に端末上で動作し、クイズの回答やデータをサーバーや第三者に送信しません。",
+
+    "permissionsHeading": "📱 端末の権限",
+    "permissionsText": "DizzySenseはカメラ、連絡先、位置情報、マイクへのアクセスを要求しません。アプリの基本機能のみに必要な端末機能を使用します。",
+
+    "thirdPartyHeading": "💼 サードパーティサービス",
+    "thirdPartyText1": "Google AnalyticsやFacebook SDKなどのサードパーティ解析、広告、トラッキングツールは使用していません。",
+    "thirdPartyText2": "便利のために外部サイト（例：Google検索）を開く場合があります。これらは端末のブラウザで処理され、DizzySenseは個人情報を送信しません。",
+
+    "disclaimerHeading": "⚠️ 医療に関する免責事項",
+    "disclaimerText": "DizzySenseは専門的な医療アドバイスや診断の代替ではありません。情報提供のみを目的としています。症状や健康上の懸念については、必ず資格のある医療提供者に相談してください。",
+
+    "securityHeading": "🔐 データセキュリティ",
+    "securityText": "アプリはデータを収集しないため、保護や送信する個人データはありません。すべての症状選択とクイズのロジックは端末上で完結します。",
+
+    "childrenHeading": "👶 子どものプライバシー",
+    "childrenText": "DizzySenseは13歳未満の子どもを対象としていません。未成年者を含む誰のデータも意図的に収集しません。",
+
+    "contactHeading": "📬 お問い合わせ",
+    "contactText": "このプライバシーポリシーやアプリに関して質問がある場合：\nメール: entclinicdwarka@gmail.com\n開発者: Dr. Rahul Kapahi, 耳鼻咽喉科医\n所在地: インド",
+
+    "summaryHeading": "✅ まとめ",
+    "summaryText": "あなたのプライバシーは私たちにとって重要です。DizzySenseは、追跡、広告、データ収集なしで、安全かつオフライン優先の医療ガイダンスを提供することを目的に作られました。",
+
+    "version": "バージョン 1.1 • 2025年9月",
+    "homeButton": "🏠 ホーム",
+    "homeButtonLabel": "ホーム画面に戻る"
+  },
+  "specialist": {
+    "title": "専門医ガイド",
+    "invalidResult": "無効な結果パラメータです。",
+    "noSpecialist": "該当する専門医が見つかりません。",
+    "consultDoctor": "{{doctor}}に相談する",
+    "redFlags": "注意すべき赤旗症状：",
+    "findNearby": "🔎 近くの{{doctor}}を探す",
+    "home": "🏠 ホーム",
+    "errorSearch": "検索を開く際に問題が発生しました。",
+    "cannotOpen": "検索URLを開くことができません"
+  },
+  "terms": {
+    "title": "📄 利用規約",
+    "headerAccessibility": "DizzySenseの利用規約",
+    "effectiveDate": "施行日：2025年8月2日",
+    "lastUpdated": "最終更新日：2025年9月24日",
+    "intro": "🌀DizzySense（「アプリ」「当社」「私たち」）を使用することで、以下の利用規約に同意したものとみなされます。アプリを使用する前に、内容をよくお読みください。",
+
+    "useOfApp": {
+      "heading": "1. アプリの利用",
+      "paragraph": "DizzySenseは、めまいに関する一般情報とガイダンスを提供することを目的としています。専門的な医療評価、診断、治療の代替ではありません。"
+    },
+
+    "medicalDisclaimer": {
+      "heading": "2. 医療に関する免責事項",
+      "paragraph": "本アプリは医療アドバイスを提供するものではありません。症状がある場合や健康上の疑問がある場合は、必ず資格のある医療提供者に相談してください。本アプリの情報に基づき、専門医の診察を遅らせないでください。"
+    },
+
+    "noDataCollection": {
+      "heading": "3. データ収集なし",
+      "paragraph1": "アプリは個人データを収集または保存しません。すべての症状入力や操作は端末内で完結します。データの追跡、保存、共有は一切行いません。",
+      "paragraph2": "便利のため、外部ウェブサイト（例：Google検索）を開く場合があります。これらは端末のブラウザで処理され、DizzySenseは個人情報を送信しません。"
+    },
+
+    "intellectualProperty": {
+      "heading": "4. 知的財産",
+      "paragraph": "アプリ内のテキスト、レイアウト、ビジュアルを含むすべてのコンテンツはDr. Rahul Kapahiの知的財産です。無断で複製・再配布することはできません。"
+    },
+
+    "limitation": {
+      "heading": "5. 責任の制限",
+      "paragraph": "アプリの使用または誤使用、ガイダンスに基づく行動による損害について、当社は一切責任を負いません。アプリの利用は自己責任で行ってください。"
+    },
+
+    "changes": {
+      "heading": "6. 利用規約の変更",
+      "paragraph": "本規約は時折更新されることがあります。最新のバージョンは常にアプリ内で確認できます。アプリの継続利用は、変更内容に同意したものとみなされます。"
+    },
+
+    "contact": {
+      "heading": "7. お問い合わせ",
+      "paragraph": "規約に関する質問や懸念について：",
+      "emailLabel": "メール：",
+      "developerLabel": "開発者：",
+      "locationLabel": "所在地："
+    },
+
+    "version": "バージョン 1.1 • 2025年9月",
+    "homeButton": "🏠 ホーム",
+    "homeButtonAccessibility": "ホーム画面に戻る"
+  },
+  "language": "言語を変更"
+}

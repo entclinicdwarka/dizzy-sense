@@ -5,8 +5,21 @@ import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { moderateScale } from "react-native-size-matters";
 import { StatusBar } from "expo-status-bar";
+import { LinearGradient } from "expo-linear-gradient";
+import { LanguageProvider } from "@/contexts/LanguageContext";
+import { useTranslation } from "@/hooks/useTranslation";
 
 export default function RootLayout() {
+  return (
+    <LanguageProvider>
+      <LayoutContent />
+    </LanguageProvider>
+  );
+}
+
+function LayoutContent() {
+  const { t } = useTranslation();
+
   return (
     <>
       <StatusBar style="dark" translucent={false} />
@@ -19,12 +32,13 @@ export default function RootLayout() {
 
             <View style={styles.disclaimerBox}>
               <Text style={styles.disclaimerText}>
-                🛑🚫 This app provides general information only and is{" "}
-                <Text style={styles.disclaimerBold}>NOT A SUBSTITUTE</Text> for
-                professional medical advice, diagnosis, or treatment. Always
-                consult a{" "}
+                {t("layout.disclaimer.text1")}{" "}
                 <Text style={styles.disclaimerBold}>
-                  Qualified Healthcare Provider
+                  {t("layout.disclaimer.notSubstitute")}
+                </Text>{" "}
+                {t("layout.disclaimer.text2")}{" "}
+                <Text style={styles.disclaimerBold}>
+                  {t("layout.disclaimer.provider")}
                 </Text>
                 .
               </Text>
@@ -34,24 +48,28 @@ export default function RootLayout() {
               <View>
                 <Link href="/about" asChild accessibilityRole="link">
                   <TouchableOpacity
-                    accessibilityLabel="Open About screen with Terms and Privacy Policy"
+                    accessibilityLabel={t("layout.footer.accessibility")}
                     style={styles.settingsIcon}
                   >
-                    <Ionicons
-                      name="settings-outline"
-                      size={moderateScale(20)}
-                      color="#ffffff"
-                    />
-                    <Text style={styles.settingsText}>
-                      About / Terms / Privacy
-                    </Text>
+                    <LinearGradient
+                      colors={["#04d9ff", "#70a1ff"]}
+                      style={styles.settingsIcon}
+                    >
+                      <Ionicons
+                        name="settings-outline"
+                        size={moderateScale(20)}
+                        color="#ffffff"
+                      />
+                      <Text style={styles.settingsText}>
+                        {t("layout.footer.aboutLink")}
+                      </Text>
+                    </LinearGradient>
                   </TouchableOpacity>
                 </Link>
               </View>
 
               <Text style={styles.footerNote}>
-                © {new Date().getFullYear()} Dr. Rahul Kapahi · For Awareness,
-                Not Diagnosis
+                © {new Date().getFullYear()} {t("layout.footer.note")}
               </Text>
             </View>
           </View>
@@ -76,7 +94,7 @@ const styles = StyleSheet.create({
     position: "relative",
   },
   footer: {
-    backgroundColor: "#eef5fc",
+    backgroundColor: "#e3faff",
     paddingVertical: moderateScale(4),
     paddingHorizontal: moderateScale(20),
     alignItems: "center",
@@ -92,7 +110,6 @@ const styles = StyleSheet.create({
   settingsIcon: {
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "#2b4cca",
     paddingHorizontal: moderateScale(12),
     paddingVertical: moderateScale(8),
     borderRadius: moderateScale(9),

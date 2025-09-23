@@ -1,0 +1,423 @@
+{
+  "customHeader": {
+    "title": "🌀 DizzySense"
+  },
+  "whatsapp": {
+    "message": "Hello, I want to book an appointment with Dr. Rahul Kapahi.",
+    "alertTitle": "WhatsApp kann nicht geöffnet werden",
+    "alertMessage": "Es scheint, dass WhatsApp auf Ihrem Gerät nicht installiert oder zugänglich ist.",
+    "accessibilityHint": "Öffnet den WhatsApp-Chat mit der Praxis von Dr. Rahul Kapahi",
+    "accessibilityLabel": "Kontaktieren Sie uns über WhatsApp"
+  },
+  "questionEngine": {},
+  "common": {
+    "yes": "Ja",
+    "no": "Nein"
+  },
+  "questions": {
+    "loading": "Ihr Ergebnis wird vorbereitet...",
+    "step": "Schritt {{step}}",
+    "start": {
+      "text": "Welche Art von Schwindel verspüren Sie?",
+      "options": {
+        "spinning": "Drehschwindel",
+        "blackout": "Blackout / Ohnmacht",
+        "lightheaded": "Benommen / unsicher",
+        "vision": "Sehstörungen",
+        "neck": "Schwindel im Zusammenhang mit dem Nacken"
+      }
+    },
+    "spinning_duration": {
+      "text": "Wie lange dauern Ihre Drehschwindelattacken normalerweise?",
+      "options": {
+        "seconds": "Sekunden",
+        "minutes_hours": "Minuten bis Stunden",
+        "hours_days": "Stunden bis Tage"
+      }
+    },
+    "spinning_trigger": {
+      "text": "Werden sie durch Positionsänderungen ausgelöst (z. B. Hinlegen, Drehen)?"
+    },
+    "hearing_issues": {
+      "text": "Haben Sie ein Gefühl von Ohrendruck, Klingeln (Tinnitus) oder Hörverlust?"
+    },
+    "upper_respiratory": {
+      "text": "Hatten Sie kürzlich eine Erkältung, Nasennebenhöhlenentzündung oder obere Atemwegsinfektion?"
+    },
+    "head_trauma": {
+      "text": "Haben Sie kürzlich eine Kopfverletzung oder ein Trauma gehabt?"
+    },
+    "nausea_vomiting": {
+      "text": "Leiden Sie auch unter anhaltendem Übelkeit oder Erbrechen?"
+    },
+    "blackout_trigger": {
+      "text": "Wann treten die Blackouts typischerweise auf?",
+      "options": {
+        "exertion": "Bei Anstrengung",
+        "standing": "Beim schnellen Aufstehen",
+        "random": "Zufällig ohne klaren Auslöser"
+      }
+    },
+    "cardio_palpitations": {
+      "text": "Fühlen Sie während der Blackouts Brustenge, Herzklopfen oder Atemnot?"
+    },
+    "neuro_syncopal": {
+      "text": "Haben Sie während dieser Ereignisse undeutliches Sprechen, Verwirrung oder Schwäche in den Gliedmaßen?"
+    },
+    "lightheaded_trigger": {
+      "text": "Wann fühlen Sie sich benommen oder unsicher?",
+      "options": {
+        "activity": "Während körperlicher Aktivität oder beim Stehen",
+        "random": "Zufällig, auch im Sitzen oder Liegen",
+        "stress": "In stressigen oder ängstlichen Momenten",
+        "infection": "Bei Fieber, Schüttelfrost oder kürzlicher Infektion",
+        "unexplained": "Bei unerklärlichen Symptomen"
+      }
+    },
+    "endocrine_symptoms": {
+      "text": "Erleben Sie unerklärliche Müdigkeit, Gewichtszunahme/-verlust oder übermäßiges Schwitzen?"
+    },
+    "psychiatric_stress": {
+      "text": "Fühlen Sie sich von der Realität losgelöst (Derealisation)?"
+    },
+    "psychiatric_anxiety": {
+      "text": "Treten diese Symptome gleichzeitig mit Panikattacken oder Angstzuständen auf?"
+    },
+    "systemic_infection": {
+      "text": "Hatten Sie kürzlich eine Virusinfektion, unerklärliches Fieber oder Müdigkeit?"
+    },
+    "vision_issues": {
+      "text": "Haben Sie verschwommenes Sehen, Doppelbilder, Schwierigkeiten beim Fokussieren oder Augenbelastung?"
+    },
+    "vision_additional": {
+      "text": "Sind diese Symptome mit Kopfschmerzen, Schwindel oder Übelkeit verbunden?"
+    },
+    "neuro_or_ophthalmology": {
+      "text": "Treten diese Sehstörungen zusammen mit Gliederschwäche oder undeutlicher Sprache auf?"
+    },
+    "neck_pain_relation": {
+      "text": "Steht Ihr Schwindel im Zusammenhang mit Nackenschmerzen oder eingeschränkter Beweglichkeit?"
+    },
+    "neck_additional": {
+      "text": "Haben Sie Kopfschmerzen, Kribbeln oder Taubheitsgefühle in Armen oder Händen?"
+    },
+    "ent": { "text": "Konsultieren Sie einen HNO-Spezialisten." },
+    "cardio": { "text": "Konsultieren Sie einen Kardiologen." },
+    "neuro": { "text": "Konsultieren Sie einen Neurologen." },
+    "psychiatry": { "text": "Konsultieren Sie einen Psychiater." },
+    "orthopedics": { "text": "Konsultieren Sie einen Orthopäden." },
+    "endocrinology": { "text": "Konsultieren Sie einen Endokrinologen." },
+    "ophthalmology": { "text": "Konsultieren Sie einen Augenarzt." },
+    "infectious": {
+      "text": "Konsultieren Sie einen Spezialisten für Infektionskrankheiten."
+    },
+    "general": {
+      "text": "⚠️ Aufgrund von Warnsymptomen dringend einen Arzt aufsuchen."
+    }
+  },
+  "options": {
+    "spinning": "Drehschwindel",
+    "blackout": "Blackout / Ohnmacht",
+    "lightheaded": "Benommen / unsicher",
+    "visual_disturbances": "Sehstörungen",
+    "neck_related": "Schwindel im Zusammenhang mit dem Nacken"
+  },
+  "dizziness": {
+    "spinning": {
+      "title": "Drehschwindel",
+      "desc": "Gefühl, dass sich der Raum oder Sie sich bewegen oder drehen."
+    },
+    "blackout": {
+      "title": "Blackout / Ohnmacht",
+      "desc": "Gefühl des Beinahe-Ohnmachts oder vollständiger Bewusstlosigkeit."
+    },
+    "lightheaded": {
+      "title": "Benommen",
+      "desc": "Ein schwebendes, schwindeliges Gefühl – nicht ganz drehend, aber desorientierend."
+    },
+    "unsteady": {
+      "title": "Unsicher",
+      "desc": "Gefühl des Ungleichgewichts oder Schwankens beim Gehen oder Stehen."
+    },
+    "neck": {
+      "title": "Nacken / Haltung bezogen",
+      "desc": "Schwindel beim Bewegen oder Halten des Nackens in bestimmten Positionen."
+    },
+    "modalTitle": "Arten von Schwindel",
+    "close": "Schließen"
+  },
+  "specialties": {
+    "ent": "Konsultieren Sie einen HNO-Spezialisten.",
+    "cardio": "Konsultieren Sie einen Kardiologen.",
+    "neuro": "Konsultieren Sie einen Neurologen.",
+    "psychiatry": "Konsultieren Sie einen Psychiater.",
+    "orthopedics": "Konsultieren Sie einen Orthopäden.",
+    "endocrinology": "Konsultieren Sie einen Endokrinologen.",
+    "ophthalmology": "Konsultieren Sie einen Augenarzt.",
+    "infectious": "Konsultieren Sie einen Spezialisten für Infektionskrankheiten.",
+    "general": "⚠️ Aufgrund von Warnsymptomen dringend einen Arzt aufsuchen."
+  },
+  "results": {
+    "ent": {
+      "label": "Ohrbezogener Schwindel",
+      "doctor": "HNO-Spezialist",
+      "description": "Symptome deuten auf Probleme im Innenohr oder Gleichgewichtssystem hin, häufig positionsabhängiger Schwindel.",
+      "redFlags": [
+        "Plötzlicher oder fortschreitender Hörverlust",
+        "Anhaltendes Ungleichgewicht bei Kopfbewegung",
+        "Übelkeit/Erbrechen bei Positionswechsel"
+      ],
+      "nextSteps": "Ruhe in einem dunklen, ruhigen Raum. Vermeiden Sie plötzliche Bewegungen.",
+      "contact": "Besuchen Sie eine örtliche HNO-Klinik oder ein Krankenhaus."
+    },
+    "cardio": {
+      "label": "Herzbedingter Schwindel",
+      "doctor": "Kardiologe",
+      "description": "Muster deutet auf eine Herz-Kreislauf-Ursache hin, z. B. Blutdruckänderungen oder Arrhythmie.",
+      "redFlags": [
+        "Engegefühl in der Brust oder Atemnot",
+        "Ohnmacht bei Aktivität oder beim Stehen",
+        "Herzklopfen oder unregelmäßiger Herzschlag"
+      ],
+      "nextSteps": "Bleiben Sie hydriert und vermeiden Sie Anstrengung, bis ein Arzt Sie untersucht.",
+      "contact": "Besuchen Sie die Kardiologieabteilung Ihres nächstgelegenen Krankenhauses."
+    },
+    "neuro": {
+      "label": "Neurologisch bedingter Schwindel",
+      "doctor": "Neurologe",
+      "description": "Möglicher Zusammenhang mit Migräne, Gleichgewichtszentren oder transitorischen ischämischen Ereignissen.",
+      "redFlags": [
+        "Verwaschene Sprache",
+        "Gliederschwäche oder Taubheitsgefühle",
+        "Verschwommenes oder doppeltes Sehen"
+      ],
+      "nextSteps": "Stress vermeiden und Symptome für die medizinische Beratung notieren.",
+      "contact": "Sehen Sie einen Neurologen zur Untersuchung von Gehirn und Nervensystem."
+    },
+    "psychiatry": {
+      "label": "Psychiatrisch bedingter Schwindel",
+      "doctor": "Psychiater",
+      "description": "Symptome können durch Angst, Panikstörung oder somatoforme Störungen verursacht werden.",
+      "redFlags": [
+        "Anhaltende Sorgen",
+        "Depersonalisation oder Derealisation",
+        "Schlafstörungen"
+      ],
+      "nextSteps": "Entspannungstechniken üben und psychologische Fachkräfte konsultieren.",
+      "contact": "Besuchen Sie eine psychische Gesundheitsklinik oder einen Psychiater."
+    },
+    "orthopedics": {
+      "label": "Orthopädisch bedingter Schwindel",
+      "doctor": "Orthopäde",
+      "description": "Symptome im Zusammenhang mit Nackenschmerzen oder Wirbelsäulenstörungen.",
+      "redFlags": [
+        "Nackensteifigkeit",
+        "Schmerzen, die in die Arme ausstrahlen",
+        "Eingeschränkte Nackenbeweglichkeit"
+      ],
+      "nextSteps": "Nackenbelastung vermeiden und orthopädische Untersuchung durchführen lassen.",
+      "contact": "Besuchen Sie eine orthopädische Klinik zur Wirbelsäulenuntersuchung."
+    },
+    "endocrinology": {
+      "label": "Endokrin bedingter Schwindel",
+      "doctor": "Endokrinologe",
+      "description": "Könnte mit Blutzuckerschwankungen, Schilddrüsenfunktionsstörungen oder hormonellem Ungleichgewicht zusammenhängen.",
+      "redFlags": [
+        "Unerklärliche Müdigkeit",
+        "Gewichtsveränderungen",
+        "Übermäßiges Schwitzen"
+      ],
+      "nextSteps": "Symptome beobachten und Endokrinologen zur Untersuchung aufsuchen.",
+      "contact": "Sehen Sie einen Endokrinologen zur Hormonuntersuchung."
+    },
+    "ophthalmology": {
+      "label": "Augenbedingter Schwindel",
+      "doctor": "Augenarzt",
+      "description": "Sehstörungen, die Schwindel verursachen, z. B. durch Augenmuskeln oder Sehnervfunktionsstörungen.",
+      "redFlags": [
+        "Verschwommenes Sehen",
+        "Doppeltsehen",
+        "Schwierigkeiten beim Fokussieren"
+      ],
+      "nextSteps": "Visuelle Belastung vermeiden und Augenarzt konsultieren.",
+      "contact": "Besuchen Sie eine Augenklinik."
+    },
+    "infectious": {
+      "label": "Infektionsbedingter Schwindel",
+      "doctor": "Internist",
+      "description": "Mögliche systemische Ursachen wie Infektion, Anämie oder Dehydration.",
+      "redFlags": ["Fieber", "Müdigkeit", "Kürzliche Virusinfektion"],
+      "nextSteps": "Hydriert bleiben und dringend einen Arzt konsultieren.",
+      "contact": "Besuchen Sie Ihr nächstgelegenes Krankenhaus für internistische Beratung."
+    },
+    "general": {
+      "label": "Nicht spezifizierter oder Warnsymptom-Schwindel",
+      "doctor": "Allgemeinarzt",
+      "description": "Warnsymptome erfordern eine dringende umfassende medizinische Untersuchung.",
+      "redFlags": [
+        "Plötzliche, starke Kopfschmerzen (schlimmster Kopfschmerz Ihres Lebens)",
+        "Akuter Sehverlust, verschwommenes oder doppeltes Sehen",
+        "Plötzlicher Hörverlust",
+        "Gliederschwäche, Taubheitsgefühl oder Gesichtslähmung",
+        "Sprachschwierigkeiten, undeutliches Sprechen oder Verwirrung",
+        "Bewusstseinsverlust oder unerklärliche Ohnmacht",
+        "Starke Brustschmerzen, Herzklopfen oder Atemnot",
+        "Unerklärliches Fieber, Schüttelfrost oder Infektionszeichen",
+        "Anhaltendes Erbrechen oder Dehydration",
+        "Unsicherer Gang, Stürze oder Unfähigkeit, sicher zu gehen",
+        "Neu aufgetretener starker Schwindel nach Kopfverletzung",
+        "Schnell verschlechternde Symptome oder Fortschreiten",
+        "Starke Müdigkeit oder unerklärlicher Gewichtsverlust",
+        "Anzeichen von niedrigem Blutzucker (Schwitzen, Zittern, Verwirrung)"
+      ],
+      "nextSteps": "Besuchen Sie sofort das nächstgelegene Krankenhaus.",
+      "contact": "Sehen Sie einen Allgemeinarzt für eine vollständige Untersuchung."
+    }
+  },
+  "quiz/index": {
+    "index": {
+      "title": "Fragen"
+    }
+  },
+  "quiz/result": {
+    "header": "Ihr Ergebnis",
+    "unknown": {
+      "label": "Ergebnis nicht erkannt",
+      "description": "Wir konnten kein spezifisches Ergebnis feststellen. Bitte versuchen Sie es erneut."
+    },
+    "answersTitle": "🧾 Ihre Antworten:",
+    "qPrefix": "F.",
+    "aPrefix": "A.",
+    "meaningTitle": "💬 Was es bedeuten könnte:",
+    "findDoctorButton": "👉 Welchen Arzt sollte ich konsultieren?",
+    "homeButton": "🏠 Startseite",
+    "accessibility": {
+      "findDoctor": "Tippen Sie, um den richtigen Arzt zu finden"
+    }
+  },
+  "layout": {
+    "disclaimer": {
+      "text1": "🛑🚫 Diese App bietet nur allgemeine Informationen und ist",
+      "notSubstitute": "KEIN ERSATZ",
+      "text2": "für professionelle medizinische Beratung, Diagnose oder Behandlung. Konsultieren Sie immer einen",
+      "provider": "Qualifizierten Gesundheitsdienstleister"
+    },
+    "footer": {
+      "aboutLink": "Über / Bedingungen / Datenschutz",
+      "note": "Dr. Rahul Kapahi · Zur Aufklärung, nicht zur Diagnose",
+      "accessibility": "Öffnet die Informationsseite mit Bedingungen und Datenschutz"
+    }
+  },
+  "about": {
+    "screenTitle": "Über die App",
+    "header": "🌀 Über DizzySense",
+    "paragraph1": "DizzySense ist eine kostenlose Offline-App, die Nutzern hilft, mögliche Ursachen für Schwindel zu verstehen und Hinweise gibt, welchen medizinischen Spezialisten sie konsultieren sollten.",
+    "paragraph2": "Es werden keine persönlichen Daten gesammelt. Alle Verarbeitung erfolgt auf Ihrem Gerät.",
+    "paragraph3": "DizzySense funktioniert vollständig ohne Internet!",
+    "developerInfo": "👨‍⚕️ Entwicklerinfo",
+    "developerName": "Dr. Rahul Kapahi",
+    "developerRole": "HNO-Spezialist",
+    "developerCountry": "🇮🇳 Indien",
+    "emailLabel": "entclinicdwarka@gmail.com",
+    "websiteLabel": "Webseite der Klinik",
+    "directionsLabel": "Wegbeschreibung",
+    "phoneLabel": "+91 88000 47117",
+    "privacyPolicy": "🛡️ Datenschutzrichtlinie",
+    "terms": "📄 Allgemeine Geschäftsbedingungen",
+    "clickHint": "(Klicken Sie auf die obigen Links, um mehr zu lesen)",
+    "version": "📱 Version 1.1 • September 2025",
+    "home": "🏠 Startseite"
+  },
+  "home": {
+    "feelingHeading": "Fühlen Sie sich unsicher oder benommen?",
+    "subtitle1": "Unsicher, ob es Schwindel, Drehschwindel, Benommenheit oder Blackout ist?",
+    "subtitle2": "führt Sie durch ein kurzes Quiz, um Ihnen zu helfen:",
+    "bullet1": "👉 Verstehen, was Sie gerade erleben.",
+    "bullet2": "👉 Häufige Ursachen und Warnsignale erkennen.",
+    "bullet3": "👉 Klare Hinweise erhalten, welchen Spezialisten Sie aufsuchen sollten.",
+    "startQuiz": "Symptome-Quiz starten"
+  },
+  "appName": "DizzySense",
+  "privacy": {
+    "title": "Datenschutzrichtlinie",
+    "accessibilityTitle": "Datenschutzrichtlinie für DizzySense",
+    "header": "🛡️ Datenschutzrichtlinie für DizzySense",
+    "effectiveDate": "Gültig ab: 2. August 2025",
+    "lastUpdated": "Zuletzt aktualisiert: 24. September 2025",
+    "intro": "🌀 DizzySense (\"die App\", \"wir\", \"unser\") ist eine mobile Anwendung, die Nutzern hilft, mögliche Ursachen von Schwindel zu verstehen und sie zu den geeigneten medizinischen Spezialisten zu leiten. Wir respektieren Ihre Privatsphäre und sammeln keine persönlich identifizierbaren Informationen.",
+    "infoCollectHeading": "🔍 Informationen, die wir sammeln",
+    "infoCollectText": "Wir sammeln, speichern oder übertragen keine der folgenden Informationen:\n\n• Ihren Namen, E-Mail-Adresse, Telefonnummer oder persönliche Identität\n• Standort- oder Gerätekennungen\n• Gesundheitsakten oder medizinische Historie\n\nDie App läuft vollständig auf Ihrem Gerät und überträgt keine Quizantworten oder Daten an unsere Server oder Dritte.",
+    "permissionsHeading": "📱 Geräteberechtigungen",
+    "permissionsText": "DizzySense verlangt keinen Zugriff auf Kamera, Kontakte, Standort oder Mikrofon. Es werden nur grundlegende Funktionen verwendet, die für den reibungslosen Betrieb der App erforderlich sind.",
+    "thirdPartyHeading": "💼 Dienste von Drittanbietern",
+    "thirdPartyText1": "Wir verwenden keine Drittanbieter-Analysen, Werbung oder Tracking-Tools (z. B. Google Analytics, Facebook SDK usw.).",
+    "thirdPartyText2": "Die App kann externe Websites (z. B. Google-Suche) öffnen. Diese werden vom Browser Ihres Geräts behandelt, und DizzySense überträgt keine persönlichen Informationen.",
+    "disclaimerHeading": "⚠️ Medizinischer Haftungsausschluss",
+    "disclaimerText": "DizzySense ersetzt keine professionelle medizinische Beratung oder Diagnose. Sie dient nur zu Informationszwecken. Konsultieren Sie immer einen qualifizierten Gesundheitsdienstleister bei Symptomen oder gesundheitlichen Bedenken.",
+    "securityHeading": "🔐 Datensicherheit",
+    "securityText": "Da die App keine Daten sammelt, gibt es keine persönlichen Daten zu sichern oder zu übertragen. Alle Symptom-Auswahlen und Quizlogik erfolgen vollständig auf Ihrem Gerät.",
+    "childrenHeading": "👶 Datenschutz für Kinder",
+    "childrenText": "DizzySense richtet sich nicht an Kinder unter 13 Jahren. Wir sammeln wissentlich keine Daten von Minderjährigen.",
+    "contactHeading": "📬 Kontaktieren Sie uns",
+    "contactText": "Wenn Sie Fragen zur Datenschutzrichtlinie oder der App haben:\nEmail: entclinicdwarka@gmail.com\nEntwickler: Dr. Rahul Kapahi, HNO-Spezialist\nStandort: Indien",
+    "summaryHeading": "✅ Zusammenfassung",
+    "summaryText": "Ihre Privatsphäre ist uns wichtig. DizzySense wurde entwickelt, um sichere, offline-fähige medizinische Hinweise ohne Tracking, Werbung oder Datensammlung bereitzustellen.",
+    "version": "Version 1.1 • September 2025",
+    "homeButton": "🏠 Startseite",
+    "homeButtonLabel": "Zurück zum Startbildschirm"
+  },
+  "specialist": {
+    "title": "Spezialistenleitfaden",
+    "invalidResult": "Ungültiger Ergebnisparameter.",
+    "noSpecialist": "Kein passender Spezialist gefunden.",
+    "consultDoctor": "Konsultieren Sie {{doctor}}",
+    "redFlags": "Warnsignale, auf die Sie achten sollten:",
+    "findNearby": "🔎 {{doctor}}s in der Nähe finden",
+    "home": "🏠 Startseite",
+    "errorSearch": "Beim Öffnen der Suche ist ein Fehler aufgetreten.",
+    "cannotOpen": "Such-URL kann nicht geöffnet werden"
+  },
+  "terms": {
+    "title": "📄 Allgemeine Geschäftsbedingungen",
+    "headerAccessibility": "Allgemeine Geschäftsbedingungen für DizzySense",
+    "effectiveDate": "Gültig ab: 2. August 2025",
+    "lastUpdated": "Zuletzt aktualisiert: 24. September 2025",
+    "intro": "Durch die Nutzung von 🌀DizzySense (\"die App\", \"wir\", \"unser\") stimmen Sie den folgenden Bedingungen zu. Bitte lesen Sie diese sorgfältig, bevor Sie die App verwenden.",
+    "useOfApp": {
+      "heading": "1. Nutzung der App",
+      "paragraph": "DizzySense soll allgemeine Informationen und Hinweise im Zusammenhang mit Schwindel bereitstellen. Sie ersetzt keine professionelle medizinische Bewertung, Diagnose oder Behandlung."
+    },
+    "medicalDisclaimer": {
+      "heading": "2. Medizinischer Haftungsausschluss",
+      "paragraph": "Diese App gibt keine medizinische Beratung. Konsultieren Sie immer einen qualifizierten Gesundheitsdienstleister bei Symptomen oder gesundheitlichen Fragen. Verzögern Sie nicht die Inanspruchnahme professioneller medizinischer Hilfe aufgrund von Informationen aus dieser App."
+    },
+    "noDataCollection": {
+      "heading": "3. Keine Datensammlung",
+      "paragraph1": "Die App sammelt oder speichert keine persönlichen Daten. Alle Symptom-Eingaben und Interaktionen verbleiben auf Ihrem Gerät. Wir verfolgen, speichern oder teilen Ihre Daten nicht.",
+      "paragraph2": "Die App kann externe Websites (z. B. Google-Suche) öffnen. Diese werden vom Browser Ihres Geräts behandelt, und DizzySense überträgt keine persönlichen Informationen."
+    },
+    "intellectualProperty": {
+      "heading": "4. Geistiges Eigentum",
+      "paragraph": "Alle Inhalte innerhalb der App, einschließlich Text, Layout und Visuals, sind geistiges Eigentum von Dr. Rahul Kapahi. Sie dürfen keine Teile dieser App ohne Genehmigung reproduzieren oder weiterverbreiten."
+    },
+    "limitation": {
+      "heading": "5. Haftungsbeschränkung",
+      "paragraph": "Wir haften nicht für Schäden oder Verluste, die aus der Nutzung oder unsachgemäßen Verwendung der App entstehen, einschließlich der Nutzung der bereitgestellten Hinweise. Die Nutzung der App erfolgt auf eigenes Risiko."
+    },
+    "changes": {
+      "heading": "6. Änderungen der Bedingungen",
+      "paragraph": "Wir können diese Bedingungen gelegentlich aktualisieren. Die neueste Version ist immer in der App verfügbar. Die fortgesetzte Nutzung der App gilt als Akzeptanz der Änderungen."
+    },
+    "contact": {
+      "heading": "7. Kontakt",
+      "paragraph": "Bei Fragen oder Bedenken zu diesen Bedingungen:",
+      "emailLabel": "Email:",
+      "developerLabel": "Entwickler:",
+      "locationLabel": "Standort:"
+    },
+    "version": "Version 1.1 • September 2025",
+    "homeButton": "🏠 Startseite",
+    "homeButtonAccessibility": "Zurück zum Startbildschirm"
+  },
+  "language": "Sprache ändern"
+}

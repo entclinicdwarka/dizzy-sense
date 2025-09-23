@@ -1,17 +1,21 @@
 import { Platform, StyleSheet, Text } from "react-native";
 import { moderateScale } from "react-native-size-matters";
 import { SafeAreaView } from "react-native-safe-area-context";
+import i18n from "@/i18n";
+import { useTranslation } from "@/hooks/useTranslation";
 
 export default function CustomHeader() {
+  const { t } = useTranslation();
   return (
     <SafeAreaView style={styles.headerContainer}>
       <Text
         style={styles.title}
         accessibilityRole="header"
         numberOfLines={1}
+        accessibilityLabel={t("customHeader.title")}
         adjustsFontSizeToFit
       >
-        🌀 DizzySense
+        {t("customHeader.title")}
       </Text>
     </SafeAreaView>
   );
@@ -25,7 +29,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 4,
     paddingTop: Platform.OS === "android" ? 0 : 8,
     width: "100%",
-    backgroundColor: "#2b4cca",
+    backgroundColor: "#04d9ff",
   },
   title: {
     fontSize: moderateScale(32),

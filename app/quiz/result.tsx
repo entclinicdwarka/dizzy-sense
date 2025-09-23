@@ -10,11 +10,15 @@ import {
 import { getFinalResult } from "./data/questions";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { moderateScale, verticalScale } from "react-native-size-matters";
+import { LinearGradient } from "expo-linear-gradient";
+import { useTranslation } from "@/hooks/useTranslation";
 
 export default function ResultScreen() {
+  const { t } = useTranslation();
   const { result, summary } = useLocalSearchParams();
   const normalized = typeof result === "string" ? result : "";
   let parsedSummary: { question: string; answer: string }[] = [];
+
   try {
     parsedSummary =
       typeof summary === "string"
@@ -25,13 +29,13 @@ export default function ResultScreen() {
   }
 
   const info = getFinalResult(normalized) ?? {
-    label: "Result Not Recognized",
-    description: "We couldn't determine a specific outcome. Please retry.",
+    label: t("quiz/result.unknown.label"),
+    description: t("quiz/result.unknown.description"),
     redFlags: [],
   };
 
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: "#eef5fc" }}>
+    <SafeAreaView style={{ flex: 1, backgroundColor: "#e3faff" }}>
       <ScrollView
         contentContainerStyle={{ flexGrow: 1 }}
         keyboardShouldPersistTaps="handled"
@@ -39,24 +43,28 @@ export default function ResultScreen() {
         <View style={styles.container}>
           <Stack.Screen
             options={{
-              title: "Your Result",
-              headerStyle: { backgroundColor: "#2b4cca" },
+              title: t("quiz/result.header"),
+              headerStyle: { backgroundColor: "#04d9ff" },
               headerTintColor: "#ffffff",
             }}
           />
 
-          <Text style={styles.title}>🩺 {info.label}</Text>
+          <Text style={styles.title}>🩺 {t(info.label)}</Text>
 
           {parsedSummary.length > 0 && (
             <>
-              <Text style={styles.sectionLabel}>🧾 Your Answers:</Text>
+              <Text style={styles.sectionLabel}>
+                {t("quiz/result.answersTitle")}
+              </Text>
               {parsedSummary.map(
                 (item: { question: string; answer: string }, index: number) => (
                   <View key={index} style={styles.summaryItem}>
                     <Text style={styles.summaryQuestion}>
-                      Q. {item.question}
+                      {t("quiz/result.qPrefix")} {item.question}
                     </Text>
-                    <Text style={styles.summaryAnswer}>A. {item.answer}</Text>
+                    <Text style={styles.summaryAnswer}>
+                      {t("quiz/result.aPrefix")} {item.answer}
+                    </Text>
                   </View>
                 )
               )}
@@ -64,17 +72,25 @@ export default function ResultScreen() {
           )}
 
           <View style={styles.card}>
-            <Text style={styles.sectionLabel}>💬 What it might mean:</Text>
-            <Text style={styles.bodyText}>{info.description}</Text>
+            <Text style={styles.sectionLabel}>
+              {t("quiz/result.meaningTitle")}
+            </Text>
+            <Text style={styles.bodyText}>{t(info.description)}</Text>
 
             <TouchableOpacity
-              style={styles.button}
-              accessibilityLabel="Tap to find the right doctor"
+              accessibilityLabel={t("quiz.result.accessibility.findDoctor")}
               onPress={() => router.push(`/specialist?result=${normalized}`)}
             >
-              <Text style={styles.buttonText}>
-                👉 Which doctor should I consult?
-              </Text>
+              <LinearGradient
+                colors={["#00c6ff", "#04d9ff", "#2b4cca"]}
+                start={{ x: 0, y: 0 }}
+                end={{ x: 1, y: 1 }}
+                style={styles.gradientButton}
+              >
+                <Text style={styles.buttonText}>
+                  {t("quiz/result.findDoctorButton")}
+                </Text>
+              </LinearGradient>
             </TouchableOpacity>
           </View>
 
@@ -84,7 +100,7 @@ export default function ResultScreen() {
               onPress={() => router.replace("/")}
             >
               <Text style={[styles.buttonText, { color: "#2b4cca" }]}>
-                🏠 Home
+                {t("quiz/result.homeButton")}
               </Text>
             </TouchableOpacity>
           </View>
@@ -96,7 +112,7 @@ export default function ResultScreen() {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#eef5fc",
+    backgroundColor: "#e3faff",
     flex: 1,
     padding: moderateScale(24),
     justifyContent: "center",
@@ -108,7 +124,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
   card: {
-    backgroundColor: "white",
+    backgroundColor: "#ffffff",
     borderRadius: 12,
     padding: 16,
     marginVertical: 12,
@@ -130,18 +146,6 @@ const styles = StyleSheet.create({
     lineHeight: verticalScale(22),
     color: "#2b4cca",
   },
-  button: {
-    marginTop: verticalScale(30),
-    backgroundColor: "#2b4cca",
-    paddingVertical: verticalScale(12),
-    paddingHorizontal: moderateScale(24),
-    borderRadius: moderateScale(12),
-    shadowColor: "#000",
-    shadowOpacity: 0.1,
-    shadowOffset: { width: 0, height: 2 },
-    shadowRadius: 4,
-    elevation: 5,
-  },
   buttonText: {
     color: "#ffffff",
     fontSize: moderateScale(20),
@@ -154,7 +158,7 @@ const styles = StyleSheet.create({
     marginTop: verticalScale(10),
   },
   secondaryButton: {
-    backgroundColor: "#eef5fc",
+    backgroundColor: "#e3faff",
     padding: verticalScale(12),
     borderRadius: moderateScale(12),
     borderWidth: 2,
@@ -163,7 +167,7 @@ const styles = StyleSheet.create({
     minWidth: moderateScale(130),
   },
   summaryItem: {
-    backgroundColor: "#cbe4fc",
+    backgroundColor: "#d0f8ff",
     padding: moderateScale(12),
     borderRadius: moderateScale(8),
     marginBottom: verticalScale(12),
@@ -185,5 +189,19 @@ const styles = StyleSheet.create({
     color: "#2b4cca",
     fontStyle: "italic",
     fontWeight: "600",
+  },
+  gradientButton: {
+    marginTop: moderateScale(20),
+    paddingVertical: verticalScale(12),
+    paddingHorizontal: moderateScale(24),
+    borderRadius: moderateScale(12),
+    alignSelf: "center",
+    alignItems: "center",
+    justifyContent: "center",
+    shadowColor: "#000",
+    shadowOpacity: 0.1,
+    shadowOffset: { width: 0, height: 2 },
+    shadowRadius: 4,
+    elevation: 5,
   },
 });

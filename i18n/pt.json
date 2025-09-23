@@ -1,0 +1,428 @@
+{
+  "customHeader": {
+    "title": "🌀 DizzySense"
+  },
+  "whatsapp": {
+    "message": "Hello, I want to book an appointment with Dr. Rahul Kapahi.",
+    "alertTitle": "Não foi possível abrir o WhatsApp",
+    "alertMessage": "Parece que o WhatsApp não está instalado ou acessível em seu dispositivo.",
+    "accessibilityHint": "Abre o chat do WhatsApp com a clínica do Dr. Rahul Kapahi",
+    "accessibilityLabel": "Contate-nos pelo WhatsApp"
+  },
+  "questionEngine": {},
+  "common": {
+    "yes": "Sim",
+    "no": "Não"
+  },
+  "questions": {
+    "loading": "Preparando seu resultado...",
+    "step": "Passo {{step}}",
+    "start": {
+      "text": "Que tipo de tontura você está sentindo?",
+      "options": {
+        "spinning": "Giro",
+        "blackout": "Desmaio / Perda de consciência",
+        "lightheaded": "Tonto / Instável",
+        "vision": "Distúrbios visuais",
+        "neck": "Tontura relacionada ao pescoço"
+      }
+    },
+    "spinning_duration": {
+      "text": "Quanto tempo geralmente duram seus episódios de giro?",
+      "options": {
+        "seconds": "Segundos",
+        "minutes_hours": "Minutos a horas",
+        "hours_days": "Horas a dias"
+      }
+    },
+    "spinning_trigger": {
+      "text": "Eles são desencadeados por mudanças de posição (ex.: deitar, virar)?"
+    },
+    "hearing_issues": {
+      "text": "Você sente sensação de ouvido cheio, zumbido (tinnitus) ou perda auditiva?"
+    },
+    "upper_respiratory": {
+      "text": "Você teve algum resfriado recente, infecção sinusal ou infecção respiratória superior?"
+    },
+    "head_trauma": {
+      "text": "Algum histórico recente de trauma ou lesão na cabeça?"
+    },
+    "nausea_vomiting": {
+      "text": "Você também sente náusea ou vômito persistente?"
+    },
+    "blackout_trigger": {
+      "text": "Quando os desmaios normalmente acontecem?",
+      "options": {
+        "exertion": "Durante esforço físico",
+        "standing": "Ao se levantar rapidamente",
+        "random": "Aleatoriamente, sem gatilho claro"
+      }
+    },
+    "cardio_palpitations": {
+      "text": "Você sente aperto no peito, palpitações ou falta de ar durante os desmaios?"
+    },
+    "neuro_syncopal": {
+      "text": "Alguma fala arrastada, confusão ou fraqueza nos membros durante esses eventos?"
+    },
+    "lightheaded_trigger": {
+      "text": "Quando você se sente tonto ou instável?",
+      "options": {
+        "activity": "Durante atividade física ou em pé",
+        "random": "Aleatoriamente, incluindo sentado ou deitado",
+        "stress": "Em momentos de estresse ou ansiedade",
+        "infection": "Com febre, calafrios ou infecção recente",
+        "unexplained": "Com sintomas inexplicáveis"
+      }
+    },
+    "endocrine_symptoms": {
+      "text": "Você sente fadiga inexplicável, ganho/perda de peso ou suor excessivo?"
+    },
+    "psychiatric_stress": {
+      "text": "Você se sente desconectado da realidade (desrealização)?"
+    },
+    "psychiatric_anxiety": {
+      "text": "Esses sintomas coincidem com ataques de pânico ou ansiedade?"
+    },
+    "systemic_infection": {
+      "text": "Você teve alguma infecção viral recente, febre inexplicável ou fadiga?"
+    },
+    "vision_issues": {
+      "text": "Você percebe visão embaçada, visão dupla, dificuldade de focar ou cansaço ocular?"
+    },
+    "vision_additional": {
+      "text": "Esses sintomas estão associados a dores de cabeça, tontura ou náusea?"
+    },
+    "neuro_or_ophthalmology": {
+      "text": "Esses sintomas visuais estão associados a fraqueza nos membros ou fala arrastada?"
+    },
+    "neck_pain_relation": {
+      "text": "Sua tontura está relacionada à dor no pescoço ou limitação de movimento?"
+    },
+    "neck_additional": {
+      "text": "Você tem dores de cabeça, formigamento ou dormência nos braços ou mãos?"
+    },
+    "ent": { "text": "Consulte um Especialista em Otorrinolaringologia." },
+    "cardio": { "text": "Consulte um Cardiologista." },
+    "neuro": { "text": "Consulte um Neurologista." },
+    "psychiatry": { "text": "Consulte um Psiquiatra." },
+    "orthopedics": { "text": "Consulte um Ortopedista." },
+    "endocrinology": { "text": "Consulte um Endocrinologista." },
+    "ophthalmology": { "text": "Consulte um Oftalmologista." },
+    "infectious": {
+      "text": "Consulte um Especialista em Doenças Infecciosas."
+    },
+    "general": {
+      "text": "⚠️ Procure um médico imediatamente devido a sintomas de alerta."
+    }
+  },
+  "options": {
+    "spinning": "Giro",
+    "blackout": "Desmaio / Perda de consciência",
+    "lightheaded": "Tonto / Instável",
+    "visual_disturbances": "Distúrbios visuais",
+    "neck_related": "Tontura relacionada ao pescoço"
+  },
+  "dizziness": {
+    "spinning": {
+      "title": "Giro",
+      "desc": "Sensação de que o ambiente ou você está se movendo ou girando."
+    },
+    "blackout": {
+      "title": "Desmaio / Perda de consciência",
+      "desc": "Sensação de quase desmaio ou perda completa de consciência."
+    },
+    "lightheaded": {
+      "title": "Tonto",
+      "desc": "Sensação flutuante e confusa — não exatamente girando, mas desorientadora."
+    },
+    "unsteady": {
+      "title": "Instável",
+      "desc": "Sensação de desequilíbrio ou oscilação ao caminhar ou ficar em pé."
+    },
+    "neck": {
+      "title": "Pescoço / Relacionado à postura",
+      "desc": "Sensação de tontura ao mover ou manter o pescoço em certas posições."
+    },
+    "modalTitle": "Tipos de Tontura",
+    "close": "Fechar"
+  },
+  "specialties": {
+    "ent": "Consulte um Especialista em Otorrinolaringologia.",
+    "cardio": "Consulte um Cardiologista.",
+    "neuro": "Consulte um Neurologista.",
+    "psychiatry": "Consulte um Psiquiatra.",
+    "orthopedics": "Consulte um Ortopedista.",
+    "endocrinology": "Consulte um Endocrinologista.",
+    "ophthalmology": "Consulte um Oftalmologista.",
+    "infectious": "Consulte um Especialista em Doenças Infecciosas.",
+    "general": "⚠️ Procure um médico imediatamente devido a sintomas de alerta."
+  },
+  "results": {
+    "ent": {
+      "label": "Vertigem relacionada ao ouvido",
+      "doctor": "Especialista em Otorrinolaringologia",
+      "description": "Os sintomas sugerem um problema no ouvido interno ou no sistema de equilíbrio, comumente causando vertigem posicional.",
+      "redFlags": [
+        "Perda auditiva súbita ou progressiva",
+        "Desequilíbrio persistente ao mover a cabeça",
+        "Náusea/vômito com mudança de posição"
+      ],
+      "nextSteps": "Descanse em um ambiente escuro e silencioso. Evite movimentos bruscos.",
+      "contact": "Visite uma clínica ou hospital de otorrinolaringologia local."
+    },
+    "cardio": {
+      "label": "Tontura relacionada ao coração",
+      "doctor": "Cardiologista",
+      "description": "O padrão sugere uma causa cardiovascular, como alterações de pressão arterial ou arritmia.",
+      "redFlags": [
+        "Sensação de aperto no peito ou falta de ar",
+        "Desmaios durante atividades ou ao ficar em pé",
+        "Palpitações ou batimentos cardíacos irregulares"
+      ],
+      "nextSteps": "Mantenha-se hidratado e evite esforços até consultar um médico.",
+      "contact": "Visite um departamento de cardiologia no hospital mais próximo."
+    },
+    "neuro": {
+      "label": "Tontura relacionada ao sistema nervoso",
+      "doctor": "Neurologista",
+      "description": "Possível ligação a enxaquecas, centros de equilíbrio ou eventos isquêmicos transitórios.",
+      "redFlags": [
+        "Fala arrastada",
+        "Fraqueza ou dormência nos membros",
+        "Visão turva ou dupla"
+      ],
+      "nextSteps": "Evite estresse e registre os sintomas para consulta médica.",
+      "contact": "Consulte um neurologista para avaliação do cérebro e do sistema nervoso."
+    },
+    "psychiatry": {
+      "label": "Tontura relacionada à psiquiatria",
+      "doctor": "Psiquiatra",
+      "description": "Os sintomas podem estar relacionados à ansiedade, transtorno do pânico ou transtornos somatoformes.",
+      "redFlags": [
+        "Preocupação persistente",
+        "Despersonalização ou desrealização",
+        "Distúrbios do sono"
+      ],
+      "nextSteps": "Pratique técnicas de relaxamento e consulte profissionais de saúde mental.",
+      "contact": "Visite uma clínica de saúde mental ou um psiquiatra."
+    },
+    "orthopedics": {
+      "label": "Tontura relacionada à ortopedia",
+      "doctor": "Ortopedista",
+      "description": "Sintomas relacionados à dor no pescoço ou distúrbios da coluna cervical.",
+      "redFlags": [
+        "Rigidez no pescoço",
+        "Dor irradiando para os braços",
+        "Redução da mobilidade do pescoço"
+      ],
+      "nextSteps": "Evite esforços no pescoço e procure avaliação ortopédica.",
+      "contact": "Visite uma clínica ortopédica para avaliação da coluna."
+    },
+    "endocrinology": {
+      "label": "Tontura relacionada ao sistema endócrino",
+      "doctor": "Endocrinologista",
+      "description": "Pode estar ligada a flutuações de açúcar no sangue, disfunção da tireoide ou desequilíbrio hormonal.",
+      "redFlags": [
+        "Fadiga inexplicável",
+        "Alterações de peso",
+        "Sudorese excessiva"
+      ],
+      "nextSteps": "Monitore os sintomas e consulte um endocrinologista para exames.",
+      "contact": "Consulte um endocrinologista para avaliação hormonal."
+    },
+    "ophthalmology": {
+      "label": "Tontura relacionada aos olhos",
+      "doctor": "Oftalmologista",
+      "description": "Distúrbios visuais que causam tontura, devido a disfunção dos músculos oculares ou do nervo óptico.",
+      "redFlags": ["Visão turva", "Visão dupla", "Dificuldade de foco"],
+      "nextSteps": "Evite esforço visual e consulte um especialista em olhos.",
+      "contact": "Visite uma clínica oftalmológica."
+    },
+    "infectious": {
+      "label": "Tontura relacionada a infecções",
+      "doctor": "Medicina Interna",
+      "description": "Possíveis causas sistêmicas como infecção, anemia ou desidratação.",
+      "redFlags": ["Febre", "Fadiga", "Infecção viral recente"],
+      "nextSteps": "Mantenha-se hidratado e consulte um médico urgentemente.",
+      "contact": "Visite o hospital mais próximo para avaliação de medicina interna."
+    },
+    "general": {
+      "label": "Tontura não especificada ou com sinais de alerta",
+      "doctor": "Clínico Geral",
+      "description": "Sintomas de alerta exigem avaliação médica abrangente imediata.",
+      "redFlags": [
+        "Dor de cabeça súbita e intensa (a pior da sua vida)",
+        "Perda aguda de visão, visão turva ou dupla",
+        "Perda auditiva súbita",
+        "Fraqueza nos membros, dormência ou queda facial",
+        "Dificuldade para falar, fala arrastada ou confusão",
+        "Perda de consciência ou desmaio inexplicável",
+        "Dor intensa no peito, palpitações ou falta de ar",
+        "Febre inexplicável, calafrios ou sinais de infecção",
+        "Vômitos persistentes ou desidratação",
+        "Dificuldade para andar, quedas ou incapacidade de caminhar com segurança",
+        "Tontura intensa após trauma craniano recente",
+        "Sintomas rapidamente agravantes ou progressivos",
+        "Fadiga intensa ou perda de peso inexplicável",
+        "Sinais de baixa glicose no sangue (suor, tremores, confusão)"
+      ],
+      "nextSteps": "Visite o hospital mais próximo imediatamente.",
+      "contact": "Consulte um clínico geral para avaliação completa."
+    }
+  },
+  "quiz/index": {
+    "index": {
+      "title": "Perguntas"
+    }
+  },
+  "quiz/result": {
+    "header": "Seu Resultado",
+    "unknown": {
+      "label": "Resultado Não Reconhecido",
+      "description": "Não conseguimos determinar um resultado específico. Por favor, tente novamente."
+    },
+    "answersTitle": "🧾 Suas Respostas:",
+    "qPrefix": "P.",
+    "aPrefix": "R.",
+    "meaningTitle": "💬 O que isso pode significar:",
+    "findDoctorButton": "👉 Qual médico devo consultar?",
+    "homeButton": "🏠 Início",
+    "accessibility": {
+      "findDoctor": "Toque para encontrar o médico adequado"
+    }
+  },
+  "layout": {
+    "disclaimer": {
+      "text1": "🛑🚫 Este aplicativo fornece apenas informações gerais e não é",
+      "notSubstitute": "UM SUBSTITUTO",
+      "text2": "para aconselhamento médico profissional, diagnóstico ou tratamento. Sempre consulte um",
+      "provider": "Profissional de Saúde Qualificado"
+    },
+    "footer": {
+      "aboutLink": "Sobre / Termos / Privacidade",
+      "note": "Dr. Rahul Kapahi · Para Conscientização, Não Diagnóstico",
+      "accessibility": "Abrir tela Sobre com Termos e Política de Privacidade"
+    }
+  },
+  "about": {
+    "screenTitle": "Sobre o App",
+    "header": "🌀 Sobre o DizzySense",
+    "paragraph1": "O DizzySense é um aplicativo gratuito offline que ajuda os usuários a entender possíveis causas de tontura e fornece orientação sobre qual especialista médico consultar.",
+    "paragraph2": "Nenhum dado pessoal é coletado. Todo o processamento ocorre no seu dispositivo.",
+    "paragraph3": "O DizzySense funciona totalmente sem internet!",
+    "developerInfo": "👨‍⚕️ Informações do Desenvolvedor",
+    "developerName": "Dr. Rahul Kapahi",
+    "developerRole": "Consultor de Otorrinolaringologia",
+    "developerCountry": "🇮🇳 Índia",
+    "emailLabel": "entclinicdwarka@gmail.com",
+    "websiteLabel": "Site da Clínica",
+    "directionsLabel": "Como Chegar",
+    "phoneLabel": "+91 88000 47117",
+    "privacyPolicy": "🛡️ Política de Privacidade",
+    "terms": "📄 Termos & Condições",
+    "clickHint": "(Clique nos links acima para saber mais)",
+    "version": "📱 Versão 1.1 • Setembro 2025",
+    "home": "🏠 Início"
+  },
+  "home": {
+    "feelingHeading": "Sentindo-se instável ou tonto?",
+    "subtitle1": "Não tem certeza se é Vertigem, Tontura, Tonteira ou Desmaio?",
+    "subtitle2": "o aplicativo te guia por um breve questionário para ajudá-lo a:",
+    "bullet1": "👉 Entender o que você está sentindo.",
+    "bullet2": "👉 Conhecer causas comuns e sinais de alerta.",
+    "bullet3": "👉 Obter orientação clara sobre qual especialista consultar.",
+    "startQuiz": "Iniciar Questionário de Sintomas"
+  },
+  "appName": "DizzySense",
+  "privacy": {
+    "title": "Política de Privacidade",
+    "accessibilityTitle": "Política de Privacidade do DizzySense",
+    "header": "🛡️ Política de Privacidade do DizzySense",
+    "effectiveDate": "Data de Vigência: 2 de Agosto de 2025",
+    "lastUpdated": "Última Atualização: 24 de Setembro de 2025",
+    "intro": "🌀 DizzySense (\"o App\", \"nós\", \"nosso\") é um aplicativo móvel projetado para ajudar os usuários a entender possíveis causas de tontura e orientá-los sobre qual especialista médico consultar. Valorizamos sua privacidade e não coletamos nenhuma informação pessoal identificável.",
+
+    "infoCollectHeading": "🔍 Informações que Coletamos",
+    "infoCollectText": "Não coletamos, armazenamos ou transmitimos nenhum dos seguintes dados:\n\n• Seu nome, endereço de e-mail, número de telefone ou identidade pessoal\n• Localização ou identificadores do dispositivo\n• Registros de saúde ou histórico médico\n\nO aplicativo funciona inteiramente em seu dispositivo e não transmite respostas do questionário ou quaisquer dados para nossos servidores ou terceiros.",
+
+    "permissionsHeading": "📱 Permissões do Dispositivo",
+    "permissionsText": "O DizzySense não solicita acesso à sua câmera, contatos, localização ou microfone. Ele apenas utiliza funções básicas do dispositivo necessárias para o funcionamento adequado do aplicativo.",
+
+    "thirdPartyHeading": "💼 Serviços de Terceiros",
+    "thirdPartyText1": "Não utilizamos ferramentas de análise, publicidade ou rastreamento de terceiros (como Google Analytics, Facebook SDK, etc.).",
+    "thirdPartyText2": "O aplicativo pode abrir sites externos (por exemplo, Google Search) para conveniência. Estes são tratados pelo navegador do seu dispositivo, e o DizzySense não transmite nenhuma informação pessoal.",
+
+    "disclaimerHeading": "⚠️ Aviso Médico",
+    "disclaimerText": "O DizzySense não substitui aconselhamento médico profissional ou diagnóstico. É destinado apenas para fins informativos. Sempre consulte um profissional de saúde qualificado sobre quaisquer sintomas ou preocupações médicas.",
+
+    "securityHeading": "🔐 Segurança dos Dados",
+    "securityText": "Como o aplicativo não coleta dados, não há informações pessoais para proteger ou transmitir. Todas as seleções de sintomas e lógica do questionário ocorrem inteiramente no seu dispositivo.",
+
+    "childrenHeading": "👶 Privacidade das Crianças",
+    "childrenText": "O DizzySense não é destinado a crianças menores de 13 anos. Não coletamos conscientemente dados de ninguém, incluindo menores.",
+
+    "contactHeading": "📬 Contato",
+    "contactText": "Se tiver dúvidas sobre esta política de privacidade ou o aplicativo:\nEmail: entclinicdwarka@gmail.com\nDesenvolvedor: Dr. Rahul Kapahi, Consultor de Otorrinolaringologia\nLocalização: Índia",
+
+    "summaryHeading": "✅ Resumo",
+    "summaryText": "Sua privacidade é importante para nós. O DizzySense foi criado com o objetivo de fornecer orientação médica segura, offline, sem rastreamento, publicidade ou coleta de dados.",
+
+    "version": "Versão 1.1 • Setembro 2025",
+    "homeButton": "🏠 Início",
+    "homeButtonLabel": "Voltar à tela inicial"
+  },
+  "specialist": {
+    "title": "Guia de Especialistas",
+    "invalidResult": "Parâmetro de resultado inválido.",
+    "noSpecialist": "Nenhum especialista correspondente encontrado.",
+    "consultDoctor": "Consultar {{doctor}}",
+    "redFlags": "Sinais de alerta a observar:",
+    "findNearby": "🔎 Encontrar {{doctor}}s próximos",
+    "home": "🏠 Início",
+    "errorSearch": "Ocorreu um erro ao abrir a pesquisa.",
+    "cannotOpen": "Não foi possível abrir o URL da pesquisa"
+  },
+  "terms": {
+    "title": "📄 Termos & Condições",
+    "headerAccessibility": "Termos e Condições do DizzySense",
+    "effectiveDate": "Data de Vigência: 2 de Agosto de 2025",
+    "lastUpdated": "Última Atualização: 24 de Setembro de 2025",
+    "intro": "Ao usar 🌀DizzySense (\"o App\", \"nós\", \"nosso\"), você concorda com os seguintes termos e condições. Por favor, leia-os cuidadosamente antes de usar o aplicativo.",
+    "useOfApp": {
+      "heading": "1. Uso do Aplicativo",
+      "paragraph": "O DizzySense tem como objetivo fornecer informações gerais e orientações relacionadas à tontura. Não substitui avaliação médica profissional, diagnóstico ou tratamento."
+    },
+    "medicalDisclaimer": {
+      "heading": "2. Aviso Médico",
+      "paragraph": "Este aplicativo não fornece aconselhamento médico. Sempre consulte um profissional de saúde qualificado caso apresente sintomas ou tenha dúvidas relacionadas à saúde. Não adie buscar atendimento profissional com base nas informações deste aplicativo."
+    },
+    "noDataCollection": {
+      "heading": "3. Nenhuma Coleta de Dados",
+      "paragraph1": "O aplicativo não coleta ou armazena nenhum dado pessoal. Todas as entradas de sintomas e interações permanecem em seu dispositivo. Não rastreamos, armazenamos ou compartilhamos seus dados com ninguém.",
+      "paragraph2": "O aplicativo pode abrir sites externos (por exemplo, Google Search) para conveniência. Estes são tratados pelo navegador do seu dispositivo, e o DizzySense não transmite nenhuma informação pessoal."
+    },
+    "intellectualProperty": {
+      "heading": "4. Propriedade Intelectual",
+      "paragraph": "Todo o conteúdo do aplicativo, incluindo texto, layout e elementos visuais, é propriedade intelectual do Dr. Rahul Kapahi. Você não pode reproduzir ou redistribuir qualquer parte deste aplicativo sem permissão."
+    },
+    "limitation": {
+      "heading": "5. Limitação de Responsabilidade",
+      "paragraph": "Não nos responsabilizamos por qualquer dano ou prejuízo que possa surgir do uso ou uso indevido do aplicativo, incluindo a confiança nas orientações fornecidas. O uso do aplicativo é por sua conta e risco."
+    },
+    "changes": {
+      "heading": "6. Alterações nos Termos",
+      "paragraph": "Podemos atualizar estes termos ocasionalmente. A versão mais recente estará sempre disponível dentro do aplicativo. O uso contínuo do aplicativo implica sua aceitação de quaisquer alterações."
+    },
+    "contact": {
+      "heading": "7. Contato",
+      "paragraph": "Para dúvidas ou preocupações sobre estes termos:",
+      "emailLabel": "Email:",
+      "developerLabel": "Desenvolvedor:",
+      "locationLabel": "Localização:"
+    },
+    "version": "Versão 1.1 • Setembro 2025",
+    "homeButton": "🏠 Início",
+    "homeButtonAccessibility": "Voltar à tela inicial"
+  },
+  "language": "Alterar idioma"
+}

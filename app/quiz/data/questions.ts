@@ -3,387 +3,283 @@ import { QuestionSet } from "@/app/components/QuestionEngine";
 const questions: QuestionSet = {
   start: {
     id: "start",
-    text: "What kind of dizziness are you feeling?",
+    text: "questions.start.text",
     options: [
-      { label: "Spinning", next: "spinning_duration" },
-      { label: "Blackout / Fainting", next: "blackout_trigger" },
-      { label: "Lightheaded / Unsteady", next: "lightheaded_trigger" },
-      { label: "Visual disturbances", next: "vision_issues" },
-      { label: "Neck-related dizziness", next: "neck_pain_relation" },
+      { label: "questions.start.options.spinning", next: "spinning_duration" },
+      { label: "questions.start.options.blackout", next: "blackout_trigger" },
+      { label: "questions.start.options.lightheaded", next: "lightheaded_trigger" },
+      { label: "questions.start.options.vision", next: "vision_issues" },
+      { label: "questions.start.options.neck", next: "neck_pain_relation" },
     ],
   },
 
   // === Spinning Vertigo Flow ===
   spinning_duration: {
     id: "spinning_duration",
-    text: "How long do your spinning attacks usually last?",
+    text: "questions.spinning_duration.text",
     options: [
-      { label: "Seconds", next: "spinning_trigger" },
-      { label: "Minutes to hours", next: "spinning_trigger" },
-      { label: "Hours to days", next: "spinning_trigger" },
+      { label: "questions.spinning_duration.options.seconds", next: "spinning_trigger" },
+      { label: "questions.spinning_duration.options.minutes_hours", next: "spinning_trigger" },
+      { label: "questions.spinning_duration.options.hours_days", next: "spinning_trigger" },
     ],
   },
 
   spinning_trigger: {
     id: "spinning_trigger",
-    text: "Are they triggered by positional changes (e.g., lying down, turning)?",
+    text: "questions.spinning_trigger.text",
     options: [
-      { label: "Yes", next: "hearing_issues" },
-      { label: "No", next: "nausea_vomiting" },
+      { label: "common.yes", next: "hearing_issues" },
+      { label: "common.no", next: "nausea_vomiting" },
     ],
   },
 
   hearing_issues: {
     id: "hearing_issues",
-    text: "Do you experience ear fullness, ringing (tinnitus), or hearing loss?",
+    text: "questions.hearing_issues.text",
     options: [
-      { label: "Yes", next: "upper_respiratory" },
-      { label: "No", next: "head_trauma" },
+      { label: "common.yes", next: "upper_respiratory" },
+      { label: "common.no", next: "head_trauma" },
     ],
   },
 
   upper_respiratory: {
     id: "upper_respiratory",
-    text: "Have you had any recent cold, sinus infection, or upper respiratory infection?",
+    text: "questions.upper_respiratory.text",
     options: [
-      { label: "Yes", next: "ent" },
-      { label: "No", next: "ent" },
+      { label: "common.yes", next: "ent" },
+      { label: "common.no", next: "ent" },
     ],
   },
 
   head_trauma: {
     id: "head_trauma",
-    text: "Any history of head trauma or injury recently?",
+    text: "questions.head_trauma.text",
     options: [
-      { label: "Yes", next: "neuro" },
-      { label: "No", next: "ent" },
+      { label: "common.yes", next: "neuro" },
+      { label: "common.no", next: "ent" },
     ],
   },
 
   nausea_vomiting: {
     id: "nausea_vomiting",
-    text: "Do you also experience persistent nausea or vomiting?",
+    text: "questions.nausea_vomiting.text",
     options: [
-      { label: "Yes", next: "neuro" },
-      { label: "No", next: "ent" },
+      { label: "common.yes", next: "neuro" },
+      { label: "common.no", next: "ent" },
     ],
   },
 
   // === Blackout / Fainting Flow ===
   blackout_trigger: {
     id: "blackout_trigger",
-    text: "When do blackouts typically happen?",
+    text: "questions.blackout_trigger.text",
     options: [
-      { label: "During exertion", next: "cardio_palpitations" },
-      { label: "When standing up quickly", next: "cardio" },
-      { label: "Randomly without clear trigger", next: "neuro_syncopal" },
+      { label: "questions.blackout_trigger.options.exertion", next: "cardio_palpitations" },
+      { label: "questions.blackout_trigger.options.standing", next: "cardio" },
+      { label: "questions.blackout_trigger.options.random", next: "neuro_syncopal" },
     ],
   },
 
   cardio_palpitations: {
     id: "cardio_palpitations",
-    text: "Do you feel chest tightness, palpitations, or shortness of breath during blackouts?",
+    text: "questions.cardio_palpitations.text",
     options: [
-      { label: "Yes", next: "cardio" },
-      { label: "No", next: "general" },
+      { label: "common.yes", next: "cardio" },
+      { label: "common.no", next: "general" },
     ],
   },
 
   neuro_syncopal: {
     id: "neuro_syncopal",
-    text: "Any slurred speech, confusion, or limb weakness during these events?",
+    text: "questions.neuro_syncopal.text",
     options: [
-      { label: "Yes", next: "neuro" },
-      { label: "No", next: "general" },
+      { label: "common.yes", next: "neuro" },
+      { label: "common.no", next: "general" },
     ],
   },
 
   // === Lightheaded / Unsteady Flow ===
   lightheaded_trigger: {
     id: "lightheaded_trigger",
-    text: "When do you feel lightheaded or unsteady?",
+    text: "questions.lightheaded_trigger.text",
     options: [
-      { label: "During physical activity or standing", next: "cardio_palpitations" },
-      { label: "Randomly, including when sitting or lying", next: "psychiatric_stress" },
-      { label: "In stressful or anxious moments", next: "psychiatric_anxiety" },
-      { label: "With fever, chills, or recent infection", next: "systemic_infection" },
-      {
-        label: "With unexplained symptoms",
-        next: "endocrine_symptoms"
-      }
-
+      { label: "questions.lightheaded_trigger.options.activity", next: "cardio_palpitations" },
+      { label: "questions.lightheaded_trigger.options.random", next: "psychiatric_stress" },
+      { label: "questions.lightheaded_trigger.options.stress", next: "psychiatric_anxiety" },
+      { label: "questions.lightheaded_trigger.options.infection", next: "systemic_infection" },
+      { label: "questions.lightheaded_trigger.options.unexplained", next: "endocrine_symptoms" },
     ],
   },
 
   endocrine_symptoms: {
     id: "endocrine_symptoms",
-    text: "Do you experience unexplained fatigue, weight gain/loss, or excessive sweating?",
+    text: "questions.endocrine_symptoms.text",
     options: [
-      { label: "Yes", next: "endocrinology" },
-      { label: "No", next: "general" },
+      { label: "common.yes", next: "endocrinology" },
+      { label: "common.no", next: "general" },
     ],
   },
 
   psychiatric_stress: {
     id: "psychiatric_stress",
-    text: "Do you feel detached from reality (derealization)?",
+    text: "questions.psychiatric_stress.text",
     options: [
-      { label: "Yes", next: "psychiatry" },
-      { label: "No", next: "general" },
+      { label: "common.yes", next: "psychiatry" },
+      { label: "common.no", next: "general" },
     ],
   },
 
   psychiatric_anxiety: {
     id: "psychiatric_anxiety",
-    text: "Do these symptoms coincide with panic attacks or anxiety?",
+    text: "questions.psychiatric_anxiety.text",
     options: [
-      { label: "Yes", next: "psychiatry" },
-      { label: "No", next: "general" },
+      { label: "common.yes", next: "psychiatry" },
+      { label: "common.no", next: "general" },
     ],
   },
 
   systemic_infection: {
     id: "systemic_infection",
-    text: "Have you experienced recent viral infection, unexplained fever, or fatigue?",
+    text: "questions.systemic_infection.text",
     options: [
-      { label: "Yes", next: "infectious" },
-      { label: "No", next: "general" },
+      { label: "common.yes", next: "infectious" },
+      { label: "common.no", next: "general" },
     ],
   },
 
   // === Visual Disturbances Flow ===
   vision_issues: {
     id: "vision_issues",
-    text: "Do you experience blurred vision, double vision, difficulty focusing, or eye strain?",
+    text: "questions.vision_issues.text",
     options: [
-      { label: "Yes", next: "vision_additional" },
-      { label: "No", next: "general" },
+      { label: "common.yes", next: "vision_additional" },
+      { label: "common.no", next: "general" },
     ],
   },
 
   vision_additional: {
     id: "vision_additional",
-    text: "Are these symptoms associated with headaches, dizziness, or nausea?",
+    text: "questions.vision_additional.text",
     options: [
-      { label: "Yes", next: "neuro_or_ophthalmology" },
-      { label: "No", next: "ophthalmology" },
+      { label: "common.yes", next: "neuro_or_ophthalmology" },
+      { label: "common.no", next: "ophthalmology" },
     ],
   },
 
   neuro_or_ophthalmology: {
     id: "neuro_or_ophthalmology",
-    text: "Are these visual symptoms associated with limb weakness or slurred speech",
+    text: "questions.neuro_or_ophthalmology.text",
     options: [
-      { label: "Yes", next: "neuro" },
-      { label: "No", next: "ophthalmology" },
+      { label: "common.yes", next: "neuro" },
+      { label: "common.no", next: "ophthalmology" },
     ],
   },
 
   // === Neck-related Dizziness Flow ===
   neck_pain_relation: {
     id: "neck_pain_relation",
-    text: "Is your dizziness related to neck pain or limited range of motion?",
+    text: "questions.neck_pain_relation.text",
     options: [
-      { label: "Yes", next: "neck_additional" },
-      { label: "No", next: "general" },
+      { label: "common.yes", next: "neck_additional" },
+      { label: "common.no", next: "general" },
     ],
   },
 
   neck_additional: {
     id: "neck_additional",
-    text: "Do you have headaches, tingling, or numbness in your arms or hands?",
+    text: "questions.neck_additional.text",
     options: [
-      { label: "Yes", next: "orthopedics" },
-      { label: "No", next: "general" },
+      { label: "common.yes", next: "orthopedics" },
+      { label: "common.no", next: "general" },
     ],
   },
 
-
-  // === Specialties Leaf Nodes ===
-  ent: {
-    id: "ent",
-    text: "Consult an ENT Specialist.",
-    options: [],
-  },
-
-  cardio: {
-    id: "cardio",
-    text: "Consult a Cardiologist.",
-    options: [],
-  },
-
-  neuro: {
-    id: "neuro",
-    text: "Consult a Neurologist.",
-    options: [],
-  },
-
-  psychiatry: {
-    id: "psychiatry",
-    text: "Consult a Psychiatrist.",
-    options: [],
-  },
-
-  orthopedics: {
-    id: "orthopedics",
-    text: "Consult an Orthopedist.",
-    options: [],
-  },
-
-  endocrinology: {
-    id: "endocrinology",
-    text: "Consult an Endocrinologist.",
-    options: [],
-  },
-
-  ophthalmology: {
-    id: "ophthalmology",
-    text: "Consult an Ophthalmologist.",
-    options: [],
-  },
-
-  infectious: {
-    id: "infectious",
-    text: "Consult Infectious Disease Specialist.",
-    options: [],
-  },
-
-  general: {
-    id: "general",
-    text: "⚠️ See a doctor urgently due to red flag symptoms.",
-    options: [],
-  },
+  // === Leaf Nodes ===
+  ent: { id: "ent", text: "questions.ent.text", options: [] },
+  cardio: { id: "cardio", text: "questions.cardio.text", options: [] },
+  neuro: { id: "neuro", text: "questions.neuro.text", options: [] },
+  psychiatry: { id: "psychiatry", text: "questions.psychiatry.text", options: [] },
+  orthopedics: { id: "orthopedics", text: "questions.orthopedics.text", options: [] },
+  endocrinology: { id: "endocrinology", text: "questions.endocrinology.text", options: [] },
+  ophthalmology: { id: "ophthalmology", text: "questions.ophthalmology.text", options: [] },
+  infectious: { id: "infectious", text: "questions.infectious.text", options: [] },
+  general: { id: "general", text: "questions.general.text", options: [] },
 };
 
+// === Final Result Mapping ===
 const getFinalResult = (id: string) => {
   const mapping = {
     ent: {
-      label: "Ear - related vertigo",
-      doctor: "E.N.T. Specialist",
-      description:
-        "Symptoms suggest an inner ear or balance system issue, commonly causing positional vertigo.",
-      redFlags: [
-        "Sudden or progressive hearing loss",
-        "Persistent imbalance with head movement",
-        "Nausea/vomiting with position change",
-      ],
-      nextSteps: "Rest in a dark, quiet room. Avoid sudden movements.",
-      contact: "Visit a local ENT clinic or hospital.",
+      label: "results.ent.label",
+      doctor: "results.ent.doctor",
+      description: "results.ent.description",
+      redFlags: "results.ent.redFlags",
+      nextSteps: "results.ent.nextSteps",
+      contact: "results.ent.contact",
     },
     cardio: {
-      label: "Heart-related dizziness",
-      doctor: "Cardiologist",
-      description:
-        "Pattern suggests a cardiovascular cause such as blood pressure changes or arrhythmia.",
-      redFlags: [
-        "Tightness in chest or shortness of breath",
-        "Fainting during activity or standing",
-        "Palpitations or irregular heartbeat",
-      ],
-      nextSteps: "Stay hydrated and avoid exertion until seen by a doctor.",
-      contact: "Visit a cardiology department at your nearest hospital.",
+      label: "results.cardio.label",
+      doctor: "results.cardio.doctor",
+      description: "results.cardio.description",
+      redFlags: "results.cardio.redFlags",
+      nextSteps: "results.cardio.nextSteps",
+      contact: "results.cardio.contact",
     },
     neuro: {
-      label: "Neurological-related dizziness",
-      doctor: "Neurologist",
-      description:
-        "Possible link to migraines, balance centers, or transient ischemic events.",
-      redFlags: [
-        "Slurred speech",
-        "Limb weakness or numbness",
-        "Blurred or double vision",
-      ],
-      nextSteps: "Avoid stress and take notes of symptoms for medical consultation.",
-      contact: "See a neurologist for brain and nervous system evaluation.",
+      label: "results.neuro.label",
+      doctor: "results.neuro.doctor",
+      description: "results.neuro.description",
+      redFlags: "results.neuro.redFlags",
+      nextSteps: "results.neuro.nextSteps",
+      contact: "results.neuro.contact",
     },
     psychiatry: {
-      label: "Psychiatry-related dizziness",
-      doctor: "Psychiatrist",
-      description:
-        "Symptoms may stem from anxiety, panic disorder, or somatoform disorders.",
-      redFlags: [
-        "Persistent worry",
-        "Depersonalization or derealization",
-        "Sleep disturbances",
-      ],
-      nextSteps: "Practice relaxation techniques and consult mental health professionals.",
-      contact: "Visit a mental health clinic or psychiatrist.",
+      label: "results.psychiatry.label",
+      doctor: "results.psychiatry.doctor",
+      description: "results.psychiatry.description",
+      redFlags: "results.psychiatry.redFlags",
+      nextSteps: "results.psychiatry.nextSteps",
+      contact: "results.psychiatry.contact",
     },
     orthopedics: {
-      label: "Orthopedic-related dizziness",
-      doctor: "Orthopedist",
-      description:
-        "Symptoms related to neck pain or cervical spine disorders.",
-      redFlags: [
-        "Neck stiffness",
-        "Pain radiating to arms",
-        "Reduced neck motion",
-      ],
-      nextSteps: "Avoid neck strain and seek orthopedic assessment.",
-      contact: "Visit an orthopedic clinic for spinal evaluation.",
+      label: "results.orthopedics.label",
+      doctor: "results.orthopedics.doctor",
+      description: "results.orthopedics.description",
+      redFlags: "results.orthopedics.redFlags",
+      nextSteps: "results.orthopedics.nextSteps",
+      contact: "results.orthopedics.contact",
     },
     endocrinology: {
-      label: "Endocrine-related dizziness",
-      doctor: "Endocrinologist",
-      description:
-        "Could be linked to blood sugar fluctuations, thyroid dysfunction, or hormonal imbalance.",
-      redFlags: [
-        "Unexplained fatigue",
-        "Weight changes",
-        "Excessive sweating",
-      ],
-      nextSteps: "Monitor symptoms and consult endocrinologist for testing.",
-      contact: "See an endocrinologist for hormone evaluation.",
+      label: "results.endocrinology.label",
+      doctor: "results.endocrinology.doctor",
+      description: "results.endocrinology.description",
+      redFlags: "results.endocrinology.redFlags",
+      nextSteps: "results.endocrinology.nextSteps",
+      contact: "results.endocrinology.contact",
     },
     ophthalmology: {
-      label: "Eye-related dizziness",
-      doctor: "Ophthalmologist",
-      description:
-        "Visual disturbances causing dizziness, due to eye muscle or optic nerve dysfunction.",
-      redFlags: [
-        "Blurred vision",
-        "Double vision",
-        "Difficulty focusing",
-      ],
-      nextSteps: "Avoid visual strain and consult eye specialist.",
-      contact: "Visit an ophthalmology clinic.",
+      label: "results.ophthalmology.label",
+      doctor: "results.ophthalmology.doctor",
+      description: "results.ophthalmology.description",
+      redFlags: "results.ophthalmology.redFlags",
+      nextSteps: "results.ophthalmology.nextSteps",
+      contact: "results.ophthalmology.contact",
     },
     infectious: {
-      label: "Infectious-related Dizziness",
-      doctor: "Internal Medicine",
-      description:
-        "Possible systemic causes like infection, anemia, or dehydration.",
-      redFlags: [
-        "Fever",
-        "Fatigue",
-        "Recent viral infection",
-      ],
-      nextSteps: "Stay hydrated and consult doctor urgently.",
-      contact: "Visit your nearest hospital for internal medicine consult.",
+      label: "results.infectious.label",
+      doctor: "results.infectious.doctor",
+      description: "results.infectious.description",
+      redFlags: "results.infectious.redFlags",
+      nextSteps: "results.infectious.nextSteps",
+      contact: "results.infectious.contact",
     },
     general: {
-      label: "Unspecified or Red Flag Dizziness",
-      doctor: "General Physician",
-      description:
-        "Red flag symptoms require urgent comprehensive medical assessment.",
-      redFlags: [
-        "Sudden, severe headache (worst headache of your life)",
-        "Acute vision loss, blurred or double vision",
-        "Sudden hearing loss",
-        "Limb weakness, numbness, or facial drooping",
-        "Difficulty speaking, slurred speech, or confusion",
-        "Loss of consciousness or unexplained fainting",
-        "Severe chest pain, palpitations, or shortness of breath",
-        "Unexplained fever, chills, or signs of infection",
-        "Persistent vomiting or dehydration",
-        "Unsteady gait, falls, or inability to walk safely",
-        "New-onset severe dizziness after head trauma",
-        "Rapidly worsening symptoms or progression",
-        "Severe fatigue or unexplained weight loss",
-        "Signs of low blood sugar (sweating, shaking, confusion)",
-      ],
-      nextSteps: "Visit nearest hospital immediately.",
-      contact: "See a general physician for a full workup.",
+      label: "results.general.label",
+      doctor: "results.general.doctor",
+      description: "results.general.description",
+      redFlags: "results.general.redFlags",
+      nextSteps: "results.general.nextSteps",
+      contact: "results.general.contact",
     },
   };
 

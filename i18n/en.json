@@ -1,0 +1,429 @@
+{
+  "customHeader": {
+    "title": "🌀 DizzySense"
+  },
+  "whatsapp": {
+    "message": "Hello, I want to book an appointment with Dr. Rahul Kapahi.",
+    "alertTitle": "Unable to open WhatsApp",
+    "alertMessage": "It looks like WhatsApp is not installed or accessible on your device.",
+    "accessibilityHint": "Opens WhatsApp chat with Dr. Rahul Kapahi's clinic",
+    "accessibilityLabel": "Contact us on WhatsApp"
+  },
+  "questionEngine": {},
+  "common": {
+    "yes": "Yes",
+    "no": "No"
+  },
+  "questions": {
+    "loading": "Preparing your result...",
+    "step": "Step {{step}}",
+    "start": {
+      "text": "What kind of dizziness are you feeling?",
+      "options": {
+        "spinning": "Spinning",
+        "blackout": "Blackout / Fainting",
+        "lightheaded": "Lightheaded / Unsteady",
+        "vision": "Visual disturbances",
+        "neck": "Neck-related dizziness"
+      }
+    },
+    "spinning_duration": {
+      "text": "How long do your spinning attacks usually last?",
+      "options": {
+        "seconds": "Seconds",
+        "minutes_hours": "Minutes to hours",
+        "hours_days": "Hours to days"
+      }
+    },
+    "spinning_trigger": {
+      "text": "Are they triggered by positional changes (e.g., lying down, turning)?"
+    },
+    "hearing_issues": {
+      "text": "Do you experience ear fullness, ringing (tinnitus), or hearing loss?"
+    },
+    "upper_respiratory": {
+      "text": "Have you had any recent cold, sinus infection, or upper respiratory infection?"
+    },
+    "head_trauma": {
+      "text": "Any history of head trauma or injury recently?"
+    },
+    "nausea_vomiting": {
+      "text": "Do you also experience persistent nausea or vomiting?"
+    },
+    "blackout_trigger": {
+      "text": "When do blackouts typically happen?",
+      "options": {
+        "exertion": "During exertion",
+        "standing": "When standing up quickly",
+        "random": "Randomly without clear trigger"
+      }
+    },
+    "cardio_palpitations": {
+      "text": "Do you feel chest tightness, palpitations, or shortness of breath during blackouts?"
+    },
+    "neuro_syncopal": {
+      "text": "Any slurred speech, confusion, or limb weakness during these events?"
+    },
+    "lightheaded_trigger": {
+      "text": "When do you feel lightheaded or unsteady?",
+      "options": {
+        "activity": "During physical activity or standing",
+        "random": "Randomly, including when sitting or lying",
+        "stress": "In stressful or anxious moments",
+        "infection": "With fever, chills, or recent infection",
+        "unexplained": "With unexplained symptoms"
+      }
+    },
+    "endocrine_symptoms": {
+      "text": "Do you experience unexplained fatigue, weight gain/loss, or excessive sweating?"
+    },
+    "psychiatric_stress": {
+      "text": "Do you feel detached from reality (derealization)?"
+    },
+    "psychiatric_anxiety": {
+      "text": "Do these symptoms coincide with panic attacks or anxiety?"
+    },
+    "systemic_infection": {
+      "text": "Have you experienced recent viral infection, unexplained fever, or fatigue?"
+    },
+    "vision_issues": {
+      "text": "Do you experience blurred vision, double vision, difficulty focusing, or eye strain?"
+    },
+    "vision_additional": {
+      "text": "Are these symptoms associated with headaches, dizziness, or nausea?"
+    },
+    "neuro_or_ophthalmology": {
+      "text": "Are these visual symptoms associated with limb weakness or slurred speech?"
+    },
+    "neck_pain_relation": {
+      "text": "Is your dizziness related to neck pain or limited range of motion?"
+    },
+    "neck_additional": {
+      "text": "Do you have headaches, tingling, or numbness in your arms or hands?"
+    },
+    "ent": { "text": "Consult an ENT Specialist." },
+    "cardio": { "text": "Consult a Cardiologist." },
+    "neuro": { "text": "Consult a Neurologist." },
+    "psychiatry": { "text": "Consult a Psychiatrist." },
+    "orthopedics": { "text": "Consult an Orthopedist." },
+    "endocrinology": { "text": "Consult an Endocrinologist." },
+    "ophthalmology": { "text": "Consult an Ophthalmologist." },
+    "infectious": { "text": "Consult Infectious Disease Specialist." },
+    "general": { "text": "⚠️ See a doctor urgently due to red flag symptoms." }
+  },
+
+  "options": {
+    "spinning": "Spinning",
+    "blackout": "Blackout / Fainting",
+    "lightheaded": "Lightheaded / Unsteady",
+    "visual_disturbances": "Visual disturbances",
+    "neck_related": "Neck-related dizziness"
+  },
+  "dizziness": {
+    "spinning": {
+      "title": "Spinning",
+      "desc": "A feeling that the room or you are moving or rotating."
+    },
+    "blackout": {
+      "title": "Blackout / Fainting",
+      "desc": "A feeling of near-fainting or complete loss of consciousness."
+    },
+    "lightheaded": {
+      "title": "Lightheaded",
+      "desc": "A floating, woozy sensation — not quite spinning, but disorienting."
+    },
+    "unsteady": {
+      "title": "Unsteady",
+      "desc": "A feeling of imbalance or swaying while walking or standing."
+    },
+    "neck": {
+      "title": "Neck / Posture related",
+      "desc": "Feeling dizzy when moving or holding your neck in certain positions."
+    },
+    "modalTitle": "Types of Dizziness",
+    "close": "Close"
+  },
+  "specialties": {
+    "ent": "Consult an ENT Specialist.",
+    "cardio": "Consult a Cardiologist.",
+    "neuro": "Consult a Neurologist.",
+    "psychiatry": "Consult a Psychiatrist.",
+    "orthopedics": "Consult an Orthopedist.",
+    "endocrinology": "Consult an Endocrinologist.",
+    "ophthalmology": "Consult an Ophthalmologist.",
+    "infectious": "Consult Infectious Disease Specialist.",
+    "general": "⚠️ See a doctor urgently due to red flag symptoms."
+  },
+
+  "results": {
+    "ent": {
+      "label": "Ear - related vertigo",
+      "doctor": "E.N.T. Specialist",
+      "description": "Symptoms suggest an inner ear or balance system issue, commonly causing positional vertigo.",
+      "redFlags": [
+        "Sudden or progressive hearing loss",
+        "Persistent imbalance with head movement",
+        "Nausea/vomiting with position change"
+      ],
+      "nextSteps": "Rest in a dark, quiet room. Avoid sudden movements.",
+      "contact": "Visit a local ENT clinic or hospital."
+    },
+    "cardio": {
+      "label": "Heart-related dizziness",
+      "doctor": "Cardiologist",
+      "description": "Pattern suggests a cardiovascular cause such as blood pressure changes or arrhythmia.",
+      "redFlags": [
+        "Tightness in chest or shortness of breath",
+        "Fainting during activity or standing",
+        "Palpitations or irregular heartbeat"
+      ],
+      "nextSteps": "Stay hydrated and avoid exertion until seen by a doctor.",
+      "contact": "Visit a cardiology department at your nearest hospital."
+    },
+    "neuro": {
+      "label": "Neurological-related dizziness",
+      "doctor": "Neurologist",
+      "description": "Possible link to migraines, balance centers, or transient ischemic events.",
+      "redFlags": [
+        "Slurred speech",
+        "Limb weakness or numbness",
+        "Blurred or double vision"
+      ],
+      "nextSteps": "Avoid stress and take notes of symptoms for medical consultation.",
+      "contact": "See a neurologist for brain and nervous system evaluation."
+    },
+    "psychiatry": {
+      "label": "Psychiatry-related dizziness",
+      "doctor": "Psychiatrist",
+      "description": "Symptoms may stem from anxiety, panic disorder, or somatoform disorders.",
+      "redFlags": [
+        "Persistent worry",
+        "Depersonalization or derealization",
+        "Sleep disturbances"
+      ],
+      "nextSteps": "Practice relaxation techniques and consult mental health professionals.",
+      "contact": "Visit a mental health clinic or psychiatrist."
+    },
+    "orthopedics": {
+      "label": "Orthopedic-related dizziness",
+      "doctor": "Orthopedist",
+      "description": "Symptoms related to neck pain or cervical spine disorders.",
+      "redFlags": [
+        "Neck stiffness",
+        "Pain radiating to arms",
+        "Reduced neck motion"
+      ],
+      "nextSteps": "Avoid neck strain and seek orthopedic assessment.",
+      "contact": "Visit an orthopedic clinic for spinal evaluation."
+    },
+    "endocrinology": {
+      "label": "Endocrine-related dizziness",
+      "doctor": "Endocrinologist",
+      "description": "Could be linked to blood sugar fluctuations, thyroid dysfunction, or hormonal imbalance.",
+      "redFlags": [
+        "Unexplained fatigue",
+        "Weight changes",
+        "Excessive sweating"
+      ],
+      "nextSteps": "Monitor symptoms and consult endocrinologist for testing.",
+      "contact": "See an endocrinologist for hormone evaluation."
+    },
+    "ophthalmology": {
+      "label": "Eye-related dizziness",
+      "doctor": "Ophthalmologist",
+      "description": "Visual disturbances causing dizziness, due to eye muscle or optic nerve dysfunction.",
+      "redFlags": ["Blurred vision", "Double vision", "Difficulty focusing"],
+      "nextSteps": "Avoid visual strain and consult eye specialist.",
+      "contact": "Visit an ophthalmology clinic."
+    },
+    "infectious": {
+      "label": "Infectious-related Dizziness",
+      "doctor": "Internal Medicine",
+      "description": "Possible systemic causes like infection, anemia, or dehydration.",
+      "redFlags": ["Fever", "Fatigue", "Recent viral infection"],
+      "nextSteps": "Stay hydrated and consult doctor urgently.",
+      "contact": "Visit your nearest hospital for internal medicine consult."
+    },
+    "general": {
+      "label": "Unspecified or Red Flag Dizziness",
+      "doctor": "General Physician",
+      "description": "Red flag symptoms require urgent comprehensive medical assessment.",
+      "redFlags": [
+        "Sudden, severe headache (worst headache of your life)",
+        "Acute vision loss, blurred or double vision",
+        "Sudden hearing loss",
+        "Limb weakness, numbness, or facial drooping",
+        "Difficulty speaking, slurred speech, or confusion",
+        "Loss of consciousness or unexplained fainting",
+        "Severe chest pain, palpitations, or shortness of breath",
+        "Unexplained fever, chills, or signs of infection",
+        "Persistent vomiting or dehydration",
+        "Unsteady gait, falls, or inability to walk safely",
+        "New-onset severe dizziness after head trauma",
+        "Rapidly worsening symptoms or progression",
+        "Severe fatigue or unexplained weight loss",
+        "Signs of low blood sugar (sweating, shaking, confusion)"
+      ],
+      "nextSteps": "Visit nearest hospital immediately.",
+      "contact": "See a general physician for a full workup."
+    }
+  },
+
+  "quiz/index": {
+    "index": {
+      "title": "Questions"
+    }
+  },
+  "quiz/result": {
+    "header": "Your Result",
+    "unknown": {
+      "label": "Result Not Recognized",
+      "description": "We couldn't determine a specific outcome. Please retry."
+    },
+    "answersTitle": "🧾 Your Answers:",
+    "qPrefix": "Q.",
+    "aPrefix": "A.",
+    "meaningTitle": "💬 What it might mean:",
+    "findDoctorButton": "👉 Which doctor should I consult?",
+    "homeButton": "🏠 Home",
+    "accessibility": {
+      "findDoctor": "Tap to find the right doctor"
+    }
+  },
+  "layout": {
+    "disclaimer": {
+      "text1": "🛑🚫 This app provides general information only and is",
+      "notSubstitute": "NOT A SUBSTITUTE",
+      "text2": "for professional medical advice, diagnosis, or treatment. Always consult a",
+      "provider": "Qualified Healthcare Provider"
+    },
+    "footer": {
+      "aboutLink": "About / Terms / Privacy",
+      "note": "Dr. Rahul Kapahi · For Awareness, Not Diagnosis",
+      "accessibility": "Open About screen with Terms and Privacy Policy"
+    }
+  },
+  "about": {
+    "screenTitle": "About The App",
+    "header": "🌀 About DizzySense",
+    "paragraph1": "DizzySense is a free offline-first app that helps users understand possible causes of dizziness and provides guidance on which medical specialist to consult.",
+    "paragraph2": "No personal data is collected. All processing happens on your device.",
+    "paragraph3": "DizzySense works fully without internet!",
+    "developerInfo": "👨‍⚕️ Developer Info",
+    "developerName": "Dr. Rahul Kapahi",
+    "developerRole": "ENT Consultant",
+    "developerCountry": "🇮🇳 India",
+    "emailLabel": "entclinicdwarka@gmail.com",
+    "websiteLabel": "Clinic Website",
+    "directionsLabel": "Directions",
+    "phoneLabel": "+91 88000 47117",
+    "privacyPolicy": "🛡️ Privacy Policy",
+    "terms": "📄 Terms & Conditions",
+    "clickHint": "(Click on the above links to read more)",
+    "version": "📱 Version 1.1 • September 2025",
+    "home": "🏠 Home"
+  },
+  "home": {
+    "feelingHeading": "Feeling unsteady or lightheaded?",
+    "subtitle1": "Unsure whether it's Vertigo, Dizziness, Giddiness, or a Blackout?",
+    "subtitle2": "walks you through a short quiz to help you:",
+    "bullet1": "👉 Understand what you're experiencing.",
+    "bullet2": "👉 Learn common causes and warning signs.",
+    "bullet3": "👉 Get clear guidance on which specialist to consult.",
+    "startQuiz": "Start Symptom Quiz"
+  },
+  "appName": "DizzySense",
+
+  "privacy": {
+    "title": "Privacy Policy",
+    "accessibilityTitle": "Privacy Policy for DizzySense",
+    "header": "🛡️ Privacy Policy for DizzySense",
+    "effectiveDate": "Effective Date: August 2, 2025",
+    "lastUpdated": "Last Updated: September 24, 2025",
+    "intro": "🌀 DizzySense (\"the App\", \"we\", \"our\") is a mobile application designed to help users understand possible causes of dizziness and guide them toward appropriate medical specialists. We value your privacy and do not collect any personally identifiable information.",
+
+    "infoCollectHeading": "🔍 Information We Collect",
+    "infoCollectText": "We do not collect, store, or transmit any of the following:\n\n• Your name, email address, phone number, or personal identity\n• Location or device identifiers\n• Health records or medical history\n\nThe app runs entirely on your device and does not transmit any quiz responses or data to our servers or any third parties.",
+
+    "permissionsHeading": "📱 Device Permissions",
+    "permissionsText": "DizzySense does not request access to your camera, contacts, location, or microphone. It only uses basic device functions necessary to run the app smoothly.",
+
+    "thirdPartyHeading": "💼 Third-Party Services",
+    "thirdPartyText1": "We do not use any third-party analytics, advertising, or tracking tools (such as Google Analytics, Facebook SDK, etc.).",
+    "thirdPartyText2": "The app may open external websites (e.g. Google Search) for convenience. These are handled by your device's browser, and DizzySense does not transmit any personal information.",
+
+    "disclaimerHeading": "⚠️ Medical Disclaimer",
+    "disclaimerText": "DizzySense is not a substitute for professional medical advice or diagnosis. It is intended for informational purposes only. Always consult a qualified healthcare provider regarding any symptoms or health concerns.",
+
+    "securityHeading": "🔐 Data Security",
+    "securityText": "Since the app does not collect data, there is no personal data to secure or transmit. All symptom selections and quiz logic occur entirely on your device.",
+
+    "childrenHeading": "👶 Children's Privacy",
+    "childrenText": "DizzySense is not directed at children under 13. We do not knowingly collect data from anyone, including minors.",
+
+    "contactHeading": "📬 Contact Us",
+    "contactText": "If you have any questions about this privacy policy or the app:\nEmail: entclinicdwarka@gmail.com\nDeveloper: Dr. Rahul Kapahi, ENT Consultant\nLocation: India",
+
+    "summaryHeading": "✅ Summary",
+    "summaryText": "Your privacy is important to us. DizzySense was built with the goal of providing safe, offline-first medical guidance without any tracking, advertising, or data collection.",
+
+    "version": "Version 1.1 • September 2025",
+    "homeButton": "🏠 Home",
+    "homeButtonLabel": "Go back to the home screen"
+  },
+  "specialist": {
+    "title": "Specialist Guide",
+    "invalidResult": "Invalid result parameter.",
+    "noSpecialist": "No matching specialist found.",
+    "consultDoctor": "Consult {{doctor}}",
+    "redFlags": "Red flags to watch for:",
+    "findNearby": "🔎 Find {{doctor}}s nearby",
+    "home": "🏠 Home",
+    "errorSearch": "Something went wrong while opening the search.",
+    "cannotOpen": "Cannot open search URL"
+  },
+
+  "terms": {
+    "title": "📄 Terms & Conditions",
+    "headerAccessibility": "Terms and Conditions for DizzySense",
+    "effectiveDate": "Effective Date: August 2, 2025",
+    "lastUpdated": "Last Updated: September 24, 2025",
+    "intro": "By using 🌀DizzySense (\"the App\", \"we\", \"our\"), you agree to the following terms and conditions. Please read them carefully before using the app.",
+    "useOfApp": {
+      "heading": "1. Use of the App",
+      "paragraph": "DizzySense is intended to provide general information and guidance related to dizziness. It is not a substitute for professional medical evaluation, diagnosis, or treatment."
+    },
+    "medicalDisclaimer": {
+      "heading": "2. Medical Disclaimer",
+      "paragraph": "This app does not provide medical advice. Always consult a qualified healthcare provider if you experience symptoms or have health-related questions. Do not delay seeking professional care based on information from this app."
+    },
+    "noDataCollection": {
+      "heading": "3. No Data Collection",
+      "paragraph1": "The app does not collect or store any personal data. All symptom inputs and interactions stay on your device. We do not track, store, or share your data with anyone.",
+      "paragraph2": "The app may open external websites (e.g. Google Search) for convenience. These are handled by your device's browser, and DizzySense does not transmit any personal information."
+    },
+    "intellectualProperty": {
+      "heading": "4. Intellectual Property",
+      "paragraph": "All content within the app, including text, layout, and visuals, is the intellectual property of Dr. Rahul Kapahi. You may not reproduce or redistribute any part of this app without permission."
+    },
+    "limitation": {
+      "heading": "5. Limitation of Liability",
+      "paragraph": "We are not liable for any harm or damage that may arise from the use or misuse of the app, including reliance on the guidance provided. Use of the app is at your own risk."
+    },
+    "changes": {
+      "heading": "6. Changes to Terms",
+      "paragraph": "We may update these terms occasionally. The latest version will always be available within the app. Continued use of the app implies your acceptance of any changes."
+    },
+    "contact": {
+      "heading": "7. Contact",
+      "paragraph": "For questions or concerns about these terms:",
+      "emailLabel": "Email:",
+      "developerLabel": "Developer:",
+      "locationLabel": "Location:"
+    },
+    "version": "Version 1.1 • September 2025",
+    "homeButton": "🏠 Home",
+    "homeButtonAccessibility": "Go back to home screen"
+  },
+  "language": "Change language"
+}
