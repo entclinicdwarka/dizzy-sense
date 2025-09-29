@@ -22,14 +22,16 @@ function LayoutContent() {
 
   return (
     <>
-      <StatusBar style="dark" translucent={false} />
+      <StatusBar style="dark" translucent backgroundColor="transparent" />
       <SafeAreaProvider>
         <SafeAreaView style={styles.safeArea}>
           <View style={styles.container}>
+            {/* Main content */}
             <View style={styles.content}>
               <Stack />
             </View>
 
+            {/* Disclaimer */}
             <View style={styles.disclaimerBox}>
               <Text style={styles.disclaimerText}>
                 {t("layout.disclaimer.text1")}{" "}
@@ -44,29 +46,28 @@ function LayoutContent() {
               </Text>
             </View>
 
+            {/* Footer */}
             <View style={styles.footer}>
-              <View>
-                <Link href="/about" asChild accessibilityRole="link">
-                  <TouchableOpacity
-                    accessibilityLabel={t("layout.footer.accessibility")}
+              <Link href="/about" asChild accessibilityRole="link">
+                <TouchableOpacity
+                  accessibilityLabel={t("layout.footer.accessibility")}
+                  style={styles.settingsIcon}
+                >
+                  <LinearGradient
+                    colors={["#04d9ff", "#70a1ff"]}
                     style={styles.settingsIcon}
                   >
-                    <LinearGradient
-                      colors={["#04d9ff", "#70a1ff"]}
-                      style={styles.settingsIcon}
-                    >
-                      <Ionicons
-                        name="settings-outline"
-                        size={moderateScale(20)}
-                        color="#ffffff"
-                      />
-                      <Text style={styles.settingsText}>
-                        {t("layout.footer.aboutLink")}
-                      </Text>
-                    </LinearGradient>
-                  </TouchableOpacity>
-                </Link>
-              </View>
+                    <Ionicons
+                      name="settings-outline"
+                      size={moderateScale(20)}
+                      color="#ffffff"
+                    />
+                    <Text style={styles.settingsText}>
+                      {t("layout.footer.aboutLink")}
+                    </Text>
+                  </LinearGradient>
+                </TouchableOpacity>
+              </Link>
 
               <Text style={styles.footerNote}>
                 © {new Date().getFullYear()} {t("layout.footer.note")}

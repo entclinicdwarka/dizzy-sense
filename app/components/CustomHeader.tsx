@@ -1,13 +1,11 @@
-import { Platform, StyleSheet, Text } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 import { moderateScale } from "react-native-size-matters";
-import { SafeAreaView } from "react-native-safe-area-context";
-import i18n from "@/i18n";
 import { useTranslation } from "@/hooks/useTranslation";
 
 export default function CustomHeader() {
   const { t } = useTranslation();
   return (
-    <SafeAreaView style={styles.headerContainer}>
+    <View style={styles.headerContainer}>
       <Text
         style={styles.title}
         accessibilityRole="header"
@@ -17,7 +15,7 @@ export default function CustomHeader() {
       >
         {t("customHeader.title")}
       </Text>
-    </SafeAreaView>
+    </View>
   );
 }
 
@@ -26,13 +24,11 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
-    paddingHorizontal: 4,
-    paddingTop: Platform.OS === "android" ? 0 : 8,
     width: "100%",
     backgroundColor: "#04d9ff",
   },
   title: {
-    fontSize: moderateScale(32),
+    fontSize: moderateScale(36),
     fontWeight: "bold",
     color: "#ffffff",
   },
